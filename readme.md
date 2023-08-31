@@ -8,6 +8,7 @@
 Para el trabajo en grupo hemos definido utilizar como tema de trabajo la arquitectura de un software como lo es un juez online, como lo es BOCA, Codeforces, UVA, etc.
 
 ## Parte 1 
+Hola??
 
 ### 1. Caso de negocio
 
