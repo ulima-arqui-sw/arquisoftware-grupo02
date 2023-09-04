@@ -9,13 +9,13 @@ Para el trabajo en grupo hemos definido utilizar como tema de trabajo la arquite
 
 ## 1. Caso de Negocio
 ### 1.1. Generalidades
-
+Ulitorneos es una plataforma virtual con sede en Lima. Se dedica a ofrecer una experiencia de competencia en línea, similar a un "online judge", que permite a los participantes involucrarse en torneos de programación y desafíos similares. Su enfoque se encuentra en la virtualidad, lo que significa que opera en un entorno completamente en línea, lo que facilita la participación desde cualquier ubicación geográfica.
 ### 1.2. Modelo de Negocio
-
+El núcleo del modelo de negocio de Ulitorneos es proporcionar una plataforma que permita la organización de torneos tipo hackathon y la interacción en tiempo real entre jueces y participantes. Su público objetivo abarca instituciones que deseen organizar competencias de programación, como hackathons, así como programadores de todos los niveles que estén interesados en participar en estos eventos. Actualmente, la plataforma no genera ingresos, ya que se encuentra en sus primeras etapas de desarrollo, y los gastos se limitan principalmente al mantenimiento del servidor y el uso de herramientas en la nube.
 ### 1.3. Estructura del Equipo
-
+El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javier lidera el proyecto, y junto a Angelo, Francisco y Lelis, todos ellos desempeñan roles de desarrollo en el proyecto. Dado el tamaño reducido del equipo, no se han establecido divisiones por áreas funcionales o departamentos. La fuerza del equipo radica en su experiencia preprofesional en desarrollo de software, con competencias que abarcan lenguajes como Python, JavaScript, SQL, y más.
 ### 1.4. Listado de Stakeholders
-
+En cuanto a los stakeholders, en este momento no hay inversores o accionistas involucrados en Ulitorneo, ya que el proyecto se desarrolla como parte de un curso académico y no tiene fines lucrativos. Los clientes potenciales incluyen instituciones que deseen organizar hackathons y programadores interesados en participar en competencias. Las partes interesadas más destacadas son los propios desarrolladores (Javier, Angelo, Francisco y Lelis) y el profesor del curso (José Caballero), quienes tienen un interés significativo en que el proyecto sea exitoso, dada su dedicación al desarrollo del mismo como parte de su formación académica.
 ## 2. Requerimientos del Sistema
 
 ### 2.1. Requerimientos Funcionales
