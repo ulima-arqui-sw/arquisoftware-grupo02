@@ -21,6 +21,52 @@ En cuanto a los stakeholders, en este momento no hay inversores o accionistas in
 ### 2.1. Requerimientos Funcionales
 
 ### 2.2. Requerimientos de Atributos de Calidad (Escenarios)
+Precisión: La plataforma debe ser precisa en la evaluación de las soluciones de los usuarios. Debe ser capaz de determinar con precisión si una solución es correcta o incorrecta y proporcionar retroalimentación precisa sobre los casos de prueba que fallaron. 
+ESCENARIO: Imagine que un estudiante ha enviado una solución a un problema de programación en la plataforma. La plataforma debe ser capaz de determinar de manera precisa si la solución es correcta o incorrecta según las pruebas establecidas. Si la plataforma informa incorrectamente que una solución es incorrecta cuando en realidad es correcta, esto sería un problema de precisión.
+
+
+Confiabilidad: La plataforma debe estar disponible y funcionar de manera confiable en todo momento. Los usuarios deben poder acceder a ella sin interrupciones significativas. ESCENARIO: Suponga que un grupo de estudiantes está participando en una competencia de programación en línea y, durante la competencia, la plataforma se cae o experimenta tiempos de inactividad frecuentes. Esto interrumpiría la competencia y afectaría la experiencia de los usuarios debido a la falta de confiabilidad.
+
+
+Escalabilidad: Debe ser capaz de manejar una carga creciente de usuarios y soluciones sin degradación del rendimiento. Esto es especialmente importante en competencias en línea que pueden atraer a miles de participantes.
+ESCENARIO: En una competencia importante, la plataforma enfrenta un aumento significativo en el número de usuarios que intentan enviar soluciones al mismo tiempo. Si la plataforma no es capaz de manejar esta carga adicional y se vuelve lenta o inaccesible, esto muestra una falta de escalabilidad.
+
+
+Retroalimentación Detallada: Debe proporcionar retroalimentación detallada sobre las soluciones de los usuarios, incluyendo información sobre los casos de prueba que fallaron y sugerencias para la corrección.
+ESCENARIO: Después de que un estudiante envía una solución, la plataforma le proporciona información vaga sobre por qué su solución falló sin identificar específicamente los casos de prueba que no pasaron. Esto dificulta que el estudiante comprenda y corrija su error, lo que refleja una falta de retroalimentación detallada.
+
+
+Seguridad: La plataforma debe ser segura para proteger la integridad de los problemas, las soluciones y los datos de los usuarios. Esto incluye la prevención de intentos de trampas y protección contra vulnerabilidades de seguridad.
+ESCENARIO: Un usuario malintencionado intenta utilizar la plataforma para obtener acceso no autorizado a problemas o soluciones de otros usuarios o para distribuir contenido malicioso. La plataforma debe ser capaz de prevenir estos intentos y proteger la seguridad de los datos.
+
+
+Usabilidad: La plataforma debe ser fácil de usar para los usuarios, tanto para aquellos que envían soluciones como para aquellos que crean y administran problemas. La interfaz de usuario debe ser intuitiva.
+ESCENARIO: Un profesor que desea crear un nuevo problema en la plataforma encuentra la interfaz de administración confusa y difícil de navegar. La plataforma debería tener una interfaz de usuario intuitiva y fácil de usar tanto para profesores como para estudiantes.
+
+
+Rendimiento: Debe proporcionar respuestas rápidas y tiempos de ejecución eficientes al evaluar las soluciones de los usuarios. Los tiempos de espera prolongados pueden ser frustrantes para los participantes. 
+ESCENARIO: Cuando un estudiante envía una solución, la plataforma tarda mucho tiempo en evaluarla, lo que provoca que los estudiantes experimenten tiempos de espera frustrantes. El rendimiento deficiente de la plataforma afecta negativamente la experiencia del usuario.
+
+
+Flexibilidad: Debe ser flexible y permitir la configuración y personalización de problemas y competencias. Los administradores deben poder definir sus propios problemas y reglas.
+ESCENARIO: Un instructor desea personalizar los criterios de evaluación para un problema específico, pero la plataforma no permite una configuración personalizada. La falta de flexibilidad en la plataforma limita la capacidad de los instructores para adaptarse a sus necesidades específicas.
+
+
+Documentación y Soporte: Debe ofrecer documentación clara y soporte adecuado para los usuarios, incluyendo tutoriales, ejemplos y una base de conocimientos.
+ESCENARIO: Un estudiante nuevo en la plataforma no puede encontrar documentación o tutoriales claros sobre cómo enviar soluciones. La falta de documentación y soporte dificulta que los usuarios comprendan cómo utilizar la plataforma eficazmente.
+
+
+Mantenimiento: La plataforma debe mantenerse actualizada y recibir mejoras periódicas para corregir errores, agregar nuevas características y mantenerse al día con las mejores prácticas de seguridad. 
+ESCENARIO: La plataforma no ha recibido actualizaciones ni correcciones de errores durante un período prolongado. Esto puede llevar a problemas de seguridad no resueltos y a una falta de nuevas características que podrían mejorar la experiencia del usuario.
+
+
+Escalabilidad: Debe ser capaz de manejar un aumento en el número de usuarios y problemas sin perder su rendimiento.
+ESCENARIO: Durante una competencia importante, la plataforma maneja un gran aumento en el número de usuarios y problemas sin problemas. La capacidad de la plataforma para adaptarse a la creciente carga de trabajo muestra su escalabilidad.
+
+
+Integración: La plataforma debe ser capaz de integrarse con otros sistemas y herramientas, como sistemas de gestión de aprendizaje, sistemas de seguimiento de competencias y sistemas de autenticación.
+ESCENARIO: Un centro educativo utiliza un sistema de gestión de aprendizaje (LMS) y desea integrar la plataforma de juez en línea con su LMS para un acceso más fácil. La plataforma debe ser capaz de integrarse de manera efectiva con el LMS para proporcionar una experiencia de usuario fluida.
+
 
 ### 2.3. Restricciones
 
