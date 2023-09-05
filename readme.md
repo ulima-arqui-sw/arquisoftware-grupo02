@@ -2,8 +2,8 @@
 ## Integrantes
 * Javier Enrique Olazábal Silva [(Itsjavito)](https://github.com/ItsJavito)
 * Lelis Raquel Atencia Mondragón [(atencia22)](https://github.com/atencia22)
-* Angel Cuya Sanchez
-* Francisco Diaz Delgado 
+* Angel Cuya Sanchez [(galadto)](https://github.com/galadto)
+* Francisco Diaz Delgado [(fmdd00)](https://github.com/fmdd00)
 ## Tema de proyecto (Juez en línea)
 Para el trabajo en grupo hemos definido utilizar como tema de trabajo la arquitectura de un software como lo es un juez online, como lo es BOCA, Codeforces, UVA, etc.
 
@@ -20,7 +20,7 @@ En cuanto a los stakeholders, en este momento no hay inversores o accionistas in
 
 ### 2.1. Requerimientos Funcionales
 #### US01: Registro de usuario
-Como usuario, quiero poder crear una cuenta nueva, con un correo (revisar), usuario y una contraseña, para acceder a la plataforma.
+Como usuario, quiero poder crear una cuenta nueva, con un correo (revisar esto), usuario y una contraseña, para acceder a la plataforma.
 #### US02: Inicio de sesión
 Como usuario, quiero poder ingresar al sistema con los datos de usuario que registré, para poder acceder a las funciones de la plataforma.
 #### US03: Modificar datos personales
@@ -30,13 +30,14 @@ Como usuario, quiero poder cerrar mi sesión del sistema, para dar por culminado
 #### US05: Visualizar problemas
 Como usuario, quiero poder visualizar el nombre y la descripción de los problemas que puedo resolver, para estar conocer los detalles de estos.
 #### US06: Subir solución
-Como usuario, quiero seleccionar un problema y subir los archivos de sódigo fuente, para presentar una solución.
+Como usuario, quiero seleccionar un problema y subir los archivos de código fuente, para presentar una solución.
 #### US07: Visualización del tiempo del concurso
 Como usuario, quiero poder ver el tiempo restante del concurso, para poder organizarme de la mejor manera.
 #### US08: Visualizar resultados
 Como usuario, quiero poder visualizar la información de los problemas y las respectivas soluciones que presenté, así como el tiempo que tomé, el lenguage utilizado, y la respuesta por parte del juez, para seguir el récord de mis soluciones presentadas.
 #### US09: Visualizar puntajes globales
 Como usuario, quiero poder ver los puntajes a nivel global de otros usuarios que han presentado sus soluciones, con datos como el nombre de usuario, el país, el instituto, los problemas que ha resuelto y el puntaje total, para hacer un seguimiento del progreso de otros usuarios.
+#### // Requerimientos por evaluar: Existen otras funcionalidades que BOCA ofrece y que se necesitan evaluar. Como usuario del sistema, existen opciones realizar clarificaciones respecto a un problema, ver tastks y realizar backups. Como administrador del sistema, se pueden crear y modificar los datos de competencias, ver logs, reportes, los usuarios en una competencia, entre otros. //
 ### 2.2. Requerimientos de Atributos de Calidad (Escenarios)
 Precisión: La plataforma debe ser precisa en la evaluación de las soluciones de los usuarios. Debe ser capaz de determinar con precisión si una solución es correcta o incorrecta y proporcionar retroalimentación precisa sobre los casos de prueba que fallaron. 
 ESCENARIO: Imagine que un estudiante ha enviado una solución a un problema de programación en la plataforma. La plataforma debe ser capaz de determinar de manera precisa si la solución es correcta o incorrecta según las pruebas establecidas. Si la plataforma informa incorrectamente que una solución es incorrecta cuando en realidad es correcta, esto sería un problema de precisión.
