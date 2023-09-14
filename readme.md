@@ -63,7 +63,7 @@ El modelo de negocio de la empresa se centra principalmente en generar ingresos 
 El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javier lidera el proyecto, y junto a Angelo, Francisco y Lelis, todos ellos desempeñan roles de desarrollo en el proyecto. Dado el tamaño reducido del equipo, no se han establecido divisiones por áreas funcionales o departamentos. La fuerza del equipo radica en su experiencia preprofesional en desarrollo de software, con competencias que abarcan lenguajes como Python, JavaScript, SQL, y más.
 
 ### 1.4. Listado de Stakeholders
-En cuanto a los stakeholders, en este momento no hay inversores o accionistas involucrados en Ulitorneo, ya que el proyecto se desarrolla como parte de un curso académico y no tiene fines lucrativos. Los clientes potenciales incluyen instituciones que deseen organizar hackathons y programadores interesados en participar en competencias. Las partes interesadas más destacadas son los propios desarrolladores (Javier, Angelo, Francisco y Lelis) y el profesor del curso (José Caballero), quienes tienen un interés significativo en que el proyecto sea exitoso, dada su dedicación al desarrollo del mismo como parte de su formación académica.
+En cuanto a los stakeholders, son todas aquellas personas que quieran mejorar sus habilidades de programación. Los clientes potenciales incluyen instituciones que deseen organizar hackathons y programadores interesados en participar en competencias. Las partes interesadas más destacadas son los propios desarrolladores (Javier, Angelo, Francisco y Lelis) y el profesor del curso (José Caballero), quienes tienen un interés significativo en que el proyecto sea exitoso, dada su dedicación al desarrollo del mismo como parte de su formación académica.
 
 ## 2. Requerimientos del Sistema
 
@@ -143,7 +143,7 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 
 - Base de Datos Relacional: Utilizaremos una base de datos relacional para almacenar datos críticos del usuario y resultados de competencias.
 
-- Servidores Propios: Todos los servidores y recursos de la plataforma estarán ubicados en nuestro centro de datos, no utilizaremos servicios de nube externos.
+- Servidores Propios: Todos los servidores y recursos de la plataforma estarán desplegados en la nube
 
 - Política de Seguridad Rigurosa: Implementaremos una política de seguridad rigurosa que incluye autenticación de dos factores y cifrado de datos en reposo y en tránsito.
 
