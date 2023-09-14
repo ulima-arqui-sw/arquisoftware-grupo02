@@ -86,9 +86,24 @@ Como usuario, quiero poder ver el tiempo restante del concurso, para poder organ
 Como usuario, quiero poder visualizar la información de los problemas y las respectivas soluciones que presenté, así como el tiempo que tomé, el lenguage utilizado, y la respuesta por parte del juez, para seguir el récord de mis soluciones presentadas.
 #### US09: Visualizar puntajes globales
 Como usuario, quiero poder ver los puntajes a nivel global de otros usuarios que han presentado sus soluciones, con datos como el nombre de usuario, el país, el instituto, los problemas que ha resuelto y el puntaje total, para hacer un seguimiento del progreso de otros usuarios.
-#### // Requerimientos por evaluar: Existen otras funcionalidades nuestras plataformas modelo ofrecen y que se necesitan evaluar para su implementación en la nuestra. Como usuario del sistema, existen opciones realizar clarificaciones respecto a un problema, ver tastks y realizar backups. Como administrador del sistema, se pueden crear y modificar los datos de competencias, ver logs, reportes, los usuarios en una competencia, entre otros. // 
 
-### 2.2. Flujo de Interacción con la Plataforma Ulitorneos:
+-----
+### US10: Registrar nuevo concurso 
+Como Usuario, quiero poder crear mi concurso de programación con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc. 
+
+### US11: Subir problemas al concurso creado 
+Como usuario, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita. 
+
+### US12: Modificar el concurso 
+Como usuario, debería poder modificar una vez creado el concurso creado, tanto como el título, la cantidad de participantes, las fechas, lo límites, etc. 
+
+### US13: Modificar los problemas del concurso
+Como usuario, debería poder modificar los problemas creados junto a los límites y las características del problema. 
+
+---
+<!-- #### // Requerimientos por evaluar: Existen otras funcionalidades nuestras plataformas modelo ofrecen y que se necesitan evaluar para su implementación en la nuestra. Como usuario del sistema, existen opciones realizar clarificaciones respecto a un problema, ver tastks y realizar backups. Como administrador del sistema, se pueden crear y modificar los datos de competencias, ver logs, reportes, los usuarios en una competencia, entre otros. // -->
+
+### 2.2. Flujo de Interacción con la Plataforma Ulitorneos: (Flujo principal)
 
 1. El usuario accede a la página de inicio de Ulitorneos.
 2. El usuario hace clic en "Registro de Usuario" (US01) para crear una cuenta nueva.
