@@ -154,7 +154,7 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 
 
 ATRIBUTOS
-Código  | Atributo          | Fuente       | Respuesta    | Entorno  | Artefacto    | Estímulo   | Medida de Respuesta
+Código  | Atributo          | Fuente       | Estímulo | Respuesta       | Entorno  | Artefacto    | Medida de Respuesta
 --------|-------------------|--------------|-------------|-----------|--------------|------------|----------------------
 ESC-01  | Disponibilidad    | Participantes de la competencia, administradores de la plataforma |             |              |             |                 |     
 RNF02    | Rendimiento       |              |             |              |             |                |     
