@@ -156,7 +156,7 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 ATRIBUTOS
 Código  | Atributo          | Fuente       | Respuesta    | Entorno  | Artefacto    | Estímulo   | Medida de Respuesta
 --------|-------------------|--------------|-------------|-----------|--------------|------------|----------------------
-ESC-01  | Disponibilidad    | Participantes de la competencia, administradores de la plataforma |             |              |             |                 |     
+ESC-01  | Escalabilidad    | Participantes de la competencia, administradores de la plataforma | Miles de estudiantes en todo el mundo intentan enviar sus soluciones a problemas de programación en un lapso de tiempo muy corto debido a la fecha límite de la competencia. | la plataforma es capaz de escalar de manera efectiva y mantener tiempos de respuesta aceptables para los usuarios, sin experimentar ralentizaciones significativas o tiempos de inactividad. | competencia de programación en línea | Servidores de Aplicación, Balanceadores de Carga |  Tiempo de Respuesta     
 RNF02    | Rendimiento       |              |             |              |             |                |     
 RNF03    | Escalabilidad     |              |             |              |             |                |    
 RNF04    | Usabilidad        |              |             |              |             |                |      
