@@ -4,6 +4,7 @@
 * Lelis Raquel Atencia Mondragón [(atencia22)](https://github.com/atencia22)
 * Angel Cuya Sanchez [(galadto)](https://github.com/galadto)
 * Francisco Diaz Delgado [(fmdd00)](https://github.com/fmdd00)
+
 ## Tema de proyecto (Juez en línea)
 Para el trabajo en grupo hemos definido utilizar como tema de trabajo la arquitectura de un software como lo es un juez online, como lo es BOCA, Codeforces, UVA, etc.
 
@@ -64,7 +65,16 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 
 ### 1.4. Listado de Stakeholders
 
-En cuanto a los stakeholders, son todas aquellas personas que quieran mejorar sus habilidades de programación. Los clientes potenciales incluyen instituciones que deseen organizar hackathons y programadores interesados en participar en competencias. Las partes interesadas más destacadas son los propios desarrolladores (Javier, Angelo, Francisco y Lelis) y el profesor del curso (José Caballero), quienes tienen un interés significativo en que el proyecto sea exitoso, dada su dedicación al desarrollo del mismo como parte de su formación académica.
+|           Rol            |     Encargado     |                   Descripción                  |
+|--------------------------|-------------------|----------------------------------------------|
+|         Cliente          | Organizaciones | La institución organizadora que utiliza la plataforma para crear y gestionar hackathons. Son responsables de configurar competencias, establecer reglas y proporcionar desafíos a los participantes. |
+|         Usuario          | Organizaciones y participantes | Los participantes en los hackathons, que pueden ser estudiantes de programación o programadores experimentados. Utilizan la plataforma para competir, enviar sus soluciones y recibir retroalimentación sobre sus códigos. |
+|    Gestor de negocio     | Javier Olazabal | Encargado de la gestión estratégica y operativa de la plataforma. Definen las estrategias de crecimiento, colaboraciones y acuerdos comerciales con las instituciones organizadoras. Aseguran que la plataforma satisfaga las necesidades de los clientes. |
+| Arquitecto de software   | Lelis Atencia| Diseña la estructura de la plataforma, incluyendo la arquitectura técnica y la infraestructura necesaria para soportar la carga de trabajo. Toma decisiones técnicas clave para garantizar la escalabilidad y la eficiencia. |
+| Implementador e integrador| Francisco Diaz | Responsable de desarrollar, implementar y mantener las características técnicas de la plataforma. Codifican las funcionalidades requeridas, integran sistemas externos y aseguran que todo funcione correctamente. |
+| Responsable de mantenimiento| Angel Cuya | Encargado de mantener y actualizar la plataforma en funcionamiento. Esto implica la solución de problemas técnicos, la aplicación de actualizaciones de seguridad y el monitoreo constante para garantizar el rendimiento y la disponibilidad. |
+|         Performance Checker         | Javier Olazabal | Supervisa y gestiona la evaluación de los códigos enviados por los participantes. Realiza pruebas de compilación y ejecución para verificar la precisión y eficiencia de las soluciones. Contribuye a la imparcialidad y calidad de la plataforma al garantizar una evaluación precisa de los outcomes de los participantes. |
+
 
 ## 2. Requerimientos del Sistema
 
@@ -124,17 +134,8 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 
 | Atributo | Descripción | Escenario |
 |--------------------------|---------------------------|-------------------------|
-| Escalabilidad          | Manejar una carga creciente sin degradación del rendimiento. |
-  1.1 En una competencia importante, la plataforma enfrenta un aumento significativo en el número de usuarios.
-  1.2 Durante una competencia en línea, se espera un gran aumento en el número de usuarios que intentan enviar soluciones simultáneamente. La     
-      plataforma debe ser capaz de manejar esta carga adicional sin ralentizarse ni experimentar tiempos de espera prolongados, asegurando que la
-      competencia se desarrolle sin problemas para todos los participantes.
-  1.3 Una universidad decide utilizar una plataforma de juez en línea para realizar una competencia de programación interna entre varios       
-      departamentos. La competencia se vuelve extremadamente exitosa, y más departamentos desean unirse en el futuro. La plataforma debe poder   
-      admitir un crecimiento significativo en el número de competencias y participantes sin afectar negativamente la experiencia de los usuarios   
-      ni la calidad del servicio. 
-
-| Usabilidad             | Ofrecer una interfaz de usuario intuitiva y fácil de usar. | 
+| Escalabilidad          | Manejar una carga creciente sin degradación del rendimiento. |1.1 En una competencia importante, la plataforma enfrenta un aumento significativo en el número de usuarios. 1.2 Durante una competencia en línea, se espera un gran aumento en el número de usuarios que intentan enviar soluciones simultáneamente. La plataforma debe ser capaz de manejar esta carga adicional sin ralentizarse ni experimentar tiempos de espera prolongados, asegurando que la competencia se desarrolle sin problemas para todos los participantes. 1.3 Una universidad decide utilizar una plataforma de juez en línea para realizar una competencia de programación interna entre varios departamentos. La competencia se vuelve extremadamente exitosa, y más departamentos desean unirse en el futuro. La plataforma debe poder admitir un crecimiento significativo en el número de competencias y participantes sin afectar negativamente la experiencia de los usuarios ni la calidad del servicio. |
+|Usabilidad             | Ofrecer una interfaz de usuario intuitiva y fácil de usar. | 
 1.1  Un profesor no debe de encuentrar la interfaz de administración confusa ni difícil de navegar.
 1.2  Un estudiante nuevo se registra en la plataforma de juez en línea con la intención de mejorar sus habilidades de programación. Este no debe sentirse abrumado por la falta de orientación  y tener tutoriales claros. Debe encontrar fácilmente cómo empezar a resolver problemas.
 1.3  Un profesor que planea utilizar la plataforma para evaluar las habilidades de programación de sus estudiantes debe de tener opciones de configuración claras y capacidad considerable de personalizacion en las pruebas y criterios de evaluación.   
@@ -151,6 +152,29 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 3. Manejar la disponibilidad cuando haya mantenimiento |Un profesor planifica una sesión de práctica de programación para sus estudiantes en un día específico. Cuando intenta acceder a la plataforma de juez en línea en ese momento, encuentra que está inaccesible debido a problemas de mantenimiento no anunciados, estos mantenimiento no deberian afectar a la disponibilidad de los usuarios.
 4. Manejar caidas de servidores|Durante una competencia internacional de programación en línea con equipos de todo el mundo, un corte de energía inesperado afecta al centro de datos que aloja la plataforma.  Se debe tener redundancia de servidores y sistemas de respaldo para que  la plataforma  no se encuentra inaccesible durante varias horas.
 
+
+ATRIBUTOS
+Código  | Atributo          | Fuente       | Estímulo    | Artefacto    | Respuesta   | Medida de Respuesta
+--------|-------------------|--------------|-------------|--------------|-------------|----------------------
+RNF01    | Disponibilidad    |              |             |              |             |                      
+RNF02    | Rendimiento       |              |             |              |             |                      
+RNF03    | Escalabilidad     |              |             |              |             |                      
+RNF04    | Usabilidad        |              |             |              |             |                      
+RNF05    | Seguridad         |              |             |              |             |                      
+RNF06    | Mantenibilidad    |              |             |              |             |                      
+RNF07    | Interoperabilidad |              |             |              |             |                      
+
+ESCENARIOS
+
+| Atributo | Escenarios                                       | Requerimiento relacionado |
+|----------|-------------------------------------------------|---------------------------|
+| RNF01    |                                                 |                           |
+| RNF02    |                                                 |                           |
+| RNF03    |                                                 |                           |
+| RNF04    |                                                 |                           |
+| RNF05    |                                                 |                           |
+| RNF06    |                                                 |                           |
+| RNF07    |                                                 |                           |
 
 ### 2.4. Restricciones
 
@@ -178,15 +202,8 @@ En esta sección se va especificar los módulos de
 
 ## 4. Tácticas
 
-### 4.1. Disponibilidad
 
-### 4.2. Mantenibilidad
 
-### 4.3. Interoperabilidad
-
-### 4.4. Rendimiento
-
-### 4.5. Seguridad …
 
 ## 5. Anexo: Tópicos en Arquitectura de Software (Por alumno)
 
