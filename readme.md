@@ -154,15 +154,15 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 
 
 ATRIBUTOS
-Código  | Atributo          | Fuente       | Estímulo    | Artefacto    | Respuesta   | Medida de Respuesta
---------|-------------------|--------------|-------------|--------------|-------------|----------------------
-RNF01    | Disponibilidad    |              |             |              |             |                      
-RNF02    | Rendimiento       |              |             |              |             |                      
-RNF03    | Escalabilidad     |              |             |              |             |                      
-RNF04    | Usabilidad        |              |             |              |             |                      
-RNF05    | Seguridad         |              |             |              |             |                      
-RNF06    | Mantenibilidad    |              |             |              |             |                      
-RNF07    | Interoperabilidad |              |             |              |             |                      
+Código  | Atributo          | Fuente       | Respuesta    | Entorno  | Artefacto    | Estímulo   | Medida de Respuesta
+--------|-------------------|--------------|-------------|-----------|--------------|------------|----------------------
+ESC-01  | Disponibilidad    | Participantes de la competencia, administradores de la plataforma |             |              |             |                 |     
+RNF02    | Rendimiento       |              |             |              |             |                |     
+RNF03    | Escalabilidad     |              |             |              |             |                |    
+RNF04    | Usabilidad        |              |             |              |             |                |      
+RNF05    | Seguridad         |              |             |              |             |                |      
+RNF06    | Mantenibilidad    |              |             |              |             |                |      
+RNF07    | Interoperabilidad |              |             |              |             |                |      
 
 ESCENARIOS
 
