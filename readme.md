@@ -154,15 +154,22 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 
 
 ATRIBUTOS
-Código  | Atributo          | Fuente       | Respuesta    | Entorno  | Artefacto    | Estímulo   | Medida de Respuesta
+Código  | Atributo          | Fuente       | Estímulo | Respuesta       | Entorno  | Artefacto    | Medida de Respuesta
 --------|-------------------|--------------|-------------|-----------|--------------|------------|----------------------
 ESC-01  | Escalabilidad    | Participantes de la competencia, administradores de la plataforma | Miles de estudiantes en todo el mundo intentan enviar sus soluciones a problemas de programación en un lapso de tiempo muy corto debido a la fecha límite de la competencia. | la plataforma es capaz de escalar de manera efectiva y mantener tiempos de respuesta aceptables para los usuarios, sin experimentar ralentizaciones significativas o tiempos de inactividad. | competencia de programación en línea | Servidores de Aplicación, Balanceadores de Carga |  Tiempo de Respuesta     
-RNF02    | Rendimiento       |              |             |              |             |                |     
-RNF03    | Escalabilidad     |              |             |              |             |                |    
-RNF04    | Usabilidad        |              |             |              |             |                |      
-RNF05    | Seguridad         |              |             |              |             |                |      
-RNF06    | Mantenibilidad    |              |             |              |             |                |      
-RNF07    | Interoperabilidad |              |             |              |             |                |      
+| ESC-02 | Escalabilidad  | Administradores de la plataforma, estudiantes participantes.|   aumento en la demanda de competencias futuras por parte de otros departamentos  | la plataforma debe expandirse horizontalmente para admitir un mayor número de competencias y participantes sin degradación en el rendimiento o la disponibilidad   | El éxito de las competencias en un departamento          | Infraestructura de Servidores y Red(Este artefacto incluye tanto el hardware como el software necesarios para alojar y ejecutar la plataforma )          |  Capacidad de Usuarios Concurrentes  
+| ESC-03 | Escalabilidad  | Usuario |          |           |         |           |          |
+| ESC-04 | Usabilidad     | Usuario |          |           |         |           |          |
+| ESC-05 | Usabilidad     | Usuario |          |           |         |           |          |
+| ESC-06 | Usabilidad     | Usuario |          |           |         |           |          |
+| ESC-07 | Usabilidad     | Usuario |          |           |         |           |          |
+| ESC-08 | Rendimiento    | Usuario |          |           |         |           |          |
+| ESC-09 | Rendimiento    | Usuario |          |           |         |           |          |
+| ESC-10 | Rendimiento    | Usuario |          |           |         |           |          |
+| ESC-11 | Disponibilidad | Usuario |          |           |         |           |          |
+| ESC-12 | Disponibilidad | Usuario |          |           |         |           |          |
+| ESC-13 | Disponibilidad | Usuario |          |           |         |           |          |
+| ESC-14 | Disponibilidad | Usuario |          |           |         |           |          |  
 
 ESCENARIOS
 
