@@ -132,33 +132,61 @@ Como usuario, debería poder modificar los problemas creados junto a los límite
 
 A continuación, se presenta una tabla que resume los atributos de calidad, sus descripciones y los escenarios asociados:
 
-ATRIBUTOS
-Código  | Atributo          | Fuente       | Estímulo | Respuesta       | Entorno  | Artefacto    | Medida de Respuesta
---------|-------------------|--------------|-------------|-----------|--------------|------------|----------------------
-|ESC-01  | Escalabilidad    | Participantes de la competencia, administradores de la plataforma | Miles de estudiantes en todo el mundo intentan enviar sus soluciones a problemas de programación en un lapso de tiempo muy corto debido a la fecha límite de la competencia. | la plataforma es capaz de escalar de manera efectiva y mantener tiempos de respuesta aceptables para los usuarios, sin experimentar ralentizaciones significativas o tiempos de inactividad. | competencia de programación en línea | Servidores de Aplicación, Balanceadores de Carga |  Tiempo de Respuesta     
-| ESC-02 | Escalabilidad  | Administradores de la plataforma, estudiantes participantes.|   aumento en la demanda de competencias futuras por parte de otros departamentos  | la plataforma debe expandirse horizontalmente para admitir un mayor número de competencias y participantes sin degradación en el rendimiento o la disponibilidad   | El éxito de las competencias en un departamento          | Infraestructura de Servidores y Red(Este artefacto incluye tanto el hardware como el software necesarios para alojar y ejecutar la plataforma )          |  Capacidad de Usuarios Concurrentes  
-| ESC-03 | Usabilidad  | Nuevo profesor |Intenta crear un nuevo problema o configurar una competencia|La plataforma debe contar con una interfaz de usuario intuitiva y amigable que permita a los profesores, incluso los nuevos, configurar y gestionar problemas y competencias de manera efectiva y sin dificultades innecesarias |Nuevo profesor entra a la plataforma |  Interfaz de Administración de la Plataforma | Número de Errores, Tiempo de Configuración 
-| ESC-04 | Usabilidad     | Estudiante nuevo | se registra en la plataforma e intenta explorarla|La plataforma debe proporcionar orientación clara y tutoriales para los estudiantes nuevos|Primera vez entrando a la plataforma|Recursos de Orientación y Tutoriales|Tasa de Abandono, Tiempo para Comenzar a Resolver Problemas    
-| ESC-05 | Usabilidad     | Profesor| crear tareas de programación para sus estudiantes |debe proporcionar una interfaz de administración de problemas intuitiva y fácil de usar para permitir que los profesores configuren tareas de programación de manera eficiente y sin dificultades innecesarias|creacion de problemas |Interfaz de Administración de Problemas|Tiempo de Configuración de Tareas,Número de Pasos o Clics,Satisfacción del Profesor  
-| ESC-06 | Usabilidad     |Estudiante nuevo| intentar utilizar la plataforma para resolver problemas de práctica|debe proporcionar una interfaz de usuario clara, organizada y fácil de usar para que los estudiantes nuevos puedan encontrar y utilizar las funciones básicas sin dificultades innecesarias|estudiante se registra por primera vez|Interfaz de Usuario|Tiempo de Acceso a Funciones Básicas,Número de Intentos para Realizar una Acción,Tasa de Abandono
-| ESC-07 | Disponibilidad |Participantes en la competencia,administradores de la plataforma|la plataforma de juez en línea sufre un tiempo de inactividad no planificado debido a un error de servidor|La plataforma de juez en línea debe mantener una alta disponibilidad para garantizar que las competencias importantes y otras actividades no se vean interrumpidas por tiempos de inactividad inesperados|competencia importante de programación en línea con miles de participantes,|Servidores de la Plataforma|Número de Participantes Afectados,Duración del Tiempo de Inactividad
-| ESC-08 | Disponibilidad |Estudiantes participantes, administradores de la plataforma, proveedor de servicios de alojamiento|enviar sus soluciones durante la competencia| debe estar diseñada y configurada de manera que garantice una alta disponibilidad y evite interrupciones o fallas del proveedor de servicios de alojamiento durante competencias y eventos importantes|un grupo de estudiantes de diferentes partes del mundo se está preparando para enviar sus soluciones a un problema importante justo antes de la fecha límite|Servicios de Alojamiento del Proveedor|Tiempo de Disponibilidad,Registro de Interrupciones   
-| ESC-09 | Disponibilidad    | personal de mantenimiento del centro de datos| un corte de energía inesperado afecta al centro de datos que aloja la plataforma de juez en línea|La plataforma de juez en línea debe estar diseñada para mantener la disponibilidad incluso en situaciones de interrupción, como cortes de energía, mediante medidas de redundancia y sistemas de respaldo adecuados|Durante una competencia internacional de programación en línea con equipos de todo el mundo|Infraestructura del Centro de Datos|Duración de la Interrupción,Número de Competidores Afectados   
-| ESC-10 | Rendimiento    | Programadores participantes|los programadores se enfrentan a problemas altamente complejos que requieren una gran carga computacional para su evaluación|debe estar diseñada y configurada para manejar eficientemente la carga computacional requerida para evaluar soluciones complejas durante competencias, sin ralentizar drásticamente el proceso ni afectar negativamente la calidad de la experiencia de los participantes|Un equipo de programadores participa en una competencia internacional en línea |Sistema de Evaluación de Soluciones|Tiempo de Evaluación, Uso de Recursos del Servidor
-| ESC-11 | Rendimiento |Competidores|envía una solución que contiene un error de programación que resulta en un bucle infinito|debe estar diseñada para detectar y manejar adecuadamente situaciones de bucle infinito en las soluciones de los usuarios, evitando así un impacto grave en el rendimiento y retrasos para otros competidores| competencia de programación|Sistema de Evaluación de Soluciones|Tiempo de Ejecución,Recursos Consumidos,Número de Soluciones con Bucle Infinito    
-| ESC-12 | Rendimiento |Estudiante|envía una solución que, aunque correcta, contiene un algoritmo ineficiente que requiere mucho tiempo para su evaluación|debe ser capaz de detectar soluciones ineficientes y manejarlas adecuadamente para evitar que afecten negativamente el rendimiento y causen retrasos para otros participantes|competencia en línea de programación|Sistema de Evaluación de Soluciones|Tiempo de Evaluación,Recursos Consumidos,Número de Soluciones Ineficientes 
+
+
+
+Atributo         | Código  | Entorno                                           | Fuente                                                         | Estímulo                                                                                                                  | Artefacto                                              | Respuesta                                                                                                          | Medida de Respuesta
+-----------------|---------|--------------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------
+Escalabilidad    | ESC-01  | Proceso de envío de soluciones | Participantes | Miles de envíos en un periodo corto | Infraestructura de servidores | Activación automática de servidores adicionales | El servidor se activa en 15 segundos.
+Escalabilidad    | ESC-02  | Proceso de compilación | Gestor de Proyecto | Solicitud de escalamiento vertical | Servidor | Ampliación de capacidad de almacenamiento del servidor | La plataforma aumenta su capacidad de almacenamiento en 40%.
+Usabilidad       | ESC-03  | Proceso de creación de retos de programación | Encargado de crear retos | Intento de crear un nuevo reto | Interfaz de administración de la plataforma  | La plataforma cuenta con una interfaz de usuario intuitiva y amigable. | El tiempo promedio para configurar un problema es 5 minutos o menos.
+Usabilidad       | ESC-04  | Proceso de navegacion web             | Estudiante nuevo                                              | Se registra en la plataforma e intenta explorarla                                                                      | Recursos de Orientación y Tutoriales                 | Se proporciona una orientación clara y tutoriales para los estudiantes nuevos                                | Tasa de Abandono (TA) menor al 20 %
+Usabilidad       | ESC-05  | Creación de problemas                               | Profesor                                                       | Crear tareas de programación para sus estudiantes                                                                       | Interfaz de Administración de Problemas                | La interfaz de administración de problemas es intuitiva y fácil de usar | Tiempo de Configuración de Tareas maximo de 4 minutos
+Usabilidad       | ESC-06  | Proceso de navegacion web           | Estudiante nuevo                                              | Resolver problemas de práctica                                                      | Interfaz de Usuario                                  | Tener una interfaz de usuario clara, organizada y fácil de usar | Tiempo de Acceso a Funciones Básicas max de 5 minutos, TA menor al 20%
+Disponibilidad   | ESC-07  | Proceso de Recuperacion por caidas | Participantes en la competencia, administradores | Uno de los servidores de la plataformas se cae | Servidores de la Plataforma | La plataforma no debe verse interrumpida por tiempos de inactividad inesperados | Duración del Tiempo de Inactividad menor de 1 minuto
+Disponibilidad   | ESC-08  | Proceso de envios de soluciones| Participantes, administradores, proveedor de servicios de alojamiento | Enviar sus soluciones masivas durante la competencia | Servicios de Alojamiento del Proveedor                  | Garantizar una alta disponibilidad y evitar fallas del proveedor de servicios | Tiempo de Disponibilidad, Registro de Interrupciones max de 2
+Disponibilidad   | ESC-09  | Proceso de gestion de cortes de energia | Personal de mantenimiento del centro de datos | corte de energia en el centro de datos de la plataforma | Infraestructura del Centro de Datos                  | Medidas de redundancia y sistemas de respaldo adecuados | Duración de la Interrupción max de 1 min
+Rendimiento      | ESC-10  | Proceso de evalucion de problemas | Programadores participantes                                     | Envio de soluciones altamente complejos | Sistema de Evaluación de Soluciones                    | Manejar eficientemente la carga computacional de soluciones complejas | Tiempo de Evaluación max de 1 min
+Rendimiento      | ESC-11  | Proceso de evalucion de problemas     | Competidores                                                    |solución que contiene un bucle Infinito | Sistema de Evaluación de Soluciones | Manejar situaciones de bucle infinito en las soluciones de los usuarios| Tiempo de Ejecución max de 1 min, Recursos Consumidos, Número de Soluciones con Bucle Infinito
+Rendimiento      | ESC-12  | Proceso de evalucion de problemas | Estudiante                                                      |solución correcta pero optimizado    | Sistema de Evaluación de Soluciones                    |Detectar soluciones ineficientes para evitar que afecten negativamente el rendimiento  | Recursos Consumidos, Número de Soluciones Ineficientes
+|Seguridad|ESC-13|Plataforma en funcionamiento|Usuario|Transacción errada|Escáner de seguridad|Sistema realiza escaneos regulares para identificar vulnerabilidades|Número de vulnerabilidades identificadas
+|Seguridad|ESC-14|Plataforma en funcionamiento|Usuario|Intento de ciberataque|Módulo de acceso a datos|Sistema impide el acceso no autorizado a datos confidenciales|Número de intentos bloqueados
+|Seguridad|ESC-15|Proceso de autenticaicón|Usuario|Inicio de sesión fallido|Módulo de autenticación|Sistema detecta y bloquea intentos de inicio de sesión fallidos|Número de intentos bloqueados
+|Mantenibilidad|ESC-16|Plataforma despleagada|Usuario|Notificación de error|Código fuente|Equipo de desarrollo puede localizar y corregir errores fácilmente|Tiempo promedio de corrección de errores
+|Mantenibilidad|ESC-13|Mantenimiento de plataforma|Gestor de proyecto|Solicitud de nueva funcionalidad|Código fuente|Nuevas características se pueden implementar sin perjudicar al sistema|Tiempo promedio para implementar nuevas características
+|Mantenibilidad|ESC-16|Proceso de QA a módulo|Conformance checker|Notificación de error|Suite de pruebas automatizadas|Suite de pruebas ayuda a identificar problemas rápidamente|Porcentaje de cobertura de pruebas automatizadas
+|Interoperabilidad|ESC-17|Proceso de inicio de sesión|Usuario|Intento de inicio de sesión|Módulo de autenticaición|Usuarios pueden iniciar sesión utilizando cuentas existentes en otras plataformas|Número de sistemas admitidos
+|Interoperabilidad|ESC-18|Desarrollo de plataforma|Empresa dueña del IDE|IDE utilizado deja de ser open source|IDE|Integración con IDEs|Número de IDEs compatibles
+
 
 ESCENARIOS
 
-| Atributo | Escenarios                                       | Requerimiento relacionado |
-|----------|-------------------------------------------------|---------------------------|
-| RNF01    |                                                 |                           |
-| RNF02    |                                                 |                           |
-| RNF03    |                                                 |                           |
-| RNF04    |                                                 |                           |
-| RNF05    |                                                 |                           |
-| RNF06    |                                                 |                           |
-| RNF07    |                                                 |                           |
+
+| Escenarios                                       | Requerimiento funcional relacionado |
+|--------------------------------------------------|---------------------------|
+| ESC-1                                                 |                           |
+| ESC-2                                                 |                           |
+| ESC-3                                                 |                           |
+| ESC-4                                                 |                           |
+| ESC-5                                                 |                           |
+| ESC-6                                                 |                           |
+| ESC-7                                                 |                           |
+| ESC-8                                                 |                           |
+| ESC-9                                                 |                           |
+| ESC-10                                                 |                           |
+| ESC-11                                                 |                           |
+| ESC-12                                                 |                           |
+| ESC-13                                                 |                           |
+| ESC-14                                                 |                           |
+| ESC-15                                                 |                           |
+| ESC-16                                                 |                           |
+| ESC-17                                                 |                           |
+
+
+
+
+
+
 
 ### 2.4. Restricciones
 
