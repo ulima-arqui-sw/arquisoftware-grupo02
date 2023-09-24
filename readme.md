@@ -22,12 +22,16 @@ El modelo de negocio de la empresa se centra principalmente en generar ingresos 
 #### 1.2.3. Business Model Canvas
 
 ##### Segmentos de Clientes:
+- Universidades
+- Empresas de reclutamiento de desarrolladores con empresas- 
 - Instituciones que quieran tener torneos de programación.
 
 ##### Propuesta de Valor:
 - Experiencia de competencia en línea.
-- Adaptabilidad para que la plataforma se adecúe a las necesidades de la institución.
+- Adaptabilidad para que la plataforma se adecúe a las necesidades de la institución en el aspecto de "look an feel"
+- Ofrecer el entorno de creacion de concursos mas el compilador de juez, asi como el uso de datos para marketing.
 - Acceso a una plataforma virtual desde cualquier ubicación.
+- Contactar a programadores destacadas en base a logros en la plataforma
 
 ##### Canales:
 - Plataforma en línea (sitio web).
@@ -40,7 +44,7 @@ El modelo de negocio de la empresa se centra principalmente en generar ingresos 
 - Comunidad en línea (foros, redes sociales).
 
 ##### Fuentes de Ingresos:
-- Suscripciones premium (ingresos recurrentes).
+- Suscripciones premium para los concursantes(ingresos recurrentes).
 
 ##### Recursos Clave:
 - Plataforma en línea.
