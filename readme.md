@@ -84,37 +84,33 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 ## 2. Requerimientos del Sistema
 
 ### 2.1. Requerimientos Funcionales
-#### US01: Registro de usuario
-Como usuario, quiero poder crear una cuenta nueva, con un correo (revisar esto), usuario y una contraseña, para acceder a la plataforma. También poder crear la cuenta utilzando los servicios de google para mayor facilidad. 
-#### US02: Inicio de sesión
-Como usuario, quiero poder ingresar al sistema con los datos de usuario que registré, para poder acceder a las funciones de la plataforma.
-#### US03: Modificar datos personales
-Como usuario, quiero poder modificar mi nombre de usuario, contraseña y el país, para tener mis datos siempre actualizados.
-#### US04: Cerrar sesión
-Como usuario, quiero poder cerrar mi sesión del sistema, para dar por culminado mi trabajo.
-#### US05: Visualizar problemas
-Como usuario, quiero poder visualizar el nombre y la descripción de los problemas que puedo resolver, para estar conocer los detalles de estos.
-#### US06: Subir solución
-Como usuario, quiero seleccionar un problema y subir los archivos de código fuente, para presentar una solución.
-#### US07: Visualización del tiempo del concurso
-Como usuario, quiero poder ver el tiempo restante del concurso, para poder organizarme de la mejor manera.
-#### US08: Visualizar resultados
-Como usuario, quiero poder visualizar la información de los problemas y las respectivas soluciones que presenté, así como el tiempo que tomé, el lenguage utilizado, y la respuesta por parte del juez, para seguir el récord de mis soluciones presentadas.
-#### US09: Visualizar puntajes globales
-Como usuario, quiero poder ver los puntajes a nivel global de otros usuarios que han presentado sus soluciones, con datos como el nombre de usuario, el país, el instituto, los problemas que ha resuelto y el puntaje total, para hacer un seguimiento del progreso de otros usuarios.
+#### Requerimientos funcionales de usuario genérico
 
------
-### US10: Registrar nuevo concurso 
-Como Usuario, quiero poder crear mi concurso de programación con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc. 
+| Identificador | Descripción                                       |
+|---------------|---------------------------------------------------|
+| US01          | Como usuario, quiero poder crear una cuenta nueva, con un correo (revisar esto), usuario y una contraseña, para acceder a la plataforma. También poder crear la cuenta utilizando los servicios de Google para mayor facilidad. |
+| US02          | Como usuario, quiero poder ingresar al sistema con los datos de usuario que registré, para poder acceder a las funciones de la plataforma. |
+| US03          | Como usuario, quiero poder modificar mi nombre de usuario, contraseña y el país, para tener mis datos siempre actualizados. |
+| US04          | Como usuario, quiero poder cerrar mi sesión del sistema, para dar por culminado mi trabajo. |
 
-### US11: Subir problemas al concurso creado 
-Como usuario, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita. 
+#### Requerimientos funcionales del participante
 
-### US12: Modificar el concurso 
-Como usuario, debería poder modificar una vez creado el concurso creado, tanto como el título, la cantidad de participantes, las fechas, lo límites, etc. 
+| Identificador | Descripción                                       |
+|---------------|---------------------------------------------------|
+| US05          | Como participante, quiero poder visualizar el nombre y la descripción de los problemas que puedo resolver, para conocer los detalles de estos. |
+| US06          | Como participante, quiero seleccionar un problema y subir los archivos de código fuente, para presentar una solución. |
+| US07          | Como participante, quiero poder ver el tiempo restante del concurso, para poder organizarme de la mejor manera. |
+| US08          | Como participante, quiero poder visualizar la información de los problemas y las respectivas soluciones que presenté, así como el tiempo que tomé, el lenguaje utilizado y la respuesta por parte del juez, para seguir el récord de mis soluciones presentadas. |
+| US09          | Como participante, quiero poder ver los puntajes a nivel global de otros participantes que han presentado sus soluciones, con datos como el nombre de participante, el país, el instituto, los problemas que ha resuelto y el puntaje total, para hacer un seguimiento del progreso de otros participantes. |
 
-### US13: Modificar los problemas del concurso
-Como usuario, debería poder modificar los problemas creados junto a los límites y las características del problema. 
+#### Requerimientos funcionales de la institución
+
+| Identificador | Descripción                                       |
+|---------------|---------------------------------------------------|
+| US10          | Como institución, quiero poder crear mi concurso de programación con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc. |
+| US11          | Como institución, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita. |
+| US12          | Como institución, debería poder modificar una vez creado el concurso, tanto como el título, la cantidad de participantes, las fechas, los límites, etc. |
+| US13          | Como institución, debería poder modificar los problemas creados junto a los límites y las características del problema. |
 
 ---
 <!-- #### // Requerimientos por evaluar: Existen otras funcionalidades nuestras plataformas modelo ofrecen y que se necesitan evaluar para su implementación en la nuestra. Como usuario del sistema, existen opciones realizar clarificaciones respecto a un problema, ver tastks y realizar backups. Como administrador del sistema, se pueden crear y modificar los datos de competencias, ver logs, reportes, los usuarios en una competencia, entre otros. // -->
@@ -158,13 +154,13 @@ Rendimiento      | ESC-12  | Proceso de evalucion de problemas | Estudiante     
 |Seguridad|ESC-14|Plataforma en funcionamiento|Usuario|Intento de ciberataque|Módulo de acceso a datos|Sistema impide el acceso no autorizado a datos confidenciales|Número de intentos bloqueados
 |Seguridad|ESC-15|Proceso de autenticaicón|Usuario|Inicio de sesión fallido|Módulo de autenticación|Sistema detecta y bloquea intentos de inicio de sesión fallidos|Número de intentos bloqueados
 |Mantenibilidad|ESC-16|Plataforma despleagada|Usuario|Notificación de error|Código fuente|Equipo de desarrollo puede localizar y corregir errores fácilmente|Tiempo promedio de corrección de errores
-|Mantenibilidad|ESC-13|Mantenimiento de plataforma|Gestor de proyecto|Solicitud de nueva funcionalidad|Código fuente|Nuevas características se pueden implementar sin perjudicar al sistema|Tiempo promedio para implementar nuevas características
-|Mantenibilidad|ESC-16|Proceso de QA a módulo|Conformance checker|Notificación de error|Suite de pruebas automatizadas|Suite de pruebas ayuda a identificar problemas rápidamente|Porcentaje de cobertura de pruebas automatizadas
-|Interoperabilidad|ESC-17|Proceso de inicio de sesión|Usuario|Intento de inicio de sesión|Módulo de autenticaición|Usuarios pueden iniciar sesión utilizando cuentas existentes en otras plataformas|Número de sistemas admitidos
-|Interoperabilidad|ESC-18|Desarrollo de plataforma|Empresa dueña del IDE|IDE utilizado deja de ser open source|IDE|Integración con IDEs|Número de IDEs compatibles
+|Mantenibilidad|ESC-17|Mantenimiento de plataforma|Gestor de proyecto|Solicitud de nueva funcionalidad|Código fuente|Nuevas características se pueden implementar sin perjudicar al sistema|Tiempo promedio para implementar nuevas características
+|Mantenibilidad|ESC-18|Proceso de QA a módulo|Conformance checker|Notificación de error|Suite de pruebas automatizadas|Suite de pruebas ayuda a identificar problemas rápidamente|Porcentaje de cobertura de pruebas automatizadas
+|Interoperabilidad|ESC-19|Proceso de inicio de sesión|Usuario|Intento de inicio de sesión|Módulo de autenticaición|Usuarios pueden iniciar sesión utilizando cuentas existentes en otras plataformas|Número de sistemas admitidos
+|Interoperabilidad|ESC-20|Desarrollo de plataforma|Empresa dueña del IDE|IDE utilizado deja de ser open source|IDE|Integración con IDEs|Número de IDEs compatibles
 
 
-ESCENARIOS
+En la sieguiente tabla se especifican a qué requerimiento están relacionados los escenarios descritos.
 
 
 | Escenarios                                       | Requerimiento funcional relacionado |
@@ -186,6 +182,10 @@ ESCENARIOS
 | ESC-15                                                 |                           |
 | ESC-16                                                 |                           |
 | ESC-17                                                 |                           |
+| ESC-18                                                 |                           |
+| ESC-19                                                 |                           |
+| ESC-20                                                 |                           |
+
 
 
 
@@ -219,6 +219,26 @@ En esta sección se va especificar los módulos de
 
 ## 4. Tácticas
 
+| Atributo        | Táctica                                              | Descripción                                                      |
+|-----------------|-----------------------------------------------------|------------------------------------------------------------------|
+| Escalabilidad   | Activación automática de servidores adicionales   | Aumentar recursos de manera automática para manejar la demanda.  |
+| Escalabilidad   | Ampliación de capacidad de almacenamiento del servidor | Incrementar la capacidad de almacenamiento según sea necesario.  |
+| Usabilidad      | Interfaz de usuario intuitiva y amigable           | Diseñar una interfaz fácil de entender y usar para los usuarios. |
+| Usabilidad      | Orientación y tutoriales para nuevos estudiantes   | Proporcionar guías y tutoriales para ayudar a los nuevos usuarios. |
+| Usabilidad      | Interfaz de usuario clara y organizada            | Mantener la interfaz de usuario ordenada y de fácil navegación. |
+| Disponibilidad  | Evitar tiempos de inactividad inesperados         | Garantizar que la plataforma esté disponible sin interrupciones. |
+| Disponibilidad  | Medidas de redundancia y sistemas de respaldo     | Implementar sistemas de respaldo para mantener la disponibilidad. |
+| Rendimiento     | Eficiencia en el manejo de carga computacional     | Optimizar el sistema para manejar tareas complejas eficientemente. |
+| Rendimiento     | Manejo de bucles infinitos en soluciones de usuarios | Identificar y evitar que las tareas en bucle afecten el rendimiento. |
+| Rendimiento     | Detección de soluciones ineficientes               | Identificar y corregir soluciones que afecten negativamente el rendimiento. |
+| Seguridad       | Escaneos regulares para identificar vulnerabilidades | Realizar análisis de seguridad periódicos para detectar debilidades. |
+| Seguridad       | Prevención de acceso no autorizado a datos confidenciales | Implementar medidas para proteger la información confidencial. |
+| Seguridad       | Detección y bloqueo de intentos de inicio de sesión fallidos | Identificar y bloquear intentos de acceso no autorizados. |
+| Mantenibilidad  | Localización y corrección de errores fácilmente   | Facilitar la identificación y solución de problemas en el sistema. |
+| Mantenibilidad  | Implementación de nuevas características sin perjuicio | Hacer posible la adición de nuevas funciones sin afectar la estabilidad. |
+| Mantenibilidad  | Suite de pruebas para identificar problemas       | Utilizar pruebas para encontrar y solucionar problemas rápidamente. |
+| Interoperabilidad| Inicio de sesión con cuentas de otras plataformas  | Permitir a los usuarios utilizar cuentas existentes en otros servicios. |
+| Interoperabilidad| Compatibilidad con múltiples IDEs                  | Hacer que el sistema sea compatible con varios entornos de desarrollo. |
 
 
 
