@@ -141,15 +141,15 @@ Atributo         | Código  | Entorno                                           
 Escalabilidad    | ESC-01  | Proceso de envío de soluciones | Participantes | Miles de envíos en un periodo corto | Infraestructura de servidores | Activación automática de servidores adicionales | El servidor se activa en 15 segundos.
 Escalabilidad    | ESC-02  | Proceso de compilación | Gestor de Proyecto | Solicitud de escalamiento vertical | Servidor | Ampliación de capacidad de almacenamiento del servidor | La plataforma aumenta su capacidad de almacenamiento en 40%.
 Usabilidad       | ESC-03  | Proceso de creación de retos de programación | Encargado de crear retos | Intento de crear un nuevo reto | Interfaz de administración de la plataforma  | La plataforma cuenta con una interfaz de usuario intuitiva y amigable. | El tiempo promedio para configurar un problema es 5 minutos o menos.
-Usabilidad       | ESC-04  | Proceso de navegacion web             | Estudiante nuevo                                              | Se registra en la plataforma e intenta explorarla                                                                      | Recursos de Orientación y Tutoriales                 | Se proporciona una orientación clara y tutoriales para los estudiantes nuevos                                | Tasa de Abandono (TA) menor al 20 %
-Usabilidad       | ESC-05  | Creación de problemas                               | Profesor                                                       | Crear tareas de programación para sus estudiantes                                                                       | Interfaz de Administración de Problemas                | La interfaz de administración de problemas es intuitiva y fácil de usar | Tiempo de Configuración de Tareas maximo de 4 minutos
-Usabilidad       | ESC-06  | Proceso de navegacion web           | Estudiante nuevo                                              | Resolver problemas de práctica                                                      | Interfaz de Usuario                                  | Tener una interfaz de usuario clara, organizada y fácil de usar | Tiempo de Acceso a Funciones Básicas max de 5 minutos, TA menor al 20%
+Usabilidad       | ESC-04  | Proceso de navegacion web   | Estudiante nuevo | Se registra en la plataforma e intenta explorarla  | Recursos de Orientación y Tutoriales  | Se proporciona una orientación clara y tutoriales para los estudiantes nuevos| Tasa de Abandono (TA) menor al 20 %
+Usabilidad       | ESC-05  | Creación de problemas | Profesor    | Crear tareas de programación para sus estudiantes  | Interfaz de Administración de Problemas  | La interfaz de administración de problemas es intuitiva y fácil de usar | Tiempo de Configuración de Tareas maximo de 4 minutos
+Usabilidad       | ESC-06  | Proceso de navegacion web           | Estudiante nuevo| Resolver problemas de práctica  | Interfaz de Usuario  | Tener una interfaz de usuario clara, organizada y fácil de usar | Tiempo de Acceso a Funciones Básicas max de 5 minutos, TA menor al 20%
 Disponibilidad   | ESC-07  | Proceso de Recuperacion por caidas | Participantes en la competencia, administradores | Uno de los servidores de la plataformas se cae | Servidores de la Plataforma | La plataforma no debe verse interrumpida por tiempos de inactividad inesperados | Duración del Tiempo de Inactividad menor de 1 minuto
-Disponibilidad   | ESC-08  | Proceso de envios de soluciones| Participantes, administradores, proveedor de servicios de alojamiento | Enviar sus soluciones masivas durante la competencia | Servicios de Alojamiento del Proveedor                  | Garantizar una alta disponibilidad y evitar fallas del proveedor de servicios | Tiempo de Disponibilidad, Registro de Interrupciones max de 2
+Disponibilidad   | ESC-08  | Proceso de envios de soluciones| Participantes, administradores, proveedor de servicios de alojamiento | Enviar sus soluciones masivas durante la competencia | Servicios de Alojamiento del Proveedor  | Garantizar una alta disponibilidad y evitar fallas del proveedor de servicios | Tiempo de Disponibilidad, Registro de Interrupciones max de 2
 Disponibilidad   | ESC-09  | Proceso de gestion de cortes de energia | Personal de mantenimiento del centro de datos | corte de energia en el centro de datos de la plataforma | Infraestructura del Centro de Datos                  | Medidas de redundancia y sistemas de respaldo adecuados | Duración de la Interrupción max de 1 min
 Rendimiento      | ESC-10  | Proceso de evalucion de problemas | Programadores participantes                                     | Envio de soluciones altamente complejos | Sistema de Evaluación de Soluciones                    | Manejar eficientemente la carga computacional de soluciones complejas | Tiempo de Evaluación max de 1 min
-Rendimiento      | ESC-11  | Proceso de evalucion de problemas     | Competidores                                                    |solución que contiene un bucle Infinito | Sistema de Evaluación de Soluciones | Manejar situaciones de bucle infinito en las soluciones de los usuarios| Tiempo de Ejecución max de 1 min, Recursos Consumidos, Número de Soluciones con Bucle Infinito
-Rendimiento      | ESC-12  | Proceso de evalucion de problemas | Estudiante                                                      |solución correcta pero optimizado    | Sistema de Evaluación de Soluciones                    |Detectar soluciones ineficientes para evitar que afecten negativamente el rendimiento  | Recursos Consumidos, Número de Soluciones Ineficientes
+Rendimiento      | ESC-11  | Proceso de evalucion de problemas     | Competidores|solución que contiene un bucle Infinito | Sistema de Evaluación de Soluciones | Manejar situaciones de bucle infinito en las soluciones de los usuarios| Tiempo de Ejecución max de 1 min, Recursos Consumidos, Número de Soluciones con Bucle Infinito
+Rendimiento      | ESC-12  | Proceso de evalucion de problemas | Estudiante  |solución correcta pero optimizado    | Sistema de Evaluación de Soluciones                    |Detectar soluciones ineficientes para evitar que afecten negativamente el rendimiento  | Recursos Consumidos, Número de Soluciones Ineficientes
 |Seguridad|ESC-13|Plataforma en funcionamiento|Usuario|Transacción errada|Escáner de seguridad|Sistema realiza escaneos regulares para identificar vulnerabilidades|Número de vulnerabilidades identificadas
 |Seguridad|ESC-14|Plataforma en funcionamiento|Usuario|Intento de ciberataque|Módulo de acceso a datos|Sistema impide el acceso no autorizado a datos confidenciales|Número de intentos bloqueados
 |Seguridad|ESC-15|Proceso de autenticaicón|Usuario|Inicio de sesión fallido|Módulo de autenticación|Sistema detecta y bloquea intentos de inicio de sesión fallidos|Número de intentos bloqueados
@@ -165,18 +165,18 @@ En la sieguiente tabla se especifican a qué requerimiento están relacionados l
 
 | Escenarios                                       | Requerimiento funcional relacionado |
 |--------------------------------------------------|---------------------------|
-| ESC-1                                                 |                           |
-| ESC-2                                                 |                           |
-| ESC-3                                                 |                           |
-| ESC-4                                                 |                           |
-| ESC-5                                                 |                           |
-| ESC-6                                                 |                           |
-| ESC-7                                                 |                           |
-| ESC-8                                                 |                           |
-| ESC-9                                                 |                           |
-| ESC-10                                                 |                           |
-| ESC-11                                                 |                           |
-| ESC-12                                                 |                           |
+| ESC-1                                                 |      US06                     |
+| ESC-2                                                 |      US10                     |
+| ESC-3                                                 |     US10                      |
+| ESC-4                                                 |    US05                       |
+| ESC-5                                                 |    US10                       |
+| ESC-6                                                 |    US05                       |
+| ESC-7                                                 |     US10,US11                      |
+| ESC-8                                                 |     US06                      |
+| ESC-9                                                 |     US11                       |
+| ESC-10                                                 |     US08 ,US07                     |
+| ESC-11                                                 |     US08,US07                      |
+| ESC-12                                                 |      US08 ,US07                    |
 | ESC-13                                                 |                           |
 | ESC-14                                                 |                           |
 | ESC-15                                                 |                           |
