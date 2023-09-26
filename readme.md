@@ -177,13 +177,13 @@ En la sieguiente tabla se especifican a qué requerimiento están relacionados l
 | ESC-10                                                 |     US08 ,US07                     |
 | ESC-11                                                 |     US08,US07                      |
 | ESC-12                                                 |      US08 ,US07                    |
-| ESC-13                                                 |                           |
-| ESC-14                                                 |                           |
-| ESC-15                                                 |                           |
-| ESC-16                                                 |                           |
-| ESC-17                                                 |                           |
+| ESC-13                                                 |       US10                    |
+| ESC-14                                                 |      US02,US03                     |
+| ESC-15                                                 |      US01 ,US02                      |
+| ESC-16                                                 |       US10                    |
+| ESC-17                                                 |        US10                   |
 | ESC-18                                                 |                           |
-| ESC-19                                                 |                           |
+| ESC-19                                                 |       US01 ,US02                    |
 | ESC-20                                                 |                           |
 
 
