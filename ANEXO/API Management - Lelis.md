@@ -63,9 +63,16 @@ Por último, las métricas facturables pueden utilizarse como herramienta de com
 ### 3.1. Escenario práctico
 En el caso de Ulitorneos, un analista utiliza el API Management para gestionar eficazmente los recursos y costos de la plataforma. Tras notar un aumento del 30% en las solicitudes a la API en tres meses, se enfoca en picos de actividad del 20% los fines de semana. Trabaja con el equipo técnico para implementar una estrategia de almacenamiento en caché, reduciendo la carga de la base de datos en un 15% durante estos picos. Además, proporciona informes mensuales a los clientes, explicando su uso promedio de 500 MB de datos por evento y costos justos. Este enfoque basado en datos garantiza la eficiencia y la satisfacción del cliente en Ulitorneos.
 ### 3.2. Pasos para la demo
-Primero, realiza solicitudes en la página web para generar actividad. Luego, accede a los gráficos de Firestore para analizar métricas facturables como solicitudes, ancho de banda y tiempo de respuesta. 
-
+* Primero, se hace Inicio de sesión
+  
+  <img src="recursos/../recursos/login.png" alt="Login" width="600">
+* Segundo, realiza solicitudes en la página web para generar actividad. 
+  <img src="recursos/../recursos/web.png" alt="Login" width="600">
+* Luego, accede a los gráficos de Firestore para analizar métricas facturables como solicitudes al API.
+  <img src="recursos/../recursos/firestore.png" alt="Login" width="300">
+  <img src="recursos/../recursos/analytics.png" alt="Login" width="300">
 ### 3.3. Resultados
 Gracias al uso efectivo del API Management y las métricas facturables, el equipo de Ulitorneos logra optimizar los recursos, reducir costos innecesarios y mantener a los clientes satisfechos. Esto asegura la eficiencia operativa y el éxito continuo de la plataforma en la organización de hackathones.
 
-Link video:
+* En el siguiente video se aprecia la demo:
+[![Alt text](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
