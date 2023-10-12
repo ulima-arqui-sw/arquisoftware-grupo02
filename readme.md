@@ -216,16 +216,40 @@ La plataforma de juez en línea se compondrá de los siguientes módulos:
 * **Módulo de preguntas y pruebas**: los administradores se encargarán de cargar problemas y definir los problemas.
 * **Modulo de juez**: se encargará de evaluar las soluciones, da el puntaje y compila y ejecuta el código que se la enviado.  
 * **Módulo de concursos**: se encargará de administrar el concurso que se está ejecutando en ese momento. 
+* **Módulo de comunicación y notificaciones**: se encargará de el manejo de las notificaciones y comunicaciones que se dan dentro de los concursos. 
 
 ### 3.2. Modelo de Coordinación
 
+Según las caractaerísticas del proyecto planteado se va a implementar un modelo de coordinación utilizando tanto comunicación síncrona y asíncrona: 
+* **Comunicación síncrona**: Este tipo de comunicación se utilizará para las operaciones como la autentificación, lo obtención de información de los concursos, la subida de soluciones por parte de los participantes de los concursos. 
+* **Comunicación asíncrona**: Este tipo de comunicación se utilizará para evaluación de las soluciones, la generación de estadísticas, clasificaciones y notificaciones. 
 
+Ademas, los modulos se comunicarán mediante microservicios, los que falicitará el escalamiento del sistema. 
 
 ### 3.3. Modelo de Datos
 
+Se utilizarán bases de datos relacionales y no relacionales. 
+* **Base de datos relacional**: 
+  * *Gestión de usuarios*
+  * *Detalles del concurso* 
+  * *Preguntas y pruebas* 
+* **Base de datos no relacional (NoSQL)**:
+  * *Evaluación de soluciones*
+  * *Estadística y clasificaciones*
+  * *Comunicación y Notificaciones*
+<!-- ME FALTAN HACER LOS MODELOS, PARA EL VIERNES TENGO LOS MODELOS O PARA EL SABADO -->
 ### 3.4. Mapeo entre Elementos de Arquitectura
+<!-- ACÁ VAN TODOS LOS DIAGRAMAS QUE TENGO QUE HACER, NO SÉ CUANTOS HARÉ XDXDXD -->
+### 3.5. Elección de Tecnología
+Para la tecnología que se a utilizar es la siguiente
 
-### 3.5. Elección de Tecnología ….
+Del lado del cliente para el apartado web se utilizará React (Framework frontend) y Bootstrap (Librería de estilos). 
+
+Para el lado del servidor se usará express.js junto a docker para la creación de los microservicios y kubernetes para la orquestación de estos contenedores.
+
+Por otro lado, los motores de base de datos que se van a utilizar son: PostgresQL para la parte de modelo relacional y MongoDB para el modelo no relacional. 
+
+Además, para el juez en linea se va a utilizar un contenedor de docker configurado con los lenguajes de programación necesarios listo para compilar, acoplado con un sistema de colas como Apache Kafka para la gestión de las solicitudes de evaluación de soluciones. 
 
 ## 4. Tácticas
 
