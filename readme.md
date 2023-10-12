@@ -206,10 +206,20 @@ En la sieguiente tabla se especifican a qué requerimiento están relacionados l
 - Política de Seguridad Rigurosa: Implementaremos una política de seguridad rigurosa que incluye autenticación de dos factores y cifrado de datos en reposo y en tránsito.
 
 ## 3. Decisiones a Nivel de Arquitectura
-En esta sección se va especificar los módulos de 
+En esta sección se va especificar las decisiones que se van a tomar con respecto a la arquitectura de software
 ### 3.1. Asignación de Responsabilidades
 
+La plataforma de juez en línea se compondrá de los siguientes módulos:
+* **Módulo de autenticación del usuario**: se encargará de autentificar el usuario que está ingresando y darle el acceso. 
+* **Módulo de gestión de concursos**: se encargará de gestionar por parte del usuario los concursos en los que participa. 
+* **Módulo de administración de concursos**: se encargará de gestión los concursos por parte de los creadores del concurso, donde se podrán ver las métricas, los participantes, etc. 
+* **Módulo de preguntas y pruebas**: los administradores se encargarán de cargar problemas y definir los problemas.
+* **Modulo de juez**: se encargará de evaluar las soluciones, da el puntaje y compila y ejecuta el código que se la enviado.  
+* **Módulo de concursos**: se encargará de administrar el concurso que se está ejecutando en ese momento. 
+
 ### 3.2. Modelo de Coordinación
+
+
 
 ### 3.3. Modelo de Datos
 
