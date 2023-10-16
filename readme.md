@@ -211,9 +211,8 @@ En esta sección se va especificar las decisiones que se van a tomar con respect
 
 La plataforma de juez en línea se compondrá de los siguientes módulos:
 * **Módulo de autenticación del usuario**: se encargará de autentificar el usuario que está ingresando y darle el acceso. 
-* **Módulo de gestión de concursos**: se encargará de gestionar por parte del usuario los concursos en los que participa. 
-* **Módulo de administración de concursos**: se encargará de gestión los concursos por parte de los creadores del concurso, donde se podrán ver las métricas, los participantes, etc. 
-* **Módulo de preguntas y pruebas**: los administradores se encargarán de cargar problemas y definir los problemas.
+* **Módulo de gestión de concursos**: se encargará de mostrar los concursos del usuario, concursos disponibles, la información de cada uno de estos. 
+* **Módulo de administración de concursos**: se encargará de gestión los concursos por parte de los creadores del concurso, donde se podrán ver las métricas, los participantes, subir los problemas y los casos de prueba etc. 
 * **Modulo de juez**: se encargará de evaluar las soluciones, da el puntaje y compila y ejecuta el código que se la enviado.  
 * **Módulo de concursos**: se encargará de administrar el concurso que se está ejecutando en ese momento. 
 * **Módulo de comunicación y notificaciones**: se encargará de el manejo de las notificaciones y comunicaciones que se dan dentro de los concursos. 
@@ -240,6 +239,9 @@ Se utilizarán bases de datos relacionales y no relacionales.
 <!-- ME FALTAN HACER LOS MODELOS, PARA EL VIERNES TENGO LOS MODELOS O PARA EL SABADO -->
 ### 3.4. Mapeo entre Elementos de Arquitectura
 <!-- ACÁ VAN TODOS LOS DIAGRAMAS QUE TENGO QUE HACER, NO SÉ CUANTOS HARÉ XDXDXD -->
+Para el mapeo de los elementos se ha utilizado el modelo C4. 
+![imagen](diagrams/diagrama%20arquitectura.png)
+
 ### 3.5. Elección de Tecnología
 Para la tecnología que se a utilizar es la siguiente
 
