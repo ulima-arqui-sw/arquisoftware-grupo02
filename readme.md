@@ -197,7 +197,7 @@ En la sieguiente tabla se especifican a qué requerimiento están relacionados l
 
 - Tecnologías Propias: Nosotros desarrollamos todas las tecnologías internamente, incluyendo el marco de trabajo y las políticas de seguridad.
 
-- Idioma de Desarrollo: El sistema se desarrollará utilizando un único lenguaje de programación, que es Python.
+<!-- - Idioma de Desarrollo: El sistema se desarrollará utilizando un único lenguaje de programación, que es Python. -->
 
 - Base de Datos Relacional: Utilizaremos una base de datos relacional para almacenar datos críticos del usuario y resultados de competencias.
 
@@ -217,6 +217,16 @@ La plataforma de juez en línea se compondrá de los siguientes módulos:
 * **Módulo de concursos**: se encargará de administrar el concurso que se está ejecutando en ese momento. 
 * **Módulo de comunicación y notificaciones**: se encargará de el manejo de las notificaciones y comunicaciones que se dan dentro de los concursos. 
 
+#### ADR 
+
+| Title       | Content                                                  |
+|-------------|-----------------------------------------------------------|
+| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision    | What is the change that we're proposing and/or doing?    |
+| Consequences| What becomes easier or more difficult to do because of this change? |
+
+
 ### 3.2. Modelo de Coordinación
 
 Según las caractaerísticas del proyecto planteado se va a implementar un modelo de coordinación utilizando tanto comunicación síncrona y asíncrona: 
@@ -224,6 +234,16 @@ Según las caractaerísticas del proyecto planteado se va a implementar un model
 * **Comunicación asíncrona**: Este tipo de comunicación se utilizará para evaluación de las soluciones, la generación de estadísticas, clasificaciones y notificaciones. 
 
 Ademas, los modulos se comunicarán mediante microservicios, los que falicitará el escalamiento del sistema. 
+
+#### ADR 
+
+| Title       | Content                                                  |
+|-------------|-----------------------------------------------------------|
+| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision    | What is the change that we're proposing and/or doing?    |
+| Consequences| What becomes easier or more difficult to do because of this change? |
+
 
 ### 3.3. Modelo de Datos
 
@@ -236,22 +256,53 @@ Se utilizarán bases de datos relacionales y no relacionales.
   * *Evaluación de soluciones*
   * *Estadística y clasificaciones*
   * *Comunicación y Notificaciones*
+
+#### ADR 
+
+| Title       | Content                                                  |
+|-------------|-----------------------------------------------------------|
+| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision    | What is the change that we're proposing and/or doing?    |
+| Consequences| What becomes easier or more difficult to do because of this change? |
+
+
 <!-- ME FALTAN HACER LOS MODELOS, PARA EL VIERNES TENGO LOS MODELOS O PARA EL SABADO -->
 ### 3.4. Mapeo entre Elementos de Arquitectura
 <!-- ACÁ VAN TODOS LOS DIAGRAMAS QUE TENGO QUE HACER, NO SÉ CUANTOS HARÉ XDXDXD -->
 Para el mapeo de los elementos se ha utilizado el modelo C4. 
 ![imagen](diagrams/diagrama%20arquitectura.png)
 
+#### ADR 
+
+| Title       | Content                                                  |
+|-------------|-----------------------------------------------------------|
+| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision    | What is the change that we're proposing and/or doing?    |
+| Consequences| What becomes easier or more difficult to do because of this change? |
+
+
 ### 3.5. Elección de Tecnología
 Para la tecnología que se a utilizar es la siguiente
 
 Del lado del cliente para el apartado web se utilizará React (Framework frontend) y Bootstrap (Librería de estilos). 
 
-Para el lado del servidor se usará express.js junto a docker para la creación de los microservicios y kubernetes para la orquestación de estos contenedores.
+Para el lado del servidor se usará express.js junto a docker para la creación de los microservicios.
 
 Por otro lado, los motores de base de datos que se van a utilizar son: PostgresQL para la parte de modelo relacional y MongoDB para el modelo no relacional. 
 
 Además, para el juez en linea se va a utilizar un contenedor de docker configurado con los lenguajes de programación necesarios listo para compilar, acoplado con un sistema de colas como Apache Kafka para la gestión de las solicitudes de evaluación de soluciones. 
+
+#### ADR 
+
+| Title       | Content                                                  |
+|-------------|-----------------------------------------------------------|
+| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision    | What is the change that we're proposing and/or doing?    |
+| Consequences| What becomes easier or more difficult to do because of this change? |
+
 
 ## 4. Tácticas
 
