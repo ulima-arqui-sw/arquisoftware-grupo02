@@ -47,7 +47,7 @@ System_Boundary(c1, "Sistema de concursos") {
 
 System_Boundary(c2, "Sistema de juez"){
     Container(juez, "Juez", "Node.js", "Aplicacion que ejecuta los programas de los participantes")
-    Container(queue_juez, "Cola de mensajes", "RabbitMQ", "Cola de mensajes que permite comunicar al juez con el sistema de concursos")
+    Container(queue_juez, "Cola de mensajes", "Apache kafka", "Cola de mensajes que permite comunicar al juez con el sistema de concursos")
     ContainerDb(juez_db, "Juez Database", "SQLite", "Almacena los programas que han sido ejecutados por le juez", $tags = "base")
 }
 
