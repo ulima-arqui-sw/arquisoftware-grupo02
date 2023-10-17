@@ -186,22 +186,22 @@ En la sieguiente tabla se especifican a qué requerimiento están relacionados l
 | Escenarios                                       | Requerimiento funcional relacionado |
 |--------------------------------------------------|---------------------------|
 | ESC-1                                                 |      US06                     |
-| ESC-2                                                 |      US10                     |
-| ESC-3                                                 |     US10                      |
+| ESC-2                                                 |      (US10)                     |
+| ESC-3                                                 |     (US10)                      |
 | ESC-4                                                 |    US05                       |
-| ESC-5                                                 |    US10                       |
+| ESC-5                                                 |    (US10)                       |
 | ESC-6                                                 |    US05                       |
-| ESC-7                                                 |     US10,US11                      |
+| ESC-7                                                 |     (US10),(US11)                      |
 | ESC-8                                                 |     US06                      |
-| ESC-9                                                 |     US11                       |
+| ESC-9                                                 |     (US11)                       |
 | ESC-10                                                 |     US08 ,US07                     |
 | ESC-11                                                 |     US08,US07                      |
 | ESC-12                                                 |      US08 ,US07                    |
-| ESC-13                                                 |       US10                    |
+| ESC-13                                                 |       (US10)                    |
 | ESC-14                                                 |      US02,US03                     |
 | ESC-15                                                 |      US01 ,US02                      |
-| ESC-16                                                 |       US10                    |
-| ESC-17                                                 |        US10                   |
+| ESC-16                                                 |       (US10)                    |
+| ESC-17                                                 |        (US10)                   |
 | ESC-18                                                 |                           |
 | ESC-19                                                 |       US01 ,US02                    |
 | ESC-20                                                 |                           |
