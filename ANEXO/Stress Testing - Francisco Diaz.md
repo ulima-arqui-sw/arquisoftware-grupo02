@@ -11,7 +11,7 @@ Antes de ahondar más en el tema, entendamos primero qué tipo se prueba de soft
 #### Tipos de pruebas de software
 Dentro del grupo que conforma las pruebas de software, el Stress Testing se encuentra dentro de la categoría de Pruebas manuales, siendo una prueba de caja negra de tipo no funcional, dentro del subgrupo de Pruebas de Rendimiento. Esto se puede visualizar mejor en el siguiente diagrama:
 
-<img src="recursos/../recursos/tiposPruebasSoftw.png" alt="TiposPSW" width="600">
+![TiposPSW](recursos/tiposPruebasSoftw.png)
 
 ### 1.2. Tópicos importantes
 #### ¿En qué casos puedo necesitar realizar pruebas de estrés?
@@ -62,22 +62,51 @@ A contiunuacion, procederemos a realizar la instalación y configuración de Apa
 ### 2.1. Instalación / Configuración de Servicio
 Dirigirse a la web de [(JMeter)](https://jmeter.apache.org). Como se puede observar, se menciona es necesario tener Java SE JDK 8+, por lo cual, también accedemos a la web de descargas de [(Java)](https://www.oracle.com/pe/java/technologies/javase/javase8-archive-downloads.html) y descargarmos la versión apropiada para nuestro sistema. En el caso de este ejemplo, se descargará Java SE Development Kit 8u202 (la última versión presente hasta la fecha) para Windows 11 de 64 bits (Windows x64).
 
-<img src="recursos/../recursos/descarga.png" alt="DownloadIMG" width="600">
+![DownloadIMG](recursos/descarga.png)
 
 En la web de [(JMeter)](https://jmeter.apache.org), procedemos a la sección Downloads y descargamos el archivo ".zip". Una vez descargados ambos archivos, procedemos a instalar primero el Java y después el JMeter como cualquier aplicación común y corriente.
 
 Ahora, tenemos que configurar las variables de entorno de nuestro sistema. Para esto, tenemos que dirigirnos al Panel de Control, buscándolo en el menú de Windows. Se abrirá una ventada del Panel de Control, en donde debemos acceder a "Sistema y Seguridad" y luego a "Sistema".
 
-<img src="recursos/../recursos/panel.png" alt="PanleIMG" width="600">
+![PanleIMG](recursos/panel.png)
 
 Se nos abrirá una nueva ventana. Aquí, deberemos buscar la opción que diga "Configuración avanzada del sistema".
 
-<img src="recursos/../recursos/sistema.png" alt="SistemaIMG" width="600">
+![SistemaIMG](recursos/sistema.png)
 
-Se abrirá una nueva ventana llamada "Proipiedades del sistema", en la cual debemos hacer click en "Variables del sistema":
+Se abrirá una nueva ventana llamada "Proipiedades del sistema", en la cual debemos hacer click en "Variables de entorno":
 
-<img src="recursos/../recursos/propi.png" alt="PropiIMG" width="300">
+![PropiIMG](recursos/propi.png)
+
+Debemos asegurarnos de que existan las siguientes variables de entorno: JAVA_HOME y JMETER_HOME, las cuales almacenan las rutas a ambas aplicaciones. Si no existen, procedemos a crearlas presionando el botón "Nueva" en la sección "Variables del sistema".
+
+![VariIMG](recursos/vari.png)
+
+Dentro, se coloca el nombre y ruta. En el caso de JAVA_HOME, se coloca ese nombre y la ruta en donde está instalado el Java JDK. Generalmente es en "C:\Program Files\Java\jdk1.8.0_202" (para el caso de la última versión). Luego se da en "Aceptar" y se repite el proceso para la variable JMETER_HOME, colocando la ubicación en donde está instalado JMeter.
+
+![Ruta](recursos/Ruta.png)
+
+Por último, se tiene que verificar dentro de la variable "Path"
+
+![VariPath](recursos/variPath.png)
+
+Tiene que estar definido la ruta "bin" de Java, como se muestra a continuación. Si no existe, se crea una nueva con los parámetros que se muestran en la imagen.
+
+![def](recursos/path1.png)
+
+Teniendo todo lo anterior listo, ya se puede emepezar a usar la aplicación Apache JMeter.
 ### 2.2. Primeros pasos
+Para abrir la aplicación JMeter, tenemos que dirigirnos a la carpeta en donde instalamos el JMeter. Luego, tenemos que abrir la carpeta "bin".
+
+![jmeterFolder](recursos/jmeterFolder.png)
+
+Dentro de la carpeta "bin", tenemos que buscar el ejecutable "jmeter.bat", hacemos doble click y ya tendríamos la aplicación lista para usar.
+
+![bat](recursos/bat.png)
+
+La aplicación abierta:
+
+![app](recursos/app.png)
 
 ## 3. Demo
 
