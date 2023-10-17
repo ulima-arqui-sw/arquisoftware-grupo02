@@ -205,7 +205,7 @@ En esta sección se va especificar las decisiones que se van a tomar con respect
 ### 3.1. Asignación de Responsabilidades
 
 La plataforma de juez en línea se compondrá de los siguientes módulos:
-* **Módulo de autenticación del usuario**: se encargará de autentificar el usuario que está ingresando y darle el acceso. 
+* **Módulo del usuario**: se encargará de autentificar el usuario, obtener su información, comprar la suscripción y verificar su estado actual. 
 * **Módulo de gestión de concursos**: se encargará de mostrar los concursos del usuario, concursos disponibles, la información de cada uno de estos. 
 * **Módulo de administración de concursos**: se encargará de gestión los concursos por parte de los creadores del concurso, donde se podrán ver las métricas, los participantes, subir los problemas y los casos de prueba etc. 
 * **Modulo de juez**: se encargará de evaluar las soluciones, da el puntaje y compila y ejecuta el código que se la enviado.  

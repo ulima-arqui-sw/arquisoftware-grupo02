@@ -33,11 +33,11 @@ System_Boundary(c1, "Sistema de concursos") {
     }
 
     System_Boundary(c1_2, "microservicio de comunicación"){
-        Container(comunicacion, "microservicio de comunicación", "javascript, express.js", "Módulo que gestionará la comunicación entre los participantes y el juez", $tags = "servicios")
+        Container(comunicacion, "Comunicación y notificaciones", "javascript, express.js", "Módulo que gestionará la comunicación entre los participantes y el juez", $tags = "servicios")
     }
 
     System_Boundary(c1_3, "microservicio de usuario"){
-        Container(auth, "Autenticación", "javascript, express.js", "Módulo que autenticará al usuario", $tags = "servicios")
+        Container(auth, "Usuario", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
     }
     ' BASES DE DATOS
     ContainerDb(norelational_db, "Base no relacional", "DynamoDB ", "", $tags = "base")
