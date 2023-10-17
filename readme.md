@@ -104,17 +104,25 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 | US08          | Visualizar resultados: Como participante, quiero poder visualizar la información de los problemas y las respectivas soluciones que presenté, así como el tiempo que tomé, el lenguaje utilizado y la respuesta por parte del juez, para seguir el récord de mis soluciones presentadas. |
 | US09          | Visualizar puntajes globales: Como participante, quiero poder ver los puntajes a nivel global de otros participantes que han presentado sus soluciones, con datos como el nombre de participante, el país, el instituto, los problemas que ha resuelto y el puntaje total, para hacer un seguimiento del progreso de otros participantes. |
 
-#### Requerimientos funcionales del Administrador/Institución
+#### Requerimientos funcionales del cliente
 
 | Identificador | Descripción                                       |
 |---------------|---------------------------------------------------|
-| US10          | Administración de cuentas: Como administrador del sistema, quiero porder habilitar las nuevas cuentas de usuario o deshabilitar las ya existentes, para controlar el acceso al sistema y mantener la seguridad. |
-| US11          | Gestión de actividades: Como administrador del sistema, quiero poder crear una actividad de desafío/competencia de programación, con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc; así como también poder eliminarla por completo del sistema, para poder gestionar de mejor el manera las actividades. |
-| US12          | Modificar actividad: Como administrador, debería poder modificar los datos una vez creado la actividad/competencia, tanto como el título, la cantidad de participantes, las fechas, lo límites, etc; para poder atender cualquier cambio o actualización repentina. |
-| US13          | Gestionar problema: Como administrador del sistema, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita, así como poder eliminarlo una vez creado. |
-| US14          | Modificar problema: Como administrador del sistema, debería poder modificar los problemas creados junto a los límites y las características del problema, para atender actualizaciones repentinas. |
-| US15          | Gestión de notificaciones: Como administrador, quiero poder configurar los anuncios y notificaciones que recibirán los usuarios, para informarles sobre nuevas actividades o realizar actualizaciones. |
-| US16          | Soporte/Atención de consultas: Como administrador, quiero poder recibir mensajes sobre problemas técnicos, así como otras consultas, para resolver los problemas que tengan los usuarios. |
+| US10          | Como cliente, quiero poder crear mi concurso de programación con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc. |
+| US11          | Como cliente, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita. |
+| US12          | Como cliente, debería poder modificar una vez creado el concurso, tanto como el título, la cantidad de participantes, las fechas, los límites, etc. |
+| US13          | Como cliente, debería poder modificar los problemas creados junto a los límites y las características del problema. |
+| US14          | Como cliente, debería poder personalizar el entorno de mis torneos. |
+| US15          | Como cliente, debería poder solicitar soporte ante alguna incidencia o duda. |
+| US16          | Como cliente, debería poder solicitar una reunión para hacer solicitudes según mis requerimientos con alguien de auditoría |
+| US17          | Como cliente, debería poder actualizar o cancelar mi suscripción. |
+
+#### Requerimientos funcionales del Administrador
+
+| Identificador | Descripción                                       |
+|---------------|---------------------------------------------------|
+| US18          | Administración de cuentas: Como administrador del sistema, quiero porder habilitar las nuevas cuentas de usuario o deshabilitar las ya existentes, para controlar el acceso al sistema y mantener la seguridad. |
+| US19          | Soporte/Atención de consultas: Como administrador, quiero poder recibir mensajes sobre problemas técnicos, así como otras consultas, para resolver los problemas que tengan los usuarios. |
 
 ---
 <!-- #### // Requerimientos por evaluar: Existen otras funcionalidades nuestras plataformas modelo ofrecen y que se necesitan evaluar para su implementación en la nuestra. Como usuario del sistema, existen opciones realizar clarificaciones respecto a un problema, ver tastks y realizar backups. Como administrador del sistema, se pueden crear y modificar los datos de competencias, ver logs, reportes, los usuarios en una competencia, entre otros. // -->
@@ -129,25 +137,31 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 4. Después de completar el registro, el usuario inicia sesión en la plataforma haciendo clic en "Inicio de Sesión" (US02) y proporciona sus credenciales recién creadas.
 5. Una vez dentro de la plataforma, el usuario puede acceder a su perfil y seleccionar la opción "Modificar Datos Personales" (US03) para actualizar su nombre de usuario, contraseña y país.
 6. Cuando el usuario haya terminado de usar la plataforma, puede hacer clic en "Cerrar Sesión" (US04) para salir de su cuenta.
-7. Para resolver problemas, el usuario puede acceder a la sección "Visualizar Problemas" (US05) y ver una lista de problemas disponibles con sus nombres y descripciones.
-8. El usuario elige un problema específico y hace clic en "Subir Solución" (US06) para cargar sus archivos de código fuente y presentar una solución.
-9. Mientras participa en un concurso, el usuario puede ver el tiempo restante del concurso en la sección "Visualización del Tiempo del Concurso" (US07).
-10. El usuario puede ver los resultados de sus soluciones en la sección "Visualizar Resultados" (US08), donde se muestra información como el tiempo tomado, el lenguaje utilizado y la respuesta del juez.
-11. Además, el usuario puede explorar los puntajes globales de otros participantes en la sección "Visualizar Puntajes Globales" (US09), donde se proporcionan datos como el nombre de usuario, país, instituto y puntaje total.
 
-#### 2.2.2. Flujo de interacción del administrador
+#### 2.2.2. Flujo de interacción del participante
+
+1. Para resolver problemas, el usuario puede acceder a la sección "Visualizar Problemas" (US05) y ver una lista de problemas disponibles con sus nombres y descripciones.
+2. El usuario elige un problema específico y hace clic en "Subir Solución" (US06) para cargar sus archivos de código fuente y presentar una solución.
+3.  Mientras participa en un concurso, el usuario puede ver el tiempo restante del concurso en la sección "Visualización del Tiempo del Concurso" (US07).
+4. El usuario puede ver los resultados de sus soluciones en la sección "Visualizar Resultados" (US08), donde se muestra información como el tiempo tomado, el lenguaje utilizado y la respuesta del juez.
+5. Además, el usuario puede explorar los puntajes globales de otros participantes en la sección "Visualizar Puntajes Globales" (US09), donde se proporcionan datos como el nombre de usuario, país, instituto y puntaje total.
+
+#### 2.2.3. Flujo de interacción del cliente
+1. El usuario crea un torneo especificando sus características.
+2. El usuario crea desafíos para el torneo previamente creado.
+3. El usurio modifica detalles del torneo o desafíos según sus necesidades de corrección o ajuste.
+4. El usuario personaliza la apariencia de sus torneos.
+5. El usuario llama a soporte.
+6. El usuario solicita una reunión con equipo de auditría.
+7. El usuario visualiza los resultados en tiempo real de las soluciones durante el torneo.
+8. El usuario accede a recursos de marketing.
+
+#### 2.2.3. Flujo de interacción del administrador
 1. El adminstrador accede al sistema de Ulitorneos
 2. El administrador hace click en "Administración de cuentas de usuario" (US14), en donde se muestra un listado de los usuarios habilitados y por habilitar.
 3. Para habilitar a un nuevo usuario, el administrador hace click en un botón que dice "Habilitar" al lado del nombre del usuario nuevo.
 4. Para deshabilitarlo, el administrador hace click en el botón que dice "Deshabilitar" que aparece al lado del nombre del usuario.
-5. Después, el administrador procede a crear una nueva competencia de programación, por lo que se dirige a la opción de "Gestión de actividades" (US15), donde le aparecerá una ventana en donde podrá escribir el título, definir la cantidad de participantes, el tiempo de inicio y fin, las reglas e instrucciones, etc. Luego da click en "crear".
-6. Tras esto, el administrador puede eliminar la competencia previamente creada, presionando el botón "eliminar" que se encuentra al lado del título de la actividad.
-7. El administrador también puede modificar los datos de la competencia, como el título, la cantidad de participantes, etc; presionando el botón "Editar" (US16) ubicado al lado del título de la actividad. 
-8. El administrador ahora puede agregar los problemas que van a formar parte de la competencia previamente creada, para lo cual accede a la opción "+ Agregar problema" (US17) ubicado debajo del título de la competencia. También, añade los datos del problema, como los casos de prueba y los límites que necesita.
-9. Una vez creado, el administrador puede eliminar el problema, presionando el botón de "Eliminar", al lado del título del problema.
-10. El administrador también puede modificar los datos del problema, presionando el botón "Editar", al lado del título del problema.
-11. El administrador ahora se dirige al "Centro de notificaciones" (US19), en donde puede crear entradas de texto a modo de anuncios o actualizaciones, escribiendo dentro de un cuadro de texto y luego presionando el botón "Notificar".
-12. Por último, el administrador se dirige al apartado de "Consultas" (US20), en donde puede ver un listado de todas las consultas recientes, a las cuales puede atender presionando el botón "Responder" ubicado al costado de la entrada de la consulta. Se le abre un cuadro de texto, en donde podrá escribir para resolver la consulta, presionando el botón "Enviar" una vez haya terminado.
+5.  Por último, el administrador se dirige al apartado de "Consultas" (US20), en donde puede ver un listado de todas las consultas recientes, a las cuales puede atender presionando el botón "Responder" ubicado al costado de la entrada de la consulta. Se le abre un cuadro de texto, en donde podrá escribir para resolver la consulta, presionando el botón "Enviar" una vez haya terminado.
 
 ### 2.3. Requerimientos de Atributos de Calidad (Escenarios)
 
