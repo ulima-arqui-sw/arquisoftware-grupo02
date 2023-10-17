@@ -117,12 +117,13 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 | US16          | Como cliente, debería poder solicitar una reunión para hacer solicitudes según mis requerimientos con alguien de auditoría |
 | US17          | Como cliente, debería poder actualizar o cancelar mi suscripción. |
 
-#### Requerimientos funcionales del Administrador
+#### (POR EVALUAR) Requerimientos funcionales del Administrador
 
 | Identificador | Descripción                                       |
 |---------------|---------------------------------------------------|
 | US18          | Administración de cuentas: Como administrador del sistema, quiero poder habilitar las nuevas cuentas de usuario o deshabilitar las ya existentes, para controlar el acceso al sistema y mantener la seguridad. |
 | US19          | Soporte/Atención de consultas: Como administrador, quiero poder recibir mensajes sobre problemas técnicos, así como otras consultas, para resolver los problemas que tengan los usuarios. |
+| ...          | ... |
 
 ---
 <!-- #### // Requerimientos por evaluar: Existen otras funcionalidades nuestras plataformas modelo ofrecen y que se necesitan evaluar para su implementación en la nuestra. Como usuario del sistema, existen opciones realizar clarificaciones respecto a un problema, ver tastks y realizar backups. Como administrador del sistema, se pueden crear y modificar los datos de competencias, ver logs, reportes, los usuarios en una competencia, entre otros. // -->
@@ -156,7 +157,7 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 7. El usuario visualiza los resultados en tiempo real de las soluciones durante el torneo.
 8. El usuario accede a recursos de marketing.
 
-#### 2.2.3. Flujo de interacción del administrador
+#### 2.2.3. (POR EVALUAR) Flujo de interacción del administrador
 1. El adminstrador accede al sistema de Ulitorneos
 2. El administrador hace click en "Administración de cuentas de usuario" (US14), en donde se muestra un listado de los usuarios habilitados y por habilitar.
 3. Para habilitar a un nuevo usuario, el administrador hace click en un botón que dice "Habilitar" al lado del nombre del usuario nuevo.
