@@ -212,14 +212,6 @@ La plataforma de juez en línea se compondrá de los siguientes módulos:
 * **Módulo de concursos**: se encargará de administrar el concurso que se está ejecutando en ese momento. 
 * **Módulo de comunicación y notificaciones**: se encargará de el manejo de las notificaciones y comunicaciones que se dan dentro de los concursos. 
 
-#### ADR 
-
-| Title       | Content                                                  |
-|-------------|-----------------------------------------------------------|
-| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
-| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
-| Decision    | What is the change that we're proposing and/or doing?    |
-| Consequences| What becomes easier or more difficult to do because of this change? |
 
 
 ### 3.2. Modelo de Coordinación
@@ -230,14 +222,6 @@ Según las caractaerísticas del proyecto planteado se va a implementar un model
 
 Ademas, los modulos se comunicarán mediante microservicios, los que falicitará el escalamiento del sistema. 
 
-#### ADR 
-
-| Title       | Content                                                  |
-|-------------|-----------------------------------------------------------|
-| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
-| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
-| Decision    | What is the change that we're proposing and/or doing?    |
-| Consequences| What becomes easier or more difficult to do because of this change? |
 
 
 ### 3.3. Modelo de Datos
@@ -257,55 +241,44 @@ Se utilizarán bases de datos relacionales y no relacionales.
   * *Comunicación y Notificaciones*
 
 
-#### ADR 
-
-| Title       | Content                                                  |
-|-------------|-----------------------------------------------------------|
-| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
-| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
-| Decision    | What is the change that we're proposing and/or doing?    |
-| Consequences| What becomes easier or more difficult to do because of this change? |
-
 
 <!-- ME FALTAN HACER LOS MODELOS, PARA EL VIERNES TENGO LOS MODELOS O PARA EL SABADO -->
 ### 3.4. Mapeo entre Elementos de Arquitectura
+![imagen](diagrams/diagrama%20arquitectura.png)
 <!-- ACÁ VAN TODOS LOS DIAGRAMAS QUE TENGO QUE HACER, NO SÉ CUANTOS HARÉ XDXDXD -->
-
-
-
-#### ADR 
-
-| Title       | Content                                                  |
-|-------------|-----------------------------------------------------------|
-| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
-| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
-| Decision    | What is the change that we're proposing and/or doing?    |
-| Consequences| What becomes easier or more difficult to do because of this change? |
-
 
 ### 3.5. Elección de Tecnología
 Para la tecnología que se a utilizar es la siguiente
 
-Express.js: 
+**Express.js**: Debido a su sencillez, rendimiento eficiente aprovechando Node.js, su arquitectura de middleware, flexibilidad para la integración de bibliotecas y herramientas, soporte de enrutamiento y WebSockets. Permite el manejo de aplicaciones backend de alta intensidad lo que es ideal como marco de trabajo para el lado del servidor de nuestro sistema de juez online. 
 
-PostgreSQL:
+**PostgreSQL**: Su robustez, confiabilidad y versatibilidad como sistema de gestión de base de datos relacionales son una de las características que hacen de esta tecnología ideal para el sistema. Es una elección sólida como motor de base de datos para los datos que requieran esa integridad. 
 
-Reactjs: 
+**Reactjs**: posee un rendimiento y facildiad de desarrollo en aplicaciones web que lo hacen ideal como marco de trabajo desde el lado del cliente, además que utiliza una arquitectura basada en componentes que facilita la creación de interfaces. 
 
-MongoDB: 
+**DynamoDB**: Este servicio de AWS nos elimina la complejidad de adminisatrar una base de datos nosql a gran escala. Ofrece escabilidad automática según la demanda. Garantiza un rendimiento consistente, baja latencia y es altamente disponible. 
 
-Apacha Kafka: 
+**REST**: basada en estándares web ampliamente adoptados como HTTP, se elige comúnmente para construir API que son sencillas, escalables y altamente interoperables. Es ideal para aplicaciones web modernas, permitiendo una comunicación sencilla entre clientes y servidores a través de solicitudes HTTP, lo que la convierte en una sólida elección para la exposición de servicios web.
 
-REST: 
+**AWS EC2**: proporciona servidores virtuales escalables que ofrecen flexibilidad y control total sobre el entorno de aplicaciones. La elección de EC2 permite alojar aplicaciones y servicios personalizados, como el backend REST, y administrarlos según las necesidades. Se pueden seleccionar tipos de instancias, sistemas operativos y configuraciones de red personalizadas para adaptarse a la aplicación, lo que es fundamental para la personalización y escalabilidad.
 
-AWS EC2: 
+**AWS cloudfront**: como servicio de entrega de contenido (CDN), mejora la velocidad y la disponibilidad de aplicaciones REST. Su uso permite acelerar la entrega de recursos estáticos y proporcionar una experiencia de usuario más rápida y receptiva. Además, CloudFront ofrece seguridad y cifrado para proteger los datos en tránsito, garantizando aplicaciones web seguras.
 
-Firebase authentication: 
+**AWS  cognito**: un servicio de autenticación y autorización, simplifica la gestión de usuarios y la seguridad en aplicaciones REST. Su implementación agrega autenticación de usuarios, gestión de perfiles y seguridad a los recursos de la API. Es esencial para proteger los servicios y garantizar que solo los usuarios autorizados tengan acceso.
 
-Azure Kubernetes Service: 
+**AWS AmazonMQ**:  proporciona una solución de mensajería administrada que es valiosa para la implementación de comunicación asincrónica en aplicaciones REST. Su uso facilita la gestión de colas de mensajes y la integración de sistemas mediante la mensajería, que es esencial para escenarios en los que la asincronía es crucial.
 
-#### ADR 
+**API Gateway**: es un servicio completamente administrado que permite crear, publicar y administrar APIs seguras para aplicaciones REST. Con API Gateway, se pueden definir rutas, métodos HTTP, controlar el acceso y habilitar la integración con otros servicios de AWS. Esto permite exponer eficientemente servicios web como una API REST unificada, fundamental para la exposición de recursos a través de interfaces de usuario web o móviles.
 
+**AWS Lambda**: un servicio de cómputo sin servidor, permite ejecutar código en respuesta a eventos. Su elección simplifica la implementación de lógica de negocio y el manejo de solicitudes REST de manera escalable, sin preocuparse por la administración de servidores. Esto facilita el desarrollo, la escalabilidad y la administración de aplicaciones.
+
+**AWS ElastiCache**: es un servicio de almacenamiento en caché que mejora el rendimiento de aplicaciones REST al permitir el almacenamiento en caché de respuestas y recursos costosos de procesar. Su elección reduce la carga en servidores y mejora la velocidad de respuesta de la aplicación, crucial para brindar una experiencia rápida a los usuarios finales.
+
+
+<!-- 
+### 3.6 ADR 
+
+#### 3.6.1 ADR 1
 | Title        | Content                                                  |
 |--------------|-----------------------------------------------------------|
 | Estado       | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
@@ -313,34 +286,59 @@ Azure Kubernetes Service:
 | Decision     | What is the change that we're proposing and/or doing?    |
 | Consecuencia | What becomes easier or more difficult to do because of this change? |
 
+#### 3.6.1 ADR 1
+| Title        | Content                                                  |
+|--------------|-----------------------------------------------------------|
+| Estado       | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Contexto     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision     | What is the change that we're proposing and/or doing?    |
+| Consecuencia | What becomes easier or more difficult to do because of this change? |
+
+#### 3.6.1 ADR 1
+| Title        | Content                                                  |
+|--------------|-----------------------------------------------------------|
+| Estado       | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Contexto     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision     | What is the change that we're proposing and/or doing?    |
+| Consecuencia | What becomes easier or more difficult to do because of this change? |
+
+#### 3.6.1 ADR 1
+| Title        | Content                                                  |
+|--------------|-----------------------------------------------------------|
+| Estado       | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Contexto     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision     | What is the change that we're proposing and/or doing?    |
+| Consecuencia | What becomes easier or more difficult to do because of this change? |
+ -->
 
 ## 4. Tácticas
 
-| Atributo        | Táctica                                              | Descripción                                                      |
-|-----------------|-----------------------------------------------------|------------------------------------------------------------------|
-| Escalabilidad   | Activación automática de servidores adicionales   | Aumentar recursos de manera automática para manejar la demanda.  |
-| Escalabilidad   | Ampliación de capacidad de almacenamiento del servidor | Incrementar la capacidad de almacenamiento según sea necesario.  |
-| Usabilidad      | Interfaz de usuario intuitiva y amigable           | Diseñar una interfaz fácil de entender y usar para los usuarios. |
-| Usabilidad      | Orientación y tutoriales para nuevos estudiantes   | Proporcionar guías y tutoriales para ayudar a los nuevos usuarios. |
-| Usabilidad      | Interfaz de usuario clara y organizada            | Mantener la interfaz de usuario ordenada y de fácil navegación. |
-| Disponibilidad  | Evitar tiempos de inactividad inesperados         | Garantizar que la plataforma esté disponible sin interrupciones. |
-| Disponibilidad  | Medidas de redundancia y sistemas de respaldo     | Implementar sistemas de respaldo para mantener la disponibilidad. |
-| Rendimiento     | Eficiencia en el manejo de carga computacional     | Optimizar el sistema para manejar tareas complejas eficientemente. |
-| Rendimiento     | Manejo de bucles infinitos en soluciones de usuarios | Identificar y evitar que las tareas en bucle afecten el rendimiento. |
-| Rendimiento     | Detección de soluciones ineficientes               | Identificar y corregir soluciones que afecten negativamente el rendimiento. |
-| Seguridad       | Escaneos regulares para identificar vulnerabilidades | Realizar análisis de seguridad periódicos para detectar debilidades. |
-| Seguridad       | Prevención de acceso no autorizado a datos confidenciales | Implementar medidas para proteger la información confidencial. |
-| Seguridad       | Detección y bloqueo de intentos de inicio de sesión fallidos | Identificar y bloquear intentos de acceso no autorizados. |
-| Mantenibilidad  | Localización y corrección de errores fácilmente   | Facilitar la identificación y solución de problemas en el sistema. |
-| Mantenibilidad  | Implementación de nuevas características sin perjuicio | Hacer posible la adición de nuevas funciones sin afectar la estabilidad. |
-| Mantenibilidad  | Suite de pruebas para identificar problemas       | Utilizar pruebas para encontrar y solucionar problemas rápidamente. |
-| Interoperabilidad| Inicio de sesión con cuentas de otras plataformas  | Permitir a los usuarios utilizar cuentas existentes en otros servicios. |
-| Interoperabilidad| Compatibilidad con múltiples IDEs                  | Hacer que el sistema sea compatible con varios entornos de desarrollo. |
+<!-- | Usabilidad      |                 | Interfaz de usuario clara y organizada            | Mantener la interfaz de usuario ordenada y de fácil navegación. | -->
+<!-- | Rendimiento     | | Detección de soluciones ineficientes               | Identificar y corregir soluciones que afecten negativamente el rendimiento. | -->
+<!-- | Interoperabilidad|                | Compatibilidad con múltiples IDEs                  | Hacer que el sistema sea compatible con varios entornos de desarrollo. | -->
 
+| Atributo        | Táctica         | Acción                                          | Descripción                                     |
+|-----------------|-----------------|---------------------------------|------------------------------------------------------------------|
+| Escalabilidad   | Duplicación horizontal (auto-escalaimento proactivo) | Activación automática de servidores adicionales   | Aumentar recursos de manera automática para manejar la demanda.  |
+| Escalabilidad   | Duplicación horizontal (auto-escalamiento reactivo)| Ampliación de capacidad de almacenamiento del servidor | Incrementar la capacidad de almacenamiento según sea necesario.  |
+| Usabilidad      |  Mantenimiento del modelo del sistema | Barra de carga de progreso al subir archivos | En la carga de los problemas, debería aparecer la barra de carga|
+| Usabilidad      | Iniciativa de soporte de usuario-Undo | Guardar el estado del codigo fuente   | Guardar el estado en el que se estuvo el codigo fuente antes de salir de la página |
+| Disponibilidad  |  Monitoreo de condición | Evitar tiempos de inactividad inesperados | Garantizar el mantenimeinto de la plataforma para que esté disponible sin interrupciones. |
+| Disponibilidad  | Redundancia Activa | Medidas de redundancia y sistemas de respaldo     | Implementar sistemas de respaldo para mantener la disponibilidad. |
+| Rendimiento     | Introducción de concurrencia | Eficiencia en el manejo de carga computacional     | Optimizar el sistema para manejar tareas complejas eficientemente. |
+| Rendimiento     | Limite de tiempo de ejección | Manejo de bucles infinitos en soluciones de usuarios | Identificar y evitar que las tareas en bucle afecten el rendimiento. |
+| Seguridad       | Detectar instrusos | Escaneos regulares para identificar vulnerabilidades | Realizar análisis de seguridad periódicos para detectar debilidades. |
+| Seguridad       | Limitar el acceso | Prevención de acceso no autorizado a datos confidenciales | Implementar medidas para proteger la información confidencial. |
+| Seguridad       | Actor de autentificación | Detección y bloqueo de intentos de inicio de sesión fallidos | Identificar y bloquear intentos de acceso no autorizados. |
+| Mantenibilidad  | incrementar coherencia semántica | Localización y corrección de errores fácilmente   | Facilitar la identificación y solución de problemas en el sistema. |
+| Mantenibilidad  | Encapsular | Implementación de nuevas características sin perjuicio | Hacer posible la adición de nuevas funciones sin afectar la estabilidad. |
+| Mantenibilidad  | Separar modulos (split module)| Suite de pruebas para identificar problemas       | Utilizar pruebas para encontrar y solucionar problemas rápidamente. |
+| Interoperabilidad| Orquestación | Orquestar los microservicios  | Permitir orquestar los microservicios para el buen manejo del flujo de la información entre los sistemas. |
 
 ## 5. Propuesta de Arquitectura 
 Propuesta de arquitectura inicial
-
-![imagen](diagrams/diagrama%20arquitectura.png)
+![architecture](diagrams/architecture-diagram-aws.png)
 
 ## 6. Referencias
+
+* Li, S., Zhang, H., Jia, Z., Zhong, C., Zhang, C., Shan, Z., Shen, J., & Babar, M. A. (2021). Understanding and addressing quality attributes of microservices architecture: A Systematic literature review. In Information and Software Technology (Vol. 131, p. 106449). Elsevier BV. https://doi.org/10.1016/j.infsof.2020.106449

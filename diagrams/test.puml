@@ -23,8 +23,7 @@ Person(anonimo, Anonimo, "Usuario anonimo")
 
 System_Boundary(c1, "Sistema de concursos") {
     ' FRONTEND
-    Container(webapp, "SPA", "Javascript, React", "Aplicacion web que permitirá interactuar a los usuarios")
-    Container(webstatic, "Static Web Server", "S3", "Servidor web que almacena lading page de la página de concursos")
+    Container(webapp, "Webapp", "Javascript, React", "Aplicacion web que permitirá interactuar a los usuarios")
     ' BACKEND 
 
     System_Boundary(c1_1, "microservicio de concursos"){
@@ -41,22 +40,19 @@ System_Boundary(c1, "Sistema de concursos") {
         Container(auth, "Autenticación", "javascript, express.js", "Módulo que autenticará al usuario", $tags = "servicios")
     }
     ' BASES DE DATOS
-    ContainerDb(norelational_db, "Base no relacional", "MongoDB", "", $tags = "base")
+    ContainerDb(norelational_db, "Base no relacional", "DynamoDB ", "", $tags = "base")
     ContainerDb(relational_db, "Base relacional", "PostgreSQL", "", $tags = "base")
 }
 
 System_Boundary(c2, "Sistema de juez"){
     Container(juez, "Juez", "Node.js", "Aplicacion que ejecuta los programas de los participantes")
-    Container(queue_juez, "Cola de mensajes", "Apache kafka", "Cola de mensajes que permite comunicar al juez con el sistema de concursos")
-    ContainerDb(juez_db, "Juez Database", "SQLite", "Almacena los programas que han sido ejecutados por le juez", $tags = "base")
+    Container(queue_juez, "Cola de mensajes", "Amazon MQ", "Cola de mensajes que permite comunicar al juez con el sistema de concursos")
+    ContainerDb(juez_db, "Juez Database", "PostgreSQL", "Almacena los programas que han sido ejecutados por le juez", $tags = "base")
 }
 
 Rel(customer, webapp, "Usa", "HTTPS")
-Rel(customer, webstatic, "Usa", "HTTPS")
 Rel(admin, webapp, "Usa", "HTTPS")
-Rel(admin, webstatic, "Usa", "HTTPS")
 Rel(anonimo, webapp, "Usa", "HTTPS")
-Rel(anonimo, webstatic, "Usa", "HTTPS")
 
 Rel(webapp, auth, "Autentifica y autoriza al usuario", "REST")
 Rel(gestor_concursos, auth, "Autentifica y autoriza al usuario", "REST")
