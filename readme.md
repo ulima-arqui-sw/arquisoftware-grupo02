@@ -121,7 +121,7 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 
 | Identificador | Descripción                                       |
 |---------------|---------------------------------------------------|
-| US18          | Administración de cuentas: Como administrador del sistema, quiero porder habilitar las nuevas cuentas de usuario o deshabilitar las ya existentes, para controlar el acceso al sistema y mantener la seguridad. |
+| US18          | Administración de cuentas: Como administrador del sistema, quiero poder habilitar las nuevas cuentas de usuario o deshabilitar las ya existentes, para controlar el acceso al sistema y mantener la seguridad. |
 | US19          | Soporte/Atención de consultas: Como administrador, quiero poder recibir mensajes sobre problemas técnicos, así como otras consultas, para resolver los problemas que tengan los usuarios. |
 
 ---
