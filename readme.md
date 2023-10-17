@@ -88,29 +88,33 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 
 | Identificador | Descripción                                       |
 |---------------|---------------------------------------------------|
-| US01          | Como usuario, quiero poder crear una cuenta nueva, con un correo (revisar esto), usuario y una contraseña, para acceder a la plataforma. También poder crear la cuenta utilizando los servicios de Google para mayor facilidad. |
-| US02          | Como usuario, quiero poder ingresar al sistema con los datos de usuario que registré, para poder acceder a las funciones de la plataforma. |
-| US03          | Como usuario, quiero poder modificar mi nombre de usuario, contraseña y el país, para tener mis datos siempre actualizados. |
-| US04          | Como usuario, quiero poder cerrar mi sesión del sistema, para dar por culminado mi trabajo. |
+| US01          | Registro de usuario: Como usuario, quiero poder crear una cuenta nueva, con un correo, usuario y una contraseña, para acceder a la plataforma. También poder crear la cuenta utilizando los servicios de Google para mayor facilidad. |
+| US02          | Inicio de sesión: Como usuario, quiero poder ingresar al sistema con los datos de usuario que registré, para poder acceder a las funciones de la plataforma. |
+| US03          | Modificar datos personales: Como usuario, quiero poder modificar mi nombre de usuario, contraseña y el país, para tener mis datos siempre actualizados. |
+| US04          | Cerrar sesión: Como usuario, quiero poder cerrar mi sesión del sistema, para dar por culminado mi trabajo. |
+
 
 #### Requerimientos funcionales del participante
 
 | Identificador | Descripción                                       |
 |---------------|---------------------------------------------------|
-| US05          | Como participante, quiero poder visualizar el nombre y la descripción de los problemas que puedo resolver, para conocer los detalles de estos. |
-| US06          | Como participante, quiero seleccionar un problema y subir los archivos de código fuente, para presentar una solución. |
-| US07          | Como participante, quiero poder ver el tiempo restante del concurso, para poder organizarme de la mejor manera. |
-| US08          | Como participante, quiero poder visualizar la información de los problemas y las respectivas soluciones que presenté, así como el tiempo que tomé, el lenguaje utilizado y la respuesta por parte del juez, para seguir el récord de mis soluciones presentadas. |
-| US09          | Como participante, quiero poder ver los puntajes a nivel global de otros participantes que han presentado sus soluciones, con datos como el nombre de participante, el país, el instituto, los problemas que ha resuelto y el puntaje total, para hacer un seguimiento del progreso de otros participantes. |
+| US05          | Visualizar problemas: Como participante, quiero poder visualizar el nombre y la descripción de los problemas que puedo resolver, para conocer los detalles de estos. |
+| US06          | Subir solución: Como participante, quiero seleccionar un problema y subir los archivos de código fuente, para presentar una solución. |
+| US07          | Visualización del tiempo del concurso: Como participante, quiero poder ver el tiempo restante del concurso, para poder organizarme de la mejor manera. |
+| US08          | Visualizar resultados: Como participante, quiero poder visualizar la información de los problemas y las respectivas soluciones que presenté, así como el tiempo que tomé, el lenguaje utilizado y la respuesta por parte del juez, para seguir el récord de mis soluciones presentadas. |
+| US09          | Visualizar puntajes globales: Como participante, quiero poder ver los puntajes a nivel global de otros participantes que han presentado sus soluciones, con datos como el nombre de participante, el país, el instituto, los problemas que ha resuelto y el puntaje total, para hacer un seguimiento del progreso de otros participantes. |
 
-#### Requerimientos funcionales de la institución
+#### Requerimientos funcionales del Administrador/Institución
 
 | Identificador | Descripción                                       |
 |---------------|---------------------------------------------------|
-| US10          | Como institución, quiero poder crear mi concurso de programación con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc. |
-| US11          | Como institución, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita. |
-| US12          | Como institución, debería poder modificar una vez creado el concurso, tanto como el título, la cantidad de participantes, las fechas, los límites, etc. |
-| US13          | Como institución, debería poder modificar los problemas creados junto a los límites y las características del problema. |
+| US10          | Administración de cuentas: Como administrador del sistema, quiero porder habilitar las nuevas cuentas de usuario o deshabilitar las ya existentes, para controlar el acceso al sistema y mantener la seguridad. |
+| US11          | Gestión de actividades: Como administrador del sistema, quiero poder crear una actividad de desafío/competencia de programación, con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc; así como también poder eliminarla por completo del sistema, para poder gestionar de mejor el manera las actividades. |
+| US12          | Modificar actividad: Como administrador, debería poder modificar los datos una vez creado la actividad/competencia, tanto como el título, la cantidad de participantes, las fechas, lo límites, etc; para poder atender cualquier cambio o actualización repentina. |
+| US13          | Gestionar problema: Como administrador del sistema, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita, así como poder eliminarlo una vez creado. |
+| US14          | Modificar problema: Como administrador del sistema, debería poder modificar los problemas creados junto a los límites y las características del problema, para atender actualizaciones repentinas. |
+| US15          | Gestión de notificaciones: Como administrador, quiero poder configurar los anuncios y notificaciones que recibirán los usuarios, para informarles sobre nuevas actividades o realizar actualizaciones. |
+| US16          | Soporte/Atención de consultas: Como administrador, quiero poder recibir mensajes sobre problemas técnicos, así como otras consultas, para resolver los problemas que tengan los usuarios. |
 
 ---
 <!-- #### // Requerimientos por evaluar: Existen otras funcionalidades nuestras plataformas modelo ofrecen y que se necesitan evaluar para su implementación en la nuestra. Como usuario del sistema, existen opciones realizar clarificaciones respecto a un problema, ver tastks y realizar backups. Como administrador del sistema, se pueden crear y modificar los datos de competencias, ver logs, reportes, los usuarios en una competencia, entre otros. // -->
