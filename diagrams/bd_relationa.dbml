@@ -1,0 +1,62 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table concurso {
+  id_concurso integer [pk]
+  id_creador integer
+  titulo varchar
+  descripcion varchar
+  duracion integer //en min
+  created_at timestamp
+}
+
+Table usuario {
+  id_usuario integer [pk]
+  username varchar
+  password hash
+  created_at timestamp 
+}
+
+Table participantes {
+  id_usuario integer [pk]
+  id_concurso integer [pk]
+  id_participante integer [increment, pk]
+  created_at timestamp 
+}
+
+Table problemas{
+  id_problema integer [pk]
+  id_concurso integer
+  pregunta varchar
+  time_limit varchar
+  memory_limit varchar
+  example varchar
+  created_at timestamp
+}
+
+Table test{
+  id_problema integer [pk]
+  id_test integer
+  test varchar
+}
+
+Table posiciones{
+  id_concurso integer [pk]
+  id_usuario integer [pk]
+  num_posicion integer
+}
+
+
+Ref: "concurso"."id_concurso" < "problemas"."id_concurso"
+
+Ref: "usuario"."id_usuario" < "concurso"."id_creador"
+
+Ref: "usuario"."id_usuario" < "participantes"."id_usuario"
+
+Ref: "concurso"."id_concurso" < "participantes"."id_concurso"
+
+Ref: "test"."id_problema" > "problemas"."id_problema"
+
+Ref: "posiciones"."id_concurso" > "concurso"."id_concurso"
+
+Ref: "posiciones"."id_usuario" > "usuario"."id_usuario"

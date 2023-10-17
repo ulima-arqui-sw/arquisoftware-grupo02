@@ -188,11 +188,6 @@ En la sieguiente tabla se especifican a qué requerimiento están relacionados l
 
 
 
-
-
-
-
-
 ### 2.4. Restricciones
 
 - Tecnologías Propias: Nosotros desarrollamos todas las tecnologías internamente, incluyendo el marco de trabajo y las políticas de seguridad.
@@ -248,14 +243,19 @@ Ademas, los modulos se comunicarán mediante microservicios, los que falicitará
 ### 3.3. Modelo de Datos
 
 Se utilizarán bases de datos relacionales y no relacionales. 
+
 * **Base de datos relacional**: 
   * *Gestión de usuarios*
   * *Detalles del concurso* 
   * *Preguntas y pruebas* 
+
+![bd_relacional](diagrams/bd_relacional.png)
+
 * **Base de datos no relacional (NoSQL)**:
   * *Evaluación de soluciones*
   * *Estadística y clasificaciones*
   * *Comunicación y Notificaciones*
+
 
 #### ADR 
 
@@ -270,8 +270,8 @@ Se utilizarán bases de datos relacionales y no relacionales.
 <!-- ME FALTAN HACER LOS MODELOS, PARA EL VIERNES TENGO LOS MODELOS O PARA EL SABADO -->
 ### 3.4. Mapeo entre Elementos de Arquitectura
 <!-- ACÁ VAN TODOS LOS DIAGRAMAS QUE TENGO QUE HACER, NO SÉ CUANTOS HARÉ XDXDXD -->
-Para el mapeo de los elementos se ha utilizado el modelo C4. 
-![imagen](diagrams/diagrama%20arquitectura.png)
+
+
 
 #### ADR 
 
@@ -286,22 +286,32 @@ Para el mapeo de los elementos se ha utilizado el modelo C4.
 ### 3.5. Elección de Tecnología
 Para la tecnología que se a utilizar es la siguiente
 
-Del lado del cliente para el apartado web se utilizará React (Framework frontend) y Bootstrap (Librería de estilos). 
+Express.js: 
 
-Para el lado del servidor se usará express.js junto a docker para la creación de los microservicios.
+PostgreSQL:
 
-Por otro lado, los motores de base de datos que se van a utilizar son: PostgresQL para la parte de modelo relacional y MongoDB para el modelo no relacional. 
+Reactjs: 
 
-Además, para el juez en linea se va a utilizar un contenedor de docker configurado con los lenguajes de programación necesarios listo para compilar, acoplado con un sistema de colas como Apache Kafka para la gestión de las solicitudes de evaluación de soluciones. 
+MongoDB: 
+
+Apacha Kafka: 
+
+REST: 
+
+AWS EC2: 
+
+Firebase authentication: 
+
+Azure Kubernetes Service: 
 
 #### ADR 
 
-| Title       | Content                                                  |
-|-------------|-----------------------------------------------------------|
-| Estado      | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
-| Context     | What is the issue that we're seeing that is motivating this decision or change?      |
-| Decision    | What is the change that we're proposing and/or doing?    |
-| Consequences| What becomes easier or more difficult to do because of this change? |
+| Title        | Content                                                  |
+|--------------|-----------------------------------------------------------|
+| Estado       | What is the status, such as proposed, accepted, rejected, deprecated, superseded, etc.? |  
+| Contexto     | What is the issue that we're seeing that is motivating this decision or change?      |
+| Decision     | What is the change that we're proposing and/or doing?    |
+| Consecuencia | What becomes easier or more difficult to do because of this change? |
 
 
 ## 4. Tácticas
@@ -328,25 +338,9 @@ Además, para el juez en linea se va a utilizar un contenedor de docker configur
 | Interoperabilidad| Compatibilidad con múltiples IDEs                  | Hacer que el sistema sea compatible con varios entornos de desarrollo. |
 
 
+## 5. Propuesta de Arquitectura 
+Propuesta de arquitectura inicial
 
-## 5. Anexo: Tópicos en Arquitectura de Software (Por alumno)
-
-### 5.1. Tema / Alumno
-
-### 5.2. Desarrollo Conceptual
-
-### 5.3. Consideraciones Técnicas
-
-#### 5.3.1. Instalación / Configuración de Servicio
-
-#### 5.3.2. Primeros pasos
-
-### 5.4. Demo
-
-#### 5.4.1. Escenario práctico
-
-#### 5.4.2. Pasos para la demo
-
-#### 5.4.3. Resultados
+![imagen](diagrams/diagrama%20arquitectura.png)
 
 ## 6. Referencias
