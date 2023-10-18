@@ -114,7 +114,57 @@ La aplicación abierta:
 ## 3. Demo
 * Enlace con el video de la demo -> [(Stress Testing | Prueba)](https://youtu.be/uAVBdXleopc)
 ### 3.1. Escenario práctico
-
+En este caso práctico, realizaremos una prueba a la web de la SUNAT. Para esto, prepararemos el entorno de pruebas dentro del JMeter.
 ### 3.2. Pasos para la demo
+* Crear un Thread Group. En la pantalla del JMeter, hacer click derecho en Test Plan y dirigirnos a Add -> Threads (Users) -> Thread Group.
+  
+  ![threads](recursos/threads.png)
+  
+* Luego, podemos renombrar el Thread Group con el nombre que queramos. Dentro de esta pantalla, podemos definir cuántos usuarios queremos simular que entren a la web, en qué tiempo y cuántas veces queremos que esto se repita. Todo esto en las opciones: Number of threads (users), Ramp-up period (seconds), Loop Count.
+  
+  ![TGconfig](recursos/TGconfig.png)
+
+* Después, hacemos click derecho en el Thread Group y añadimos un Sampler de tipo HTTP Request.
+  
+  ![httpReq](recursos/httpReq.png)
+
+* En esta pantalla podremos escribir la dirección web que queremos testear, así como el nombre del servidor o dirección IP en caso de que se trate de un proyecto web propio, y también el puerto en el que está alojado.
+  
+  ![httpConf](recursos/httpConf.png)
+
+* Podemos cambiar el nombre de este Request, en caso de que queramos diferenciarlo. A continuación, ponemos la URL de la web que queremos testear. En este caso es la web de la SUNAT. Pegamos la URL de la web en el campo Server name or IP, borramos el protocolo de la URL y lo colocamos en el campo Protocol [http], y por último, colocamo la ruta a la cual queremos dirigirnos dentro de la URL. En este caso, queremos testear la página principal, por lo cual, en el campo Path colocamos simplemente un "/".
+  ![SUN](recursos/SUN.png)
+  
+  ![confSUN](recursos/confSUN.png)
+
+* También podemos agregar otras rutas. En este caso, agregaremos la ruta que nos lleva a Operaciones en Linea (Clave SOL).
+  
+  ![SOL](recursos/SOL.png)
+
+* Repetimos el procedimiento anterior, para agregar otra HTTP Request. Pegamos la URL de esta nueva página. Colocamos el protocolo donde corresponde y colocamos la nueva ruta en Path.
+  
+  ![SOLconf](recursos/SOLconf.png)
+
+* Ahora, se procede a agregar los Listener, que generarán reportes de los resultados. Entonces, hacemos click derecho en Thread Group, luego Add -> Listener -> (Elegimos el tipo de reporte)
+  
+  ![liste](recursos/liste.png)
+
+* En este caso, probaremos con un árbol de resultados, por lo cual, elegimos View results tree. 
+  ![resultTree](recursos/resultTree.png)
+
+* Por último, nos dirigimos a Thread Group y definimos el número de usuarios que ingresarán, el tiempo y las repeticiones. En este caso, serán 100 usuarios, en un tiempo de 4 segundos y en 2 repeticiones. 
+  
+  ![ento](recursos/ento.png)
+
+* Ahora solo queda guardar este entorno de pruebas haciendo click en el diskette. Podemos guardarlo donde queramos. Tras esto, ejecutamos las pruebas y esperamos a que se generen los reportes de los resultados, en este caso en el Results Tree.
+  
+  ![save](recursos/save.png)
+
+  ![start](recursos/start.png)
 
 ### 3.3. Resultados
+Para las pruebas realizadas con los parámetros de esta demo, los resultados que nos brindó el servidor de la web son positivos.
+
+![result](recursos/result.png)
+
+Esto indica que, con los parámetros colocados (el número de usuarios ingresando en un tiempo definido) no afecta en gran medida al servidor de testeo. Pero, estos parámetros pueden irse ajustando, hasta llevar al servidor a un límite, viendo los códigos de respuesta que recibe el JMeter y anotando los resultados para realizar los ajustes respectivos al servidor.
