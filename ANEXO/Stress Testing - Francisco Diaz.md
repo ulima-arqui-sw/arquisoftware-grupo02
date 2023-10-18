@@ -51,20 +51,23 @@ Se realizan pruebas en un sistema con parámetros anormales o que no ocurrirían
 * Ajustes y optimización: Y por ultimo, se procede a modificar el código, buscando que el sistema pueda permitirse los nuevos estándares definidos.
 ### 1.6. Herramientas de Stress Testing
 Algunas de las herramientas más importantes del mercado y que permiten realizar pruebas de carga, así como pruebas de estrés entre otras tareas.
-* JMeter [(Link)](https://jmeter.apache.org)
-* LoadNinja [(Link)](https://loadninja.com)
-* WebLoad [(Link)](https://www.radview.com/webload-download/)
-* NeoLoad [(Link)](https://www.tricentis.com/products/performance-testing-neoload)
-* SmartMeter [(Link)](https://www.smartmeter.io)
+* JMeter [Link](https://jmeter.apache.org)
+* LoadNinja [Link](https://loadninja.com)
+* WebLoad [Link](https://www.radview.com/webload-download/)
+* NeoLoad [Link](https://www.tricentis.com/products/performance-testing-neoload)
+* SmartMeter [Link](https://www.smartmeter.io)
 
 ## 2. Consideraciones Técnicas
+
+* Enlace con el video de explicación -> [(Stress Testing | Consideraciones técnicas)](https://youtu.be/Rsdxyx_dlhg)
+
 A contiunuacion, procederemos a realizar la instalación y configuración de Apache JMeter para un caso de prueba, para lo cual, hay que tener ciertas consideraciones dentro de nuestro sistema. La instalación se realizará en un SO Windows 11 de 64 bits.
 ### 2.1. Instalación / Configuración de Servicio
-Dirigirse a la web de [(JMeter)](https://jmeter.apache.org). Como se puede observar, se menciona es necesario tener Java SE JDK 8+, por lo cual, también accedemos a la web de descargas de [(Java)](https://www.oracle.com/pe/java/technologies/javase/javase8-archive-downloads.html) y descargarmos la versión apropiada para nuestro sistema. En el caso de este ejemplo, se descargará Java SE Development Kit 8u202 (la última versión presente hasta la fecha) para Windows 11 de 64 bits (Windows x64).
+Dirigirse a la web de [JMeter](https://jmeter.apache.org). Como se puede observar, se menciona es necesario tener Java SE JDK 8+, por lo cual, también accedemos a la web de descargas de [Java](https://www.oracle.com/pe/java/technologies/javase/javase8-archive-downloads.html) y descargarmos la versión apropiada para nuestro sistema. En el caso de este ejemplo, se descargará Java SE Development Kit 8u202 (la última versión presente hasta la fecha) para Windows 11 de 64 bits (Windows x64).
 
 ![DownloadIMG](recursos/descarga.png)
 
-En la web de [(JMeter)](https://jmeter.apache.org), procedemos a la sección Downloads y descargamos el archivo ".zip". Una vez descargados ambos archivos, procedemos a instalar primero el Java y después el JMeter como cualquier aplicación común y corriente.
+En la web de [JMeter](https://jmeter.apache.org), procedemos a la sección Downloads y descargamos el archivo ".zip". Una vez descargados ambos archivos, procedemos a instalar primero el Java y después el JMeter como cualquier aplicación común y corriente.
 
 Ahora, tenemos que configurar las variables de entorno de nuestro sistema. Para esto, tenemos que dirigirnos al Panel de Control, buscándolo en el menú de Windows. Se abrirá una ventada del Panel de Control, en donde debemos acceder a "Sistema y Seguridad" y luego a "Sistema".
 
@@ -109,7 +112,7 @@ La aplicación abierta:
 ![app](recursos/app.png)
 
 ## 3. Demo
-
+* Enlace con el video de la demo -> [(Stress Testing | Prueba)](https://youtu.be/uAVBdXleopc)
 ### 3.1. Escenario práctico
 
 ### 3.2. Pasos para la demo
