@@ -116,6 +116,7 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 | US15          | Como cliente, debería poder solicitar soporte ante alguna incidencia o duda. |
 | US16          | Como cliente, debería poder solicitar una reunión para hacer solicitudes según mis requerimientos con alguien de auditoría |
 | US17          | Como cliente, debería poder actualizar o cancelar mi suscripción. |
+| US18          | Como cliente, debería poder crear una prueba personalizada para la persona (posible empleado) que evalúo que pueda ser resuelta en cualquier horario |
 
 <!-- #### (POR EVALUAR) Requerimientos funcionales del Administrador
 
@@ -150,12 +151,15 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 #### 2.2.3. Flujo de interacción del cliente
 1. El usuario crea un torneo especificando sus características.
 2. El usuario crea desafíos para el torneo previamente creado.
-3. El usurio modifica detalles del torneo o desafíos según sus necesidades de corrección o ajuste.
+3. El usurio modifica detalles del torneo o desafíos según sus necesidades de corrección o ajuste. (También puede elegir crear prueba personalizada)
 4. El usuario personaliza la apariencia de sus torneos.
 5. El usuario llama a soporte.
 6. El usuario solicita una reunión con equipo de auditría.
 7. El usuario visualiza los resultados en tiempo real de las soluciones durante el torneo.
 8. El usuario accede a recursos de marketing.
+
+#### Mockups
+https://www.figma.com/file/lR70obXro1res0lmpquiVe/Arqui-Soft-Template?type=design&node-id=0%3A1&mode=design&t=DZI6zJCfzQ4cUUT3-1
 
 <!--  #### 2.2.3. (POR EVALUAR) Flujo de interacción del administrador
 1. El adminstrador accede al sistema de Ulitorneos
@@ -173,26 +177,25 @@ A continuación, se presenta una tabla que resume los atributos de calidad, sus 
 
 Atributo         | Código  | Entorno                                           | Fuente                                                         | Estímulo                                                                                                                  | Artefacto                                              | Respuesta                                                                                                          | Medida de Respuesta
 -----------------|---------|--------------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|---------------------
-Escalabilidad    | ESC-01  | Proceso de envío de soluciones | Participantes | Miles de envíos en un periodo corto | Infraestructura de servidores | Activación automática de servidores adicionales | El servidor se activa en 15 segundos.
-Escalabilidad    | ESC-02  | Proceso de compilación | Gestor de Proyecto | Solicitud de escalamiento vertical | Servidor | Ampliación de capacidad de almacenamiento del servidor | La plataforma aumenta su capacidad de almacenamiento en 40%.
-Usabilidad       | ESC-03  | Proceso de creación de retos de programación | Encargado de crear retos | Intento de crear un nuevo reto | Interfaz de administración de la plataforma  | La plataforma cuenta con una interfaz de usuario intuitiva y amigable. | El tiempo promedio para configurar un problema es 5 minutos o menos.
-Usabilidad       | ESC-04  | Proceso de navegacion web   | Estudiante nuevo | Se registra en la plataforma e intenta explorarla  | Recursos de Orientación y Tutoriales  | Se proporciona una orientación clara y tutoriales para los estudiantes nuevos| Tasa de Abandono (TA) menor al 20 %
-Usabilidad       | ESC-05  | Creación de problemas | Profesor    | Crear tareas de programación para sus estudiantes  | Interfaz de Administración de Problemas  | La interfaz de administración de problemas es intuitiva y fácil de usar | Tiempo de Configuración de Tareas maximo de 4 minutos
-Usabilidad       | ESC-06  | Proceso de navegacion web           | Estudiante nuevo| Resolver problemas de práctica  | Interfaz de Usuario  | Tener una interfaz de usuario clara, organizada y fácil de usar | Tiempo de Acceso a Funciones Básicas max de 5 minutos, TA menor al 20%
-Disponibilidad   | ESC-07  | Proceso de Recuperacion por caidas | Participantes en la competencia, administradores | Uno de los servidores de la plataformas se cae | Servidores de la Plataforma | La plataforma no debe verse interrumpida por tiempos de inactividad inesperados | Duración del Tiempo de Inactividad menor de 1 minuto
-Disponibilidad   | ESC-08  | Proceso de envios de soluciones| Participantes, administradores, proveedor de servicios de alojamiento | Enviar sus soluciones masivas durante la competencia | Servicios de Alojamiento del Proveedor  | Garantizar una alta disponibilidad y evitar fallas del proveedor de servicios | Tiempo de Disponibilidad, Registro de Interrupciones max de 2
-Disponibilidad   | ESC-09  | Proceso de gestion de cortes de energia | Personal de mantenimiento del centro de datos | corte de energia en el centro de datos de la plataforma | Infraestructura del Centro de Datos                  | Medidas de redundancia y sistemas de respaldo adecuados | Duración de la Interrupción max de 1 min
-Rendimiento      | ESC-10  | Proceso de evalucion de problemas | Programadores participantes                                     | Envio de soluciones altamente complejos | Sistema de Evaluación de Soluciones                    | Manejar eficientemente la carga computacional de soluciones complejas | Tiempo de Evaluación max de 1 min
-Rendimiento      | ESC-11  | Proceso de evalucion de problemas     | Competidores|solución que contiene un bucle Infinito | Sistema de Evaluación de Soluciones | Manejar situaciones de bucle infinito en las soluciones de los usuarios| Tiempo de Ejecución max de 1 min, Recursos Consumidos, Número de Soluciones con Bucle Infinito
-Rendimiento      | ESC-12  | Proceso de evalucion de problemas | Estudiante  |solución correcta pero optimizado    | Sistema de Evaluación de Soluciones                    |Detectar soluciones ineficientes para evitar que afecten negativamente el rendimiento  | Recursos Consumidos, Número de Soluciones Ineficientes
-|Seguridad|ESC-13|Plataforma en funcionamiento|Usuario|Transacción errada|Escáner de seguridad|Sistema realiza escaneos regulares para identificar vulnerabilidades|Número de vulnerabilidades identificadas
-|Seguridad|ESC-14|Plataforma en funcionamiento|Usuario|Intento de ciberataque|Módulo de acceso a datos|Sistema impide el acceso no autorizado a datos confidenciales|Número de intentos bloqueados
-|Seguridad|ESC-15|Proceso de autenticaicón|Usuario|Inicio de sesión fallido|Módulo de autenticación|Sistema detecta y bloquea intentos de inicio de sesión fallidos|Número de intentos bloqueados
-|Mantenibilidad|ESC-16|Plataforma despleagada|Usuario|Notificación de error|Código fuente|Equipo de desarrollo puede localizar y corregir errores fácilmente|Tiempo promedio de corrección de errores
-|Mantenibilidad|ESC-17|Mantenimiento de plataforma|Gestor de proyecto|Solicitud de nueva funcionalidad|Código fuente|Nuevas características se pueden implementar sin perjudicar al sistema|Tiempo promedio para implementar nuevas características
-|Mantenibilidad|ESC-18|Proceso de QA a módulo|Conformance checker|Notificación de error|Suite de pruebas automatizadas|Suite de pruebas ayuda a identificar problemas rápidamente|Porcentaje de cobertura de pruebas automatizadas
-|Interoperabilidad|ESC-19|Proceso de inicio de sesión|Usuario|Intento de inicio de sesión|Módulo de autenticaición|Usuarios pueden iniciar sesión utilizando cuentas existentes en otras plataformas|Número de sistemas admitidos
-|Interoperabilidad|ESC-20|Desarrollo de plataforma|Empresa dueña del IDE|IDE utilizado deja de ser open source|IDE|Integración con IDEs|Número de IDEs compatibles
+Escalabilidad    | ESC-01  | Plataforma funcionando con mucha carga | Participantes | Miles de envíos en un periodo corto | Infraestructura de servidores | Activación automática de servidores adicionales | El servidor se activa en 15 segundos.
+Escalabilidad    | ESC-02  | Plataforma en funcionamiento normal | Gestor de Proyecto | Solicitud de escalamiento vertical | Servidor | Ampliación de capacidad de almacenamiento del servidor | La plataforma aumenta su capacidad de almacenamiento en 40%.
+Usabilidad       | ESC-03  | Plataforma en funcionamiento normal | Encargado de crear retos | Intento de crear un nuevo reto | Interfaz de administración de la plataforma  | La plataforma cuenta con una interfaz de usuario intuitiva y amigable. | El tiempo promedio para configurar un problema es 5 minutos o menos.
+Usabilidad       | ESC-04  | Plataforma en funcionamiento normal   | Estudiante nuevo | Se registra en la plataforma e intenta explorarla  | Recursos de Orientación y Tutoriales  | Se proporciona una orientación clara y tutoriales para los estudiantes nuevos| Tasa de Abandono (TA) menor al 20 %
+Usabilidad       | ESC-05  | Plataforma en funcionamiento normal | Profesor    | Crear tareas de programación para sus estudiantes  | Interfaz de Administración de Problemas  | La interfaz de administración de problemas es intuitiva y fácil de usar | Tiempo de Configuración de Tareas maximo de 4 minutos
+Usabilidad       | ESC-06  | Plataforma en funcionamiento normal          | Estudiante nuevo| Resolver problemas de práctica  | Interfaz de Usuario  | Tener una interfaz de usuario clara, organizada y fácil de usar | Tiempo de Acceso a Funciones Básicas max de 5 minutos, TA menor al 20%
+Disponibilidad   | ESC-07  | Plataforma caída | Participantes en la competencia, administradores | Uno de los servidores de la plataformas se cae | Servidores de la Plataforma | La plataforma no debe verse interrumpida por tiempos de inactividad inesperados | Duración del Tiempo de Inactividad menor de 1 minuto
+Disponibilidad   | ESC-08  | Plataforma en funcionamiento normal| Participantes, administradores, proveedor de servicios de alojamiento | Enviar sus soluciones masivas durante la competencia | Servicios de Alojamiento del Proveedor  | Garantizar una alta disponibilidad y evitar fallas del proveedor de servicios | Tiempo de Disponibilidad, Registro de Interrupciones max de 2
+Disponibilidad   | ESC-09  | Plataforma caída | Personal de mantenimiento del centro de datos | corte de energia en el centro de datos de la plataforma | Infraestructura del Centro de Datos                  | Medidas de redundancia y sistemas de respaldo adecuados | Duración de la Interrupción max de 1 min
+Rendimiento      | ESC-10  | Plataforma en funcionamiento normal | Programadores participantes                                     | Envio de soluciones altamente complejos | Sistema de Evaluación de Soluciones                    | Manejar eficientemente la carga computacional de soluciones complejas | Tiempo de Evaluación max de 1 min
+Rendimiento      | ESC-11  | Plataforma en funcionamiento normal     | Competidores|solución que contiene un bucle Infinito | Sistema de Evaluación de Soluciones | Manejar situaciones de bucle infinito en las soluciones de los usuarios| Tiempo de Ejecución individual max de 1 min
+Rendimiento      | ESC-12  | Plataforma en funcionamiento normal | Estudiante  |solución correcta pero optimizado    | Sistema de Evaluación de Soluciones                    |Detectar soluciones ineficientes para evitar que afecten negativamente el rendimiento  | Recursos Consumidos, Número de Soluciones Ineficientes
+|Seguridad|ESC-13|Plataforma en funcionamiento|Usuario|Transacción errada|Escáner de seguridad|Sistema realiza escaneos regulares para identificar vulnerabilidades|Se identifican las vulnerabilidades con latencia máxima de 5 min
+|Seguridad|ESC-14|Plataforma en funcionamiento|Usuario|Intento de ciberataque|Módulo de acceso a datos|Sistema impide el acceso no autorizado a datos confidenciales|Se bloquea los ataque luego de 3 segundos como máximo
+|Seguridad|ESC-15|Plataforma en funcionamiento normal|Usuario|Inicio de sesión fallido|Módulo de autenticación|Sistema detecta y bloquea intentos de inicio de sesión fallidos|Se bloquea en sistema luego de 15 segundos como máximo
+|Mantenibilidad|ESC-16|Plataforma despleagada|Usuario|Notificación de error|Código fuente|Equipo de desarrollo puede localizar y corregir errores fácilmente|Tiempo promedio de corrección de errores es 1 día
+|Mantenibilidad|ESC-17|Mantenimiento regular de plataforma|Gestor de proyecto|Solicitud de nueva funcionalidad|Código fuente|Nuevas características se pueden implementar sin perjudicar al sistema|Tiempo promedio para implementar nuevas características es 1 semana
+|Mantenibilidad|ESC-18|Proceso de QA a módulo|Conformance checker|Notificación de error|Suite de pruebas automatizadas|Suite de pruebas ayuda a identificar problemas rápidamente|Pruebas automatizadas cubren el 90% del total de pruebas
+|Interoperabilidad|ESC-19|Desarrollo de plataforma|Cliente|Solicitud de integración de sistema externo|API|Integración con otro sistema por medio de API|Se logra en 1 semana
 
 
 En la sieguiente tabla se especifican a qué requerimiento están relacionados los escenarios descritos.
