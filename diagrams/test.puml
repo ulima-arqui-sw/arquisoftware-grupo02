@@ -25,23 +25,34 @@ System_Boundary(c1, "Sistema de concursos") {
     ' FRONTEND
     Container(webapp, "Webapp", "Javascript, React", "Aplicacion web que permitirá interactuar a los usuarios")
     ' BACKEND 
+    Container(gateway, "Gateway", "Node.js", "Aplicacion que gestionará las peticiones de los usuarios", $tags = "servicios")
 
     System_Boundary(c1_1, "microservicio de concursos"){
-        Container(gestor_concursos, "Gestor de concursos", "javascript, express.js", "Brindar los servicios para poder participar en los concursos y brindar la información de de estos", $tags = "servicios")
-        Container(admin_concursos, "Admin de concursos", "javascript, express.js", "Módulo que brindará la adminstración de los concursos", $tags = "servicios")
-        Container(concurso, "Concurso", "javascript, express.js", "Módulo que gestionará los concursos en ejecución", $tags = "servicios")
+        Container(concurso, "Modulo de concursos", "javascript, express.js", "Módulo que gestionará los concursos en ejecución", $tags = "servicios")
+        ContainerDb(base_concurso, "Base relacional", "PostgreSQL", "", $tags = "base")
     }
 
     System_Boundary(c1_2, "microservicio de comunicación"){
         Container(comunicacion, "Comunicación y notificaciones", "javascript, express.js", "Módulo que gestionará la comunicación entre los participantes y el juez", $tags = "servicios")
+        ContainerDb(base_comunicacion, "Base no relacional", "MongoDB", "", $tags = "base")
     }
 
     System_Boundary(c1_3, "microservicio de usuario"){
         Container(auth, "Usuario", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+        ContainerDb(base_usuario, "Base relacional", "PostgreSQL", "", $tags = "base")
     }
+
+    System_Boundary(c1_4, "microservicio de participante"){
+        Container(participante, "Participante", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+        ContainerDb(base_participante, "Base no relacional", "MongoDB", "", $tags = "base")
+    }
+
+    System_Boundary(c1_5, "microservicio de administrador"){
+        Container(administrador, "administrador", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+        ContainerDb(base_administrador, "Base no relacional", "MongoDB", "", $tags = "base")
+    }
+
     ' BASES DE DATOS
-    ContainerDb(norelational_db, "Base no relacional", "DynamoDB ", "", $tags = "base")
-    ContainerDb(relational_db, "Base relacional", "PostgreSQL", "", $tags = "base")
 }
 
 System_Boundary(c2, "Sistema de juez"){
@@ -50,29 +61,36 @@ System_Boundary(c2, "Sistema de juez"){
     ContainerDb(juez_db, "Juez Database", "PostgreSQL", "Almacena los programas que han sido ejecutados por le juez", $tags = "base")
 }
 
+' gateway -> webapp
+Rel(webapp, gateway, "Obtiene información", "REST")
+' gateway servicios
+Rel(gateway, concurso, "Obtiene información", "REST")
+Rel(gateway, comunicacion, "Obtiene información", "REST")
+Rel(gateway, auth, "Obtiene información", "REST")
+Rel(gateway, participante, "Obtiene información", "REST")
+Rel(gateway, administrador, "Obtiene información", "REST")
+' concursos 
+Rel(concurso, base_concurso, "Almacena datos", "pg")
+' comunicacion
+Rel(comunicacion, base_comunicacion, "Almacena datos", "mongoose")
+' auth
+Rel(auth, base_usuario, "Almacena datos", "pg")
+' participante
+Rel(participante, base_participante, "Almacena datos", "mongoose")
+' administrador
+Rel(administrador, base_administrador, "Almacena datos", "mongoose")
+
+
 Rel(customer, webapp, "Usa", "HTTPS")
 Rel(admin, webapp, "Usa", "HTTPS")
 Rel(anonimo, webapp, "Usa", "HTTPS")
 
 Rel(webapp, auth, "Autentifica y autoriza al usuario", "REST")
-Rel(gestor_concursos, auth, "Autentifica y autoriza al usuario", "REST")
-Rel(admin_concursos, auth, "Autentifica y autoriza al usuario", "REST")
+Rel(concurso, auth, "Autentifica y autoriza al usuario", "REST")
+Rel(administrador, auth, "Autentifica y autoriza al usuario", "REST")
 Rel(concurso, auth, "Autentifica y autoriza al usuario", "REST")
 Rel(comunicacion, auth, "Autentifica y autoriza al usuario", "REST")
 
-Rel(webapp, comunicacion, "recibe mensajes", "REST")
-Rel(webapp, gestor_concursos, "obtiene información de los concursos", "REST")
-Rel(webapp, admin_concursos, "administra los concursos", "REST")
-Rel(webapp, concurso, "participa en los concursos", "REST")
-
-Rel(auth, relational_db, "Almacena datos", "pg")
-Rel(gestor_concursos, relational_db, "Almacena datos", "pg")
-Rel(admin_concursos, relational_db, "Almacena datos", "pg")
-
-Rel(gestor_concursos, norelational_db, "Almacena datos", "mongoose")
-Rel(admin_concursos, norelational_db, "Almacena datos", "mongoose")
-Rel(concurso, norelational_db, "Almacena datos", "mongoose")
-Rel(comunicacion, norelational_db, "Almacena datos", "mongoose")
 
 
 Rel(queue_juez, juez, "Envía eventos", "REST")
@@ -81,23 +99,6 @@ Rel(juez, juez_db, "Almacena datos", "sqlite")
 Rel(juez, concurso, "Envía resultados", "REST")
 
 Rel(concurso, queue_juez, "Envía eventos", "REST")
-
-
-' Rel_D(customer, app, "Uses", "HTTPS")
-
-' Rel_D(app, customer_service, "Updates customer information using", "async, JSON/HTTPS")
-
-' Rel_U(customer_service, app, "Sends events to", "WebSocket")
-' Rel_U(customer_service, message_bus, "Sends customer update events to")
-' Rel(customer_service, customer_db, "Stores data in", "JDBC")
-
-' Rel(message_bus, reporting_service, "Sends customer update events to")
-' Rel(message_bus, audit_service, "Sends customer update events to")
-
-' Rel(reporting_service, reporting_db, "Stores data in")
-' Rel(audit_service, audit_store, "Stores events in")
-
-' Lay_R(reporting_service, audit_service)
 
 SHOW_LEGEND()
 @enduml
