@@ -357,7 +357,7 @@ Para la tecnología que se a utilizar es la siguiente
 
 | Atributo        | Táctica         | Acción                                          | Descripción                                     |
 |-----------------|-----------------|---------------------------------|------------------------------------------------------------------|
-| Escalabilidad   | Duplicación horizontal (auto-escalaimento proactivo) | Activación automática de servidores adicionales   | Aumentar recursos de manera automática para manejar la demanda.  |
+| Escalabilidad   | Duplicación horizontal (auto-escalaimento proactivo) | Activación automática de servidores adicionales  | Aumentar recursos de manera automática para manejar la demanda.  |
 | Escalabilidad   | Duplicación horizontal (auto-escalamiento reactivo)| Ampliación de capacidad de almacenamiento del servidor | Incrementar la capacidad de almacenamiento según sea necesario.  |
 | Usabilidad      |  Mantenimiento del modelo del sistema | Barra de carga de progreso al subir archivos | En la carga de los problemas, debería aparecer la barra de carga|
 | Usabilidad      | Iniciativa de soporte de usuario-Undo | Guardar el estado del codigo fuente   | Guardar el estado en el que se estuvo el codigo fuente antes de salir de la página |
