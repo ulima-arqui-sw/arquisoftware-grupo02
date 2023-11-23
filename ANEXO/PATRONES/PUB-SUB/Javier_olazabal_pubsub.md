@@ -20,3 +20,6 @@ El patrón Pub/Sub es un modelo de mensajería en el que los componentes de un s
 * **Juegos en tiempo real**: Juegos en linea com movimientos, cambios del entorno, tc. Se publican en un canal y los clientes se suscriben para recibir actualizaciones en tiempo real.  
 
 ## Vídeo
+
+https://github.com/ulima-arqui-sw/grupo02/assets/69092637/b5baa613-0aef-4be6-94f5-c8e408c5e949
+
