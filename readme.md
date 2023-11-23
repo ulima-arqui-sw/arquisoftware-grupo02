@@ -106,7 +106,7 @@ El equipo detrás de Ulitorneos está compuesto por cuatro miembros clave. Javie
 
 #### Requerimientos funcionales del cliente
 
-| Identificador | Descripción                                       |
+| Identificador | Descripción                                      |
 |---------------|---------------------------------------------------|
 | US10          | Como cliente, quiero poder crear mi concurso de programación con la cantidad de participantes, el tiempo del concurso, las fechas límites del concurso y las características como los títulos, descripciones, etc. |
 | US11          | Como cliente, debería poder subir los problemas para el concurso que he creado junto a sus casos de prueba y los límites que este necesita. |
