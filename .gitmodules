@@ -1,0 +1,3 @@
+[submodule "grupo02-backend"]
+	path = grupo02-backend
+	url = https://github.com/ItsJavito/grupo02-as-backend.git
