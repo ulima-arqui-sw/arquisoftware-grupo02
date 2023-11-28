@@ -375,8 +375,140 @@ Para la tecnología que se a utilizar es la siguiente
 
 ## 5. Propuesta de Arquitectura 
 Propuesta de arquitectura inicial
-![architecture](diagrams/architecture-diagram-aws.png)
+![architecture](diagrams/architecture.png)
 
-## 6. Referencias
+
+## 6. ADD 
+### Iteración 1:
+
+#### a. Revisar las Entradas:
+
+- *Objetivos Principales:*
+  - Garantizar buena disponibilidad para participantes y la organización.
+  
+- *Escenarios de Calidad:*
+  - *Disponibilidad Constante:*
+    - Asegurar que la plataforma esté siempre disponible para participantes y organizadores.
+  - *Manejo Eficiente de Carga:*
+    - Garantizar que el sistema pueda manejar picos de carga, especialmente durante concursos con alta participación.
+
+#### b. Iteraciones de ADD:
+
+*i. Identificar el Elemento del Sistema:*
+   - Juez en línea y Administración de Usuarios.
+
+*ii. Identificar Requerimientos Relevantes:*
+   - Soporte para Múltiples Envíos de Código:
+     - Diseñar el juez para manejar eficientemente múltiples envíos simultáneos sin caídas.
+   - Rápido y Resistente a Caídas:
+     - Implementar microservicios para el juez y conectarlos a un load balancer para mejorar velocidad y resistencia.
+   - Arquitectura de Microservicios con Load Balancer:
+     - Utilizar microservicios para problemas, concursos, usuarios y el juez, con un load balancer para distribuir la carga.
+   - Uso de un API Gateway (Kong):
+     - Conectar todos los servicios al API Gateway para facilitar la gestión y aplicar rate limiting.
+
+*iii. Generar un Diseño de Solución:*
+   - Implementación de microservicios para cada componente identificado.
+   - Configuración de un API Gateway (Kong) para facilitar la gestión y aplicar rate limiting.
+   - Utilización de un load balancer para distribuir la carga entre múltiples instancias del juez.
+
+*iv. Verificar Requerimientos:*
+   - Identificación de la mejora de la conexión como un requisito adicional.
+
+*v. Repetir el Proceso:*
+   - Se identifican mejoras en la conexión como un nuevo requerimiento.
+
+### Iteración 2:
+
+#### a. Revisar las Entradas:
+
+- *Objetivos Principales:*
+  - Mejorar la conexión.
+
+#### b. Iteraciones de ADD:
+
+*i. Identificar el Elemento del Sistema:*
+   - API Gateway.
+
+*ii. Identificar Requerimientos Relevantes:*
+   - Conectar Todos los Microservicios al API Gateway:
+     - Asegurar una conexión eficiente y segura entre los servicios y el API Gateway.
+   - Abordar Requerimientos Restantes:
+     - Resolver los requerimientos que aún no se han cubierto.
+
+*iii. Generar un Diseño de Solución:*
+   - Conectar cada microservicio al API Gateway.
+   - Abordar los requerimientos adicionales identificados.
+
+*iv. Verificar Requerimientos:*
+   - Se abordan la mayoría de los requerimientos, pero algunos aún faltan.
+
+*v. Repetir el Proceso:*
+   - Se reconoce que abordar algunos requerimientos es más difícil de lo esperado.
+
+### Iteración 3:
+
+#### a. Revisar las Entradas:
+
+- *Objetivos Principales:*
+  - Hacer frente a la dificultad identificada en la iteración anterior.
+
+#### b. Iteraciones de ADD:
+
+*i. Identificar el Elemento del Sistema:*
+   - Levantamiento de los Servicios en Docker.
+
+*ii. Identificar Requerimientos Relevantes:*
+   - Limitar el Número de Peticiones:
+     - Implementar rate limiting para controlar la carga del sistema.
+   - Orquestar el Despliegue con Docker Compose:
+     - Lograr un despliegue más ordenado y controlado utilizando Docker Compose.
+
+*iii. Generar un Diseño de Solución:*
+   - Levantar servicios en Docker para facilitar el despliegue y la gestión.
+   - Implementar límites de tasa para controlar el tráfico.
+   - Orquestar el despliegue con Docker Compose para una implementación más ordenada.
+
+*iv. Verificar Requerimientos:*
+   - Se abordan la mayoría de los requerimientos, pero algunos aún faltan.
+
+*v. Repetir el Proceso:*
+   - Hacer un despliegue más ordenado es identificado como un nuevo requerimiento.
+
+### Evaluación Final:
+
+#### a. Con Retroalimentación al Final de la Iteración:
+
+- Se recopila retroalimentación al final de cada iteración para mejorar procesos futuros.
+
+#### b. Conclusiones:
+
+*i. Arquitectura Actual:*
+   - Utilización efectiva de microservicios, API Gateway (Kong), y Docker.
+   - Implementación de rate limiting y load balancing.
+
+*ii. Desafíos Superados:*
+   - Mejora en la conexión.
+   - Conexión efectiva al API Gateway.
+   - Despliegue exitoso en Docker.
+
+*iii. Decisiones de Arquitectura:*
+   - Microservicios y API Gateway se adaptan bien al proyecto.
+   - Rate limiting y Docker son beneficiosos para el sistema.
+
+*iv. Lecciones Aprendidas:*
+   - Algunos requisitos resultaron más difíciles de implementar de lo esperado.
+   - La retroalimentación al final de cada iteración es crucial.
+
+*v. Próximos Pasos:*
+   - Abordar los requerimientos restantes.
+   - Implementar un despliegue más ordenado.
+
+Este enfoque detallado debería proporcionar una guía más completa para la implementación de tu arquitectura. Si tienes alguna pregunta adicional o ajustes específicos, estoy aquí para ayudar.
+
+## 7. Diagrama de demo
+![imagen_demo](diagrams/diagrama_final.png)
+
+## 8. Referencias
 
 * Li, S., Zhang, H., Jia, Z., Zhong, C., Zhang, C., Shan, Z., Shen, J., & Babar, M. A. (2021). Understanding and addressing quality attributes of microservices architecture: A Systematic literature review. In Information and Software Technology (Vol. 131, p. 106449). Elsevier BV. https://doi.org/10.1016/j.infsof.2020.106449
