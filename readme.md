@@ -266,15 +266,11 @@ Ademas, los modulos se comunicarán mediante microservicios, los que falicitará
 
 Se utilizarán bases de datos relacionales y no relacionales. 
 
-* **Base de datos relacional**: 
-  * *Gestión de usuarios*
-  * *Detalles del concurso* 
-  * *Preguntas y pruebas* 
-
-![bd_relacional](diagrams/bd_relacional.png)
-
 * **Base de datos no relacional (NoSQL)**:
-  * *Evaluación de soluciones*
+  * *Usuarios*
+  * *Concursos de codigo*
+  * *Problemas de codigo*
+  * *envios de codigo*
   * *Estadística y clasificaciones*
   * *Comunicación y Notificaciones*
 
@@ -289,8 +285,6 @@ Se utilizarán bases de datos relacionales y no relacionales.
 Para la tecnología que se a utilizar es la siguiente
 
 **Express.js**: Debido a su sencillez, rendimiento eficiente aprovechando Node.js, su arquitectura de middleware, flexibilidad para la integración de bibliotecas y herramientas, soporte de enrutamiento y WebSockets. Permite el manejo de aplicaciones backend de alta intensidad lo que es ideal como marco de trabajo para el lado del servidor de nuestro sistema de juez online. 
-
-**PostgreSQL**: Su robustez, confiabilidad y versatibilidad como sistema de gestión de base de datos relacionales son una de las características que hacen de esta tecnología ideal para el sistema. Es una elección sólida como motor de base de datos para los datos que requieran esa integridad. 
 
 **Reactjs**: posee un rendimiento y facildiad de desarrollo en aplicaciones web que lo hacen ideal como marco de trabajo desde el lado del cliente, además que utiliza una arquitectura basada en componentes que facilita la creación de interfaces. 
 
@@ -375,7 +369,7 @@ Para la tecnología que se a utilizar es la siguiente
 
 ## 5. Propuesta de Arquitectura 
 Propuesta de arquitectura inicial
-![architecture](diagrams/architecture.png)
+![architecture](diagrams/diagrama_final.png)
 
 
 ## 6. ADD 
@@ -465,7 +459,7 @@ Propuesta de arquitectura inicial
      - Lograr un despliegue más ordenado y controlado utilizando Docker Compose.
 
 *iii. Generar un Diseño de Solución:*
-   - Levantar servicios en Docker para facilitar el despliegue y la gestión.
+   - Levantar servicios en Docker pazra facilitar el despliegue y la gestión.
    - Implementar límites de tasa para controlar el tráfico.
    - Orquestar el despliegue con Docker Compose para una implementación más ordenada.
 
@@ -505,9 +499,6 @@ Propuesta de arquitectura inicial
    - Implementar un despliegue más ordenado.
 
 Este enfoque detallado debería proporcionar una guía más completa para la implementación de tu arquitectura. Si tienes alguna pregunta adicional o ajustes específicos, estoy aquí para ayudar.
-
-## 7. Diagrama de demo
-![imagen_demo](diagrams/diagrama_final.png)
 
 ## 8. Referencias
 
