@@ -373,18 +373,67 @@ Propuesta de arquitectura inicial
 
 
 ## 6. ADD 
+
+### DRIVERS DE ARQUITECTURA
+
+- Funcionalidad primaria:
+   - UC-01 Registro de usuario
+   - UC-02 Modificar datos personales
+   - UC-03 Cerrar sesión
+   - UC-04 Visualizar problemas
+   - UC-05 Visualización del tiempo del concurso
+   - UC-06 Subir solución
+   - UC-07 Visualización del tiempo del concurso
+   - UC-08 Visualizar resultados
+   - UC-09 Visualizar puntajes globales
+   - UC-10 Crear concurso de programación
+   - UC-11 Subir problemas
+   - UC-12 Modificar concurso
+   - UC-13 Personalizar entorno
+   - UC-14 Solicitar Soporte
+   - UC-15 Solicitar reunión para envío de solicitudes
+   - UC-16 Actualizar o cancelación suscripción
+   - UC-17 Prueba personalizada que sea resulta en cualquier horario
+ 
+
+
+- Preocupaciones a nivel de arquitectura:
+
+
+
+- Escenarios de calidad:
+ 
+   - ESC-23 Se realizan cambios en el código base
+   - ESC-04 Uno de los servidores de la plataformas se cae
+   - ESC-17 Aumento repentino en la participación en el inicio de un concurso.
+   - ESC-18 Varios concursos en el mismo período
+   - ESC-31 Intento de visualizar los concursos disponibles sin haber ninguno en la BD
+   - ESC-28 Se introduce errores inesperados
+   - ESC-06 Envío de soluciones altamente complejos
+   - ESC-09 Inicio de sesión fallido
+   - ESC-16 Se notifica en caso se requiera ayuda o se encuentre un error en los retos del torneo
+   - ESC-20 Participante intenta enviar código malicioso
+   - ESC-26 Se introduce una configuración incorrecta durante una actualización
+ 
+- Requerimientos internos:
+
+   
+- Restricciones:
+   - CON-1 Tecnologías Propias: Nosotros desarrollamos todas las tecnologías internamente, incluyendo el marco de trabajo y las políticas de seguridad.
+   - CON-2 Base de Datos Relacional: Utilizaremos una base de datos relacional para almacenar datos críticos del usuario y resultados de competencias.
+   - CON-3 Servidores Propios: Todos los servidores y recursos de la plataforma estarán desplegados en la nube.
+   - CON-4 Política de Seguridad Rigurosa: Implementaremos una política de seguridad rigurosa que incluye autenticación de dos factores y cifrado de datos en reposo y en tránsito.
+
+
 ### Iteración 1:
 
-#### a. Revisar las Entradas:
+Propósito | Funcionalidad primaria | Escenarios de calidad (del QAW) | Restricciones y preocupaciones
+--- | --- | --- |---
+Implementacion de estructuras que den soporte a la funcionalidad primaria. | UC-1, UC-5 soportan las funcionalidades anteriores | QA-6, QA-9, QA-11, QA-13, QA-15, QA-16 | CON-3, CON-4, CON-5, CON-6
 
 - *Objetivos Principales:*
-  - Garantizar buena disponibilidad para participantes y la organización.
+  - En base a las entradas especificadas, el objetivo de esta primera iteración es realizar un diseño inicial de la estructura de la plataforma, abarcando los atributos más importantes de disponibilidad, rendimiento y seguridad
   
-- *Escenarios de Calidad:*
-  - *Disponibilidad Constante:*
-    - Asegurar que la plataforma esté siempre disponible para participantes y organizadores.
-  - *Manejo Eficiente de Carga:*
-    - Garantizar que el sistema pueda manejar picos de carga, especialmente durante concursos con alta participación.
 
 #### b. Iteraciones de ADD:
 
