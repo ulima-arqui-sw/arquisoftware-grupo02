@@ -101,3 +101,5 @@
  insert into ejercicio_b (creditos_curso, nota_exam, idE_estudiante, titulo_curso,   profesor_curso ) values ( 10,'A',203,'Español moderno',	'Isabel Sanz');`
 - Ver tabla
   - `select * from ejercicio_b`
+
+Link video demo: https://drive.google.com/file/d/1ErH4lokSs3vR4iwVUV469_iBmLykpDcg/view?usp=sharing
