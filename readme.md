@@ -561,3 +561,30 @@ No Abordado | Parcialmente Abordado | Completamente Abordado | Decisión de dise
 | |ESC-26 | |DEC-1
 | | | CON-3 | DEC-2
 | | CON-4 | |DEC-1
+
+### Evaluación Final:
+#### a. Con Retroalimentación al Final de la Iteración:
+- Se recopila retroalimentación al final de cada iteración para mejorar procesos futuros.
+#### b. Conclusiones:
+*i. Arquitectura Actual:*
+   - Utilización efectiva de microservicios, API Gateway (Kong), y Docker.
+   - Implementación de rate limiting y load balancing.
+*ii. Desafíos Superados:*
+   - Mejora en la conexión.
+   - Conexión efectiva al API Gateway.
+   - Despliegue exitoso en Docker.
+*iii. Decisiones de Arquitectura:*
+   - Microservicios y API Gateway se adaptan bien al proyecto.
+   - Rate limiting y Docker son beneficiosos para el sistema.
+*iv. Lecciones Aprendidas:*
+   - Algunos requisitos resultaron más difíciles de implementar de lo esperado.
+   - La retroalimentación al final de cada iteración es crucial.
+*v. Próximos Pasos:*
+   - Abordar los requerimientos restantes.
+   - Implementar un despliegue más ordenado.
+Este enfoque detallado debería proporcionar una guía más completa para la implementación de tu arquitectura. Si tienes alguna pregunta adicional o ajustes específicos, estoy aquí para ayudar.
+## 8. Referencias
+* Li, S., Zhang, H., Jia, Z., Zhong, C., Zhang, C., Shan, Z., Shen, J., & Babar, M. A. (2021). Understanding and addressing quality attributes of microservices architecture: A Systematic literature review. In Information and Software Technology (Vol. 131, p. 106449). Elsevier BV. https://doi.org/10.1016/j.infsof.2020.106449
+
+
+
