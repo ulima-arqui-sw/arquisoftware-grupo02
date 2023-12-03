@@ -398,7 +398,9 @@ Propuesta de arquitectura inicial
 
 
 - Preocupaciones a nivel de arquitectura:
-
+   - CRN-1 Una arquitectura Resistente a Caídas
+   - CRN-2 Velocidad de carga rapida
+   - CRN-3 Mantenga una gestion centralizada de APIs
 
 
 - Escenarios de calidad:
@@ -415,9 +417,6 @@ Propuesta de arquitectura inicial
    - ESC-20 Participante intenta enviar código malicioso
    - ESC-26 Se introduce una configuración incorrecta durante una actualización
  
-- Requerimientos internos:
-
-   
 - Restricciones:
    - CON-1 Tecnologías Propias: Nosotros desarrollamos todas las tecnologías internamente, incluyendo el marco de trabajo y las políticas de seguridad.
    - CON-2 Base de Datos Relacional: Utilizaremos una base de datos relacional para almacenar datos críticos del usuario y resultados de competencias.
@@ -425,16 +424,141 @@ Propuesta de arquitectura inicial
    - CON-4 Política de Seguridad Rigurosa: Implementaremos una política de seguridad rigurosa que incluye autenticación de dos factores y cifrado de datos en reposo y en tránsito.
 
 
-### Iteración 1:
+## Iteración 1:
 
 Propósito | Funcionalidad primaria | Escenarios de calidad (del QAW) | Restricciones y preocupaciones
 --- | --- | --- |---
-Implementacion de estructuras que den soporte a la funcionalidad primaria. | UC-1, UC-5 soportan las funcionalidades anteriores | QA-6, QA-9, QA-11, QA-13, QA-15, QA-16 | CON-3, CON-4, CON-5, CON-6
+Plataforma desde 0. Se busca realizar el diseño de la arquitectura inicial. |UC-04, UC-06, UC-10, UC-11, UC-17 | ESC-31, ESC-04, ESC-06, ESC-20| CON-1, CON-2, CRN-1, CRN-2
 
-- *Objetivos Principales:*
+### Objetivos Principales:
+
   - En base a las entradas especificadas, el objetivo de esta primera iteración es realizar un diseño inicial de la estructura de la plataforma, abarcando los atributos más importantes de disponibilidad, rendimiento y seguridad
   
+### Elegir uno o más elementos del sistema a refinar
+No hay elementos a refinar, pues se está diseñando el sistema desde 0.
 
+Diagrama de contexto:
+
+
+![imagen](diagrams/diagrama%20arquitectura.png)
+
+
+### Elegir uno o más conceptos de diseño que satisfacen el driver seleccionado
+
+ID | Decisión de diseño | Fundamento
+--- | --- | ---
+DEC-1 | Load Balancer    |herramienta fundamental para lograr escalabilidad y alta disponibilidad al distribuir de manera inteligente las solicitudes entre múltiples servidores, mitigar fallos y garantizar un rendimiento óptimo de la aplicación.
+DEC-2 | Base de datos relacion y no relacional (NoSQL) | Utilizaremos una base de datos relacional para almacenar datos críticos del usuario y resultados de competencias.
+DEC-3 | Express.js | Permite el manejo de aplicaciones backend de alta intensidad lo que es ideal como marco de trabajo para el lado del servidor de nuestro sistema de juez online.
+DEC-4 | DynamoDB | Ofrece escabilidad automática según la demanda. Garantiza un rendimiento consistente, baja latencia y es altamente disponible.
+DEC-5 | REST | permite una comunicación sencilla entre clientes y servidores a través de solicitudes HTTP, lo que la convierte en una sólida elección para la exposición de servicios web.
+DEC-6 | AWS EC2 | Permite alojar aplicaciones y servicios personalizados, como el backend REST, y administrarlos según las necesidades. Se pueden seleccionar tipos de instancias, sistemas operativos y configuraciones de red personalizadas para adaptarse a la aplicación, lo que es fundamental para la personalización y escalabilidad.
+DEC-7 | AWS cloudfront | Permite acelerar la entrega de recursos estáticos y proporcionar una experiencia de usuario más rápida y receptiva. Además, CloudFront ofrece seguridad y cifrado para proteger los datos en tránsito, garantizando aplicaciones web seguras.
+DEC-9 | API Gateway KONG | Permite exponer eficientemente servicios web como una API REST unificada, fundamental para la exposición de recursos a través de interfaces de usuario web o móviles.
+
+
+
+### Instanciar elementos de arquitectura, asignar responsabilidades y definir interfaces
+
+   - Amazon EC2: Implementacion de un servicio web externo en la nube, principalmente por la facilidad de implementacion de diversos servicios AWS.
+   - API Gateway KONG: herramientala gestión de APIs que proporciona una amplia gama de características para aquellos que trabajan con arquitecturas de microservicios y APIs  
+   - DynamoDB: Este servicio de AWS nos elimina la complejidad de adminisatrar una base de datos nosql a gran escala.
+
+###  Bosquejar vistas y registrar decisiones de diseño
+wwwwwwwwwwwwwwwwwww
+###  Analizar el diseño actual, revisar objetivo de la iteración y logro del propósito de diseño
+No Abordado | Parcialmente Abordado | Completamente Abordado | Decisión de diseño
+--- | --- | --- | ---
+| |UC-4 | |DEC-2, DEC-3, DEC-4, DEC-5
+| | UC-6 | |DEC-2, DEC-3, DEC-4, DEC-5, DEC-7
+| | UC-10 | |DEC-2, DEC-3, DEC-4, DEC-5
+| | UC-11 | |DEC-2, DEC-3, DEC-4, DEC-5, DEC-7
+| || ESC-4| DEC-1,DEC-6
+ESC-6
+ESC-20
+ESC-31
+| | | CON-1 | DEC-6, DEC-7, DEC-8
+| | CON-2  | |
+CRN-1
+CRN-2
+## Iteración 2:
+
+Propósito | Funcionalidad primaria | Escenarios de calidad (del QAW) | Restricciones y preocupaciones
+--- | --- | --- |---
+soporte a l afuncionalidad primaria |UC-04, UC-06, UC-10, UC-11, UC-17 |UC-01,  UC-13, UC-12, UC-02, ESC-09 , ESC-18 ,  UC-16| CON-4
+
+### Objetivos Principales:
+ Nos centraremos en el desarrollo de estructuras que respalden la funcionalidad principal.
+
+### Elegir uno o más elementos del sistema a refinar
+
+Refinar las decisiones de arquitectura de la iteracion 1 asi como el componente de soporte de ayuda.
+
+### Elegir uno o más conceptos de diseño que satisfacen el driver seleccionado
+
+ID | Decisión de diseño | Fundamento
+--- | --- | ---
+DEC-5 | AWS Lambda|simplifica la implementación de lógica de negocio y el manejo de solicitudes REST de manera escalable, sin preocuparse por la administración de servidores. Esto facilita el desarrollo, la escalabilidad y la administración de aplicaciones.
+DEC-5 | AWS ElastiCache | mejora el rendimiento de aplicaciones REST al permitir el almacenamiento en caché de respuestas y recursos costosos de procesar.
+DEC-5 | Reactjs | Posee un rendimiento y facildiad de desarrollo en aplicaciones web que lo hacen ideal como marco de trabajo desde el lado del cliente, además que utiliza una arquitectura basada en componentes que facilita la creación de interfaces.
+DEC-8 | AWS AmazonMQ | Facilita la gestión de colas de mensajes y la integración de sistemas mediante la mensajería, que es esencial para escenarios en los que la asincronía es crucial.
+###  Instanciar elementos de arquitectura, asignar responsabilidades y definir interfaces
+
+   - AWS Lambda: un servicio de cómputo sin servidor, permite ejecutar código en respuesta a eventos.
+   - AWS ElastiCache: es un servicio de almacenamiento en caché que mejora el rendimiento de aplicaciones REST al permitir el almacenamiento en caché de respuestas y recursos costosos de procesar.
+
+###  Bosquejar vistas y registrar decisiones de diseño
+
+###  Analizar el diseño actual, revisar objetivo de la iteración y logro del propósito de diseño
+No Abordado | Parcialmente Abordado | Completamente Abordado | Decisión de diseño
+--- | --- | --- | ---
+UC-1
+| | UC-5 | | DEC-9
+| | QA-6 | | DEC-9
+| | QA-9 | |
+QA-11
+QA-13
+QA-15
+QA-16
+| | | CON-3 | DEC-6, DEC-7, DEC-8
+| | CON-4 | |
+CON-5
+CON-6
+
+## Iteración 3:
+
+Propósito | Funcionalidad primaria | Escenarios de calidad (del QAW) | Restricciones y preocupaciones
+--- | --- | --- |---
+Enfoque en refinar los ultimos componentes y las iteraciones anteriores. | UC-6 | QA-3, QA-5, QA-10, QA-17 | CRN-2, CRN-3, CON-2, CON-4, CON-5, CON-6
+### Objetivos Principales:
+En esta tercera fase de desarrollo, el objetivo es mejorar y perfeccionar las iteraciones previas, centrándonos en abordar los restantes escenarios relacionados con los atributos de calidad. En particular, se ha optado por perfeccionar el atributo de Disponibilidad.
+
+### Elegir uno o más elementos del sistema a refinar
+
+### Elegir uno o más conceptos de diseño que satisfacen el driver seleccionado
+ID | Decisión de diseño | Fundamento
+--- | --- | ---
+DEC-5 | AWS cognito | Agrega autenticación de usuarios, gestión de perfiles y seguridad a los recursos de la API. Es esencial para proteger los servicios y garantizar que solo los usuarios autorizados tengan acceso.
+###  Instanciar elementos de arquitectura, asignar responsabilidades y definir interfaces
+
+
+###  Bosquejar vistas y registrar decisiones de diseño
+
+###  Analizar el diseño actual, revisar objetivo de la iteración y logro del propósito de diseño
+No Abordado | Parcialmente Abordado | Completamente Abordado | Decisión de diseño
+--- | --- | --- | ---
+UC-1
+| | UC-5 | | DEC-9
+| | QA-6 | | DEC-9
+| | QA-9 | |
+QA-11
+QA-13
+QA-15
+QA-16
+| | | CON-3 | DEC-6, DEC-7, DEC-8
+| | CON-4 | |
+CON-5
+CON-6
 #### b. Iteraciones de ADD:
 
 *i. Identificar el Elemento del Sistema:*
