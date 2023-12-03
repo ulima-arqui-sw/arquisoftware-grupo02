@@ -428,7 +428,7 @@ Propuesta de arquitectura inicial
 
 Propósito | Funcionalidad primaria | Escenarios de calidad (del QAW) | Restricciones y preocupaciones
 --- | --- | --- |---
-Plataforma desde 0. Se busca realizar el diseño de la arquitectura inicial. |UC-04, UC-06, UC-10, UC-11, UC-17 | ESC-31, ESC-04, ESC-06, ESC-20| CON-1, CON-2, CRN-1, CRN-2
+Plataforma desde 0. Se busca realizar el diseño de la arquitectura inicial. |UC-04,, UC-05 UC-06, UC-10, UC-11, UC-17 | ESC-31,ESC-18, ,ESC-17 ESC-04, ESC-06, ESC-20| CON-1, CON-2, CRN-1, CRN-2
 
 ### Objetivos Principales:
 
@@ -454,7 +454,7 @@ DEC-4 | DynamoDB | Ofrece escabilidad automática según la demanda. Garantiza u
 DEC-5 | REST | permite una comunicación sencilla entre clientes y servidores a través de solicitudes HTTP, lo que la convierte en una sólida elección para la exposición de servicios web.
 DEC-6 | AWS EC2 | Permite alojar aplicaciones y servicios personalizados, como el backend REST, y administrarlos según las necesidades. Se pueden seleccionar tipos de instancias, sistemas operativos y configuraciones de red personalizadas para adaptarse a la aplicación, lo que es fundamental para la personalización y escalabilidad.
 DEC-7 | AWS cloudfront | Permite acelerar la entrega de recursos estáticos y proporcionar una experiencia de usuario más rápida y receptiva. Además, CloudFront ofrece seguridad y cifrado para proteger los datos en tránsito, garantizando aplicaciones web seguras.
-DEC-9 | API Gateway KONG | Permite exponer eficientemente servicios web como una API REST unificada, fundamental para la exposición de recursos a través de interfaces de usuario web o móviles.
+
 
 
 
@@ -474,18 +474,19 @@ No Abordado | Parcialmente Abordado | Completamente Abordado | Decisión de dise
 | | UC-10 | |DEC-2, DEC-3, DEC-4, DEC-5
 | | UC-11 | |DEC-2, DEC-3, DEC-4, DEC-5, DEC-7
 | || ESC-4| DEC-1,DEC-6
-ESC-6
+| | ESC-6| |DEC-7
 ESC-20
-ESC-31
+| |ESC-31 | |DEC-2, DEC-3, DEC-4, DEC-5
+| |ESC-17 | |DEC-1,DEC-6
 | | | CON-1 | DEC-6, DEC-7, DEC-8
 | | CON-2  | |
-CRN-1
-CRN-2
+| |CRN-1 | | DEC-1, DEC-7, DEC-8
+| || CRN-2| DEC-2, DEC-3, DEC-4, DEC-5
 ## Iteración 2:
 
 Propósito | Funcionalidad primaria | Escenarios de calidad (del QAW) | Restricciones y preocupaciones
 --- | --- | --- |---
-soporte a l afuncionalidad primaria |UC-04, UC-06, UC-10, UC-11, UC-17 |UC-01,  UC-13, UC-12, UC-02, ESC-09 , ESC-18 ,  UC-16| CON-4
+soporte a l afuncionalidad primaria |UC-01, UC-02, UC-03,UC-13, UC-14 , UC-04 ,UC-07, UC-08 , UC-09|ESC-09 ESC-16| 
 
 ### Objetivos Principales:
  Nos centraremos en el desarrollo de estructuras que respalden la funcionalidad principal.
@@ -498,10 +499,11 @@ Refinar las decisiones de arquitectura de la iteracion 1 asi como el componente 
 
 ID | Decisión de diseño | Fundamento
 --- | --- | ---
-DEC-5 | AWS Lambda|simplifica la implementación de lógica de negocio y el manejo de solicitudes REST de manera escalable, sin preocuparse por la administración de servidores. Esto facilita el desarrollo, la escalabilidad y la administración de aplicaciones.
-DEC-5 | AWS ElastiCache | mejora el rendimiento de aplicaciones REST al permitir el almacenamiento en caché de respuestas y recursos costosos de procesar.
-DEC-5 | Reactjs | Posee un rendimiento y facildiad de desarrollo en aplicaciones web que lo hacen ideal como marco de trabajo desde el lado del cliente, además que utiliza una arquitectura basada en componentes que facilita la creación de interfaces.
-DEC-8 | AWS AmazonMQ | Facilita la gestión de colas de mensajes y la integración de sistemas mediante la mensajería, que es esencial para escenarios en los que la asincronía es crucial.
+DEC-1 | AWS Lambda|simplifica la implementación de lógica de negocio y el manejo de solicitudes REST de manera escalable, sin preocuparse por la administración de servidores. Esto facilita el desarrollo, la escalabilidad y la administración de aplicaciones.
+DEC-2 | AWS ElastiCache | mejora el rendimiento de aplicaciones REST al permitir el almacenamiento en caché de respuestas y recursos costosos de procesar.
+DEC-3 | Reactjs | Posee un rendimiento y facildiad de desarrollo en aplicaciones web que lo hacen ideal como marco de trabajo desde el lado del cliente, además que utiliza una arquitectura basada en componentes que facilita la creación de interfaces.
+DEC-4 | AWS AmazonMQ | Facilita la gestión de colas de mensajes y la integración de sistemas mediante la mensajería, que es esencial para escenarios en los que la asincronía es crucial.
+DEC-5 | Base de datos relacion y no relacional (NoSQL) | Utilizaremos una base de datos relacional para almacenar datos críticos del usuario y resultados de competencias.
 ###  Instanciar elementos de arquitectura, asignar responsabilidades y definir interfaces
 
    - AWS Lambda: un servicio de cómputo sin servidor, permite ejecutar código en respuesta a eventos.
@@ -512,167 +514,50 @@ DEC-8 | AWS AmazonMQ | Facilita la gestión de colas de mensajes y la integraci�
 ###  Analizar el diseño actual, revisar objetivo de la iteración y logro del propósito de diseño
 No Abordado | Parcialmente Abordado | Completamente Abordado | Decisión de diseño
 --- | --- | --- | ---
-UC-1
-| | UC-5 | | DEC-9
-| | QA-6 | | DEC-9
-| | QA-9 | |
-QA-11
-QA-13
-QA-15
-QA-16
-| | | CON-3 | DEC-6, DEC-7, DEC-8
-| | CON-4 | |
-CON-5
-CON-6
+| || UC-1|DEC-1, DEC-2,DEC-3  DEC-5
+| | |UC-2  |DEC-1,DEC-2 ,DEC-3  DEC-5
+| | | UC-3 | DEC-1,DEC-2 ,DEC-3  DEC-5
+| |  | UC-4|DEC-2 ,DEC-3  DEC-5
+| |  | UC-7|DEC-2 ,DEC-3  DEC-5
+| |  | UC-8|DEC-2 ,DEC-3  DEC-5
+| |  | UC-9|DEC-2 ,DEC-3  DEC-5
+| |  | UC-13| DEC-3
+| |  |UC-14 | DEC-3,DEC-4,DEC-2
+| | | ESC-9 | DEC-1, DEC-4
+| |  |ESC-16 | DEC-1, DEC-4
 
 ## Iteración 3:
 
 Propósito | Funcionalidad primaria | Escenarios de calidad (del QAW) | Restricciones y preocupaciones
 --- | --- | --- |---
-Enfoque en refinar los ultimos componentes y las iteraciones anteriores. | UC-6 | QA-3, QA-5, QA-10, QA-17 | CRN-2, CRN-3, CON-2, CON-4, CON-5, CON-6
+Enfoque en refinar los ultimos componentes y las iteraciones anteriores. | UC-12, UC-15, UC-16  | ESC-23, ESC-26 | CON-3, CON-4, CRN-3 
 ### Objetivos Principales:
-En esta tercera fase de desarrollo, el objetivo es mejorar y perfeccionar las iteraciones previas, centrándonos en abordar los restantes escenarios relacionados con los atributos de calidad. En particular, se ha optado por perfeccionar el atributo de Disponibilidad.
+En esta tercera fase de desarrollo, el objetivo es mejorar y perfeccionar las iteraciones previas, centrándonos en abordar los restantes escenarios relacionados con los atributos de calidad. En particular, se ha optado por perfeccionar el atributo de Disponibilidad y Seguridad.
 
 ### Elegir uno o más elementos del sistema a refinar
+
 
 ### Elegir uno o más conceptos de diseño que satisfacen el driver seleccionado
 ID | Decisión de diseño | Fundamento
 --- | --- | ---
-DEC-5 | AWS cognito | Agrega autenticación de usuarios, gestión de perfiles y seguridad a los recursos de la API. Es esencial para proteger los servicios y garantizar que solo los usuarios autorizados tengan acceso.
+DEC-1 | AWS cognito | Agrega autenticación de usuarios, gestión de perfiles y seguridad a los recursos de la API. Es esencial para proteger los servicios y garantizar que solo los usuarios autorizados tengan acceso.
+DEC-2 | API Gateway KONG | Permite exponer eficientemente servicios web como una API REST unificada, fundamental para la exposición de recursos a través de interfaces de usuario web o móviles.
+DEC-3 | REST | permite una comunicación sencilla entre clientes y servidores a través de solicitudes HTTP, lo que la convierte en una sólida elección para la exposición de servicios web.
+DEC-4 | Reactjs | Posee un rendimiento y facildiad de desarrollo en aplicaciones web que lo hacen ideal como marco de trabajo desde el lado del cliente, además que utiliza una arquitectura basada en componentes que facilita la creación de interfaces.
 ###  Instanciar elementos de arquitectura, asignar responsabilidades y definir interfaces
+Se prioriza el refinamiento de la seguridad en la arquitectura asi como el manejo de los diversos servicios
 
+   - AWS cognito ,API Gateway KONG 
 
 ###  Bosquejar vistas y registrar decisiones de diseño
 
 ###  Analizar el diseño actual, revisar objetivo de la iteración y logro del propósito de diseño
 No Abordado | Parcialmente Abordado | Completamente Abordado | Decisión de diseño
 --- | --- | --- | ---
-UC-1
-| | UC-5 | | DEC-9
-| | QA-6 | | DEC-9
-| | QA-9 | |
-QA-11
-QA-13
-QA-15
-QA-16
-| | | CON-3 | DEC-6, DEC-7, DEC-8
-| | CON-4 | |
-CON-5
-CON-6
-#### b. Iteraciones de ADD:
-
-*i. Identificar el Elemento del Sistema:*
-   - Juez en línea y Administración de Usuarios.
-
-*ii. Identificar Requerimientos Relevantes:*
-   - Soporte para Múltiples Envíos de Código:
-     - Diseñar el juez para manejar eficientemente múltiples envíos simultáneos sin caídas.
-   - Rápido y Resistente a Caídas:
-     - Implementar microservicios para el juez y conectarlos a un load balancer para mejorar velocidad y resistencia.
-   - Arquitectura de Microservicios con Load Balancer:
-     - Utilizar microservicios para problemas, concursos, usuarios y el juez, con un load balancer para distribuir la carga.
-   - Uso de un API Gateway (Kong):
-     - Conectar todos los servicios al API Gateway para facilitar la gestión y aplicar rate limiting.
-
-*iii. Generar un Diseño de Solución:*
-   - Implementación de microservicios para cada componente identificado.
-   - Configuración de un API Gateway (Kong) para facilitar la gestión y aplicar rate limiting.
-   - Utilización de un load balancer para distribuir la carga entre múltiples instancias del juez.
-
-*iv. Verificar Requerimientos:*
-   - Identificación de la mejora de la conexión como un requisito adicional.
-
-*v. Repetir el Proceso:*
-   - Se identifican mejoras en la conexión como un nuevo requerimiento.
-
-### Iteración 2:
-
-#### a. Revisar las Entradas:
-
-- *Objetivos Principales:*
-  - Mejorar la conexión.
-
-#### b. Iteraciones de ADD:
-
-*i. Identificar el Elemento del Sistema:*
-   - API Gateway.
-
-*ii. Identificar Requerimientos Relevantes:*
-   - Conectar Todos los Microservicios al API Gateway:
-     - Asegurar una conexión eficiente y segura entre los servicios y el API Gateway.
-   - Abordar Requerimientos Restantes:
-     - Resolver los requerimientos que aún no se han cubierto.
-
-*iii. Generar un Diseño de Solución:*
-   - Conectar cada microservicio al API Gateway.
-   - Abordar los requerimientos adicionales identificados.
-
-*iv. Verificar Requerimientos:*
-   - Se abordan la mayoría de los requerimientos, pero algunos aún faltan.
-
-*v. Repetir el Proceso:*
-   - Se reconoce que abordar algunos requerimientos es más difícil de lo esperado.
-
-### Iteración 3:
-
-#### a. Revisar las Entradas:
-
-- *Objetivos Principales:*
-  - Hacer frente a la dificultad identificada en la iteración anterior.
-
-#### b. Iteraciones de ADD:
-
-*i. Identificar el Elemento del Sistema:*
-   - Levantamiento de los Servicios en Docker.
-
-*ii. Identificar Requerimientos Relevantes:*
-   - Limitar el Número de Peticiones:
-     - Implementar rate limiting para controlar la carga del sistema.
-   - Orquestar el Despliegue con Docker Compose:
-     - Lograr un despliegue más ordenado y controlado utilizando Docker Compose.
-
-*iii. Generar un Diseño de Solución:*
-   - Levantar servicios en Docker pazra facilitar el despliegue y la gestión.
-   - Implementar límites de tasa para controlar el tráfico.
-   - Orquestar el despliegue con Docker Compose para una implementación más ordenada.
-
-*iv. Verificar Requerimientos:*
-   - Se abordan la mayoría de los requerimientos, pero algunos aún faltan.
-
-*v. Repetir el Proceso:*
-   - Hacer un despliegue más ordenado es identificado como un nuevo requerimiento.
-
-### Evaluación Final:
-
-#### a. Con Retroalimentación al Final de la Iteración:
-
-- Se recopila retroalimentación al final de cada iteración para mejorar procesos futuros.
-
-#### b. Conclusiones:
-
-*i. Arquitectura Actual:*
-   - Utilización efectiva de microservicios, API Gateway (Kong), y Docker.
-   - Implementación de rate limiting y load balancing.
-
-*ii. Desafíos Superados:*
-   - Mejora en la conexión.
-   - Conexión efectiva al API Gateway.
-   - Despliegue exitoso en Docker.
-
-*iii. Decisiones de Arquitectura:*
-   - Microservicios y API Gateway se adaptan bien al proyecto.
-   - Rate limiting y Docker son beneficiosos para el sistema.
-
-*iv. Lecciones Aprendidas:*
-   - Algunos requisitos resultaron más difíciles de implementar de lo esperado.
-   - La retroalimentación al final de cada iteración es crucial.
-
-*v. Próximos Pasos:*
-   - Abordar los requerimientos restantes.
-   - Implementar un despliegue más ordenado.
-
-Este enfoque detallado debería proporcionar una guía más completa para la implementación de tu arquitectura. Si tienes alguna pregunta adicional o ajustes específicos, estoy aquí para ayudar.
-
-## 8. Referencias
-
-* Li, S., Zhang, H., Jia, Z., Zhong, C., Zhang, C., Shan, Z., Shen, J., & Babar, M. A. (2021). Understanding and addressing quality attributes of microservices architecture: A Systematic literature review. In Information and Software Technology (Vol. 131, p. 106449). Elsevier BV. https://doi.org/10.1016/j.infsof.2020.106449
+| |UC-12| |DEC-3,DEC-4
+| UC-15 || |
+| |UC-16 | |DEC-3,DEC-4
+| | | ESC-23|DEC-2,DEC-3
+| |ESC-26 | |DEC-1
+| | | CON-3 | DEC-2
+| | CON-4 | |DEC-1
