@@ -22,10 +22,20 @@ La flexibilidad de React radica en su capacidad para escalar aplicaciones a medi
  - **Componentes Reutilizables:** Vue permite la creación de componentes reutilizables, similar a React, lo que facilita la construcción de interfaces de usuario escalables y modulares.
  - **Directivas y Mixins:** Vue ofrece directivas y mixins, permitiendo la reutilización de funcionalidades y lógica en diferentes partes de la aplicación. Esto es útil para mantener un código limpio y modular.
 ### ANGULAR
-- **Estructura Opinada:**  Angular proporciona una estructura completa y opinionada para el desarrollo de aplicaciones. Esta estructura clara es beneficiosa para proyectos grandes, ya que establece patrones y buenas prácticas desde el principio, facilitando la escalabilidad a medida que la aplicación crece.
-- **Inyección de Dependencias:**  Angular utiliza un sistema de inyección de dependencias que facilita la gestión de servicios y componentes. Esto es útil en aplicaciones grandes, donde la gestión eficiente de dependencias contribuye a la escalabilidad y mantenimiento.
-- **TypeScript:**  Angular utiliza TypeScript como su lenguaje principal. TypeScript agrega tipado estático a JavaScript, lo que ayuda a detectar errores en tiempo de compilación y facilita el mantenimiento de código en aplicaciones grandes y complejas.
-- **Módulos y Lazy Loading:**  Angular organiza la aplicación en módulos, permitiendo la carga perezosa (lazy loading) de módulos específicos. Esta característica es crucial para mejorar el rendimiento y la velocidad de carga, especialmente en aplicaciones grandes con múltiples vistas.
+Angular facilita la implementación de varios patrones de diseño y buenas prácticas en el desarrollo de aplicaciones. A continuación, se detallan algunos de los patrones y prácticas que Angular promueve o facilita:
+Patrón MVC (Modelo-Vista-Controlador): Angular sigue el patrón MVC de forma intrínseca. Los componentes de Angular actúan como controladores, las plantillas representan las vistas, y los servicios pueden funcionar como modelos o gestionar la lógica de negocio.
+
+ - **Inyección de Dependencias:** Angular utiliza un sistema de inyección de dependencias incorporado. Este patrón facilita la gestión de dependencias y la creación de componentes y servicios de manera eficiente, lo que contribuye a un código más modular y fácil de probar.
+
+ - **Observables y Programación Reactiva:** Angular adopta el patrón de programación reactiva mediante el uso de observables. Esto permite una manipulación eficiente de los eventos y cambios en la aplicación, facilitando la actualización dinámica de la interfaz de usuario.
+
+ - **Módulos:** Angular organiza la aplicación en módulos, lo que facilita la modularidad y el mantenimiento. Cada módulo puede contener componentes, servicios y otros recursos relacionados, proporcionando una estructura clara y modularizada.
+
+ - **Lazy Loading:** Angular permite la carga perezosa (lazy loading) de módulos, lo que mejora significativamente el rendimiento al cargar solo los recursos necesarios cuando se accede a una parte específica de la aplicación.
+
+ - **Decoradores:** Angular utiliza decoradores para extender y configurar funcionalidades. Los decoradores permiten la anotación de clases y métodos, lo que facilita la implementación de características como inyección de dependencias, enlace de datos y rutas.
+
+ - **TypeScript:** Aunque TypeScript no es exclusivo de Angular, es la opción recomendada. TypeScript agrega tipado estático a JavaScript, lo que facilita la detección temprana de errores y proporciona herramientas de desarrollo más sólidas.
 
 
 
