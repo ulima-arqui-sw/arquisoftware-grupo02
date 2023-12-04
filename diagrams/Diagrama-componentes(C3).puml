@@ -1,0 +1,97 @@
+@startuml "diagrama arquitectura"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
+!include osaPuml/Common.puml
+!include osaPuml/User/all.puml
+
+!include <office/Servers/database_server>
+!include <office/Servers/file_server>
+!include <office/Servers/application_server>
+!include <office/Concepts/service_application>
+!include <office/Concepts/firewall>
+
+
+HIDE_STEREOTYPE()
+
+AddElementTag("servicios", $shape=EightSidedShape(), $bgColor="CornflowerBlue", $fontColor="white", $legendText="micro service\neight sided")
+AddElementTag("base", $shape=RoundedBoxShape(), $bgColor="lightSkyBlue",$sprite="database_server", $fontColor="white")
+
+
+System_Boundary(c1, "Sistema de concursos") {
+    ' FRONTEND
+    Container(webapp, "Webapp", "Javascript, React", "Aplicacion web que permitirá interactuar a los usuarios")
+    ' BACKEND 
+    Container(gateway, "Gateway", "Node.js", "Aplicacion que gestionará las peticiones de los usuarios", $tags = "servicios")
+
+    System_Boundary(c1_1, "microservicio de concursos"){
+        Container(concurso, "Modulo de concursos", "javascript, express.js", "Módulo que gestionará los concursos en ejecución", $tags = "servicios")
+        ContainerDb(base_concurso, "Base relacional", "PostgreSQL", "", $tags = "base")
+    }
+
+    System_Boundary(c1_2, "microservicio de comunicación"){
+        Container(comunicacion, "Comunicación y notificaciones", "javascript, express.js", "Módulo que gestionará la comunicación entre los participantes y el juez", $tags = "servicios")
+        ContainerDb(base_comunicacion, "Base no relacional", "MongoDB", "", $tags = "base")
+    }
+
+    System_Boundary(c1_3, "microservicio de usuario"){
+        Container(auth, "Usuario", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+        ContainerDb(base_usuario, "Base relacional", "PostgreSQL", "", $tags = "base")
+    }
+
+    System_Boundary(c1_4, "microservicio de participante"){
+        Container(participante, "Participante", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+        ContainerDb(base_participante, "Base no relacional", "MongoDB", "", $tags = "base")
+    }
+
+    System_Boundary(c1_5, "microservicio de administrador"){
+        Container(administrador, "administrador", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+        ContainerDb(base_administrador, "Base no relacional", "MongoDB", "", $tags = "base")
+    }
+
+    System_Boundary(c2, "Sistema de juez"){
+        Container(juez, "Juez", "Node.js", "Aplicacion que ejecuta los programas de los participantes")
+        Container(queue_juez, "Cola de mensajes", "Amazon MQ", "Cola de mensajes que permite comunicar al juez con el sistema de concursos")
+        ContainerDb(juez_db, "Juez Database", "PostgreSQL", "Almacena los programas que han sido ejecutados por le juez", $tags = "base")
+    }
+    ' BASES DE DATOS
+}
+
+
+' gateway -> webapp
+Rel(webapp, gateway, "Obtiene información", "REST")
+' gateway servicios
+Rel(gateway, concurso, "Obtiene información", "REST")
+Rel(gateway, comunicacion, "Obtiene información", "REST")
+Rel(gateway, auth, "Obtiene información", "REST")
+Rel(gateway, participante, "Obtiene información", "REST")
+Rel(gateway, administrador, "Obtiene información", "REST")
+' concursos 
+Rel(concurso, base_concurso, "Almacena datos", "pg")
+' comunicacion
+Rel(comunicacion, base_comunicacion, "Almacena datos", "mongoose")
+' auth
+Rel(auth, base_usuario, "Almacena datos", "pg")
+' participante
+Rel(participante, base_participante, "Almacena datos", "mongoose")
+' administrador
+Rel(administrador, base_administrador, "Almacena datos", "mongoose")
+
+
+Rel(webapp, auth, "Autentifica y autoriza al usuario", "REST")
+Rel(concurso, auth, "Autentifica y autoriza al usuario", "REST")
+Rel(administrador, auth, "Autentifica y autoriza al usuario", "REST")
+Rel(concurso, auth, "Autentifica y autoriza al usuario", "REST")
+Rel(comunicacion, auth, "Autentifica y autoriza al usuario", "REST")
+
+
+
+Rel(queue_juez, juez, "Envía eventos", "REST")
+Rel(juez, juez_db, "Almacena datos", "sqlite")
+
+Rel(juez, concurso, "Envía resultados", "REST")
+
+Rel(concurso, queue_juez, "Envía eventos", "REST")
+
+SHOW_LEGEND()
+@enduml
