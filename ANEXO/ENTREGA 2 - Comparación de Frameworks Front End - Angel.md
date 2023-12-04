@@ -59,7 +59,8 @@ Implementar la interfaz de usuario para el entorno de programación en línea, d
 
 
 * Código en jsx:
-  ![ADDdiagrama](../recursos/react.png)
+  
+  <img src="recursos/../recursos/react.png" alt="Login" width="600">
 
 
 ### 3.2. Escenario de Vue:
@@ -70,7 +71,8 @@ Desarrollar la funcionalidad de revisión de código, donde los jueces y partici
   -  **Simplicidad y Curva de Aprendizaje Suave:** Vue es conocido por su sintaxis clara y su curva de aprendizaje suave. En un entorno donde los jueces y participantes pueden no ser todos desarrolladores experimentados, Vue puede facilitar la colaboración y comprensión del código.
   - Reactividad Automática: La reactividad automática de Vue facilita la actualización instantánea de la interfaz de usuario cuando se realizan cambios en los datos, lo cual es beneficioso para la revisión en tiempo real del código.
 * Código Html:
-   ![ADDdiagrama](../recursos/vue.png)
+  
+  <img src="recursos/../recursos/vue.png" alt="Login" width="600"> 
 
 ### 3.2. Escenario de Angular:
 
@@ -80,4 +82,5 @@ Gestión de usuarios y permisos, donde se definen los roles y se administra el a
  - Inyección de Dependencias: La inyección de dependencias en Angular facilita la gestión de servicios, como la autenticación y la autorización, aspectos críticos en una plataforma de juez en línea.
 
 * Código typescript
-   ![ADDdiagrama](../recursos/angular.png)
+  
+  <img src="recursos/../recursos/angular.png" alt="Login" width="600"> 
