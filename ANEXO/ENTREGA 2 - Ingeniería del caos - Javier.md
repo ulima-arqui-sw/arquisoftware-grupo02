@@ -32,31 +32,73 @@ Ofrece un enfoque más generalizado para la Ingeniería del Caos, permitiendo a 
 
 ## Escenarios de uso
 
+La ingeniería del caos se puede aplicar en diferentes escenarios, como:
 
-
-## Consideraciones técnicas
-
-En esta sección consideraremos los aspectos técnicos que se debe llevar para poder realizar la instalación del servicio. 
-
+1. **Pruebas de resiliencia**: La ingeniería del caos se puede utilizar para probar la resiliencia de un sistema, introduciendo fallos en el sistema y observando cómo responde. Esto permite a los ingenieros identificar y abordar debilidades y fallos antes de que se conviertan en problemas graves en entornos de producción real.
+2. **Pruebas de recuperación ante desastres**: La ingeniería del caos se puede utilizar para probar la capacidad de un sistema para recuperarse de fallos y desastres. Esto permite a los ingenieros identificar y abordar debilidades y fallos en los planes de recuperación ante desastres.
+3. **Pruebas de seguridad**: La ingeniería del caos se puede utilizar para probar la seguridad de un sistema, introduciendo fallos en el sistema y observando cómo responde. Esto permite a los ingenieros identificar y abordar debilidades y fallos en la seguridad antes de que se conviertan en problemas graves en entornos de producción real.
+4. **Pruebas de carga**: La ingeniería del caos se puede utilizar para probar la capacidad de un sistema para manejar cargas de trabajo pesadas, introduciendo cargas de trabajo en el sistema y observando cómo responde. Esto permite a los ingenieros identificar y abordar debilidades y fallos antes de que se conviertan en problemas graves en entornos de producción real.
+5. **Pruebas de escalabilidad**: La ingeniería del caos se puede utilizar para probar la capacidad de un sistema para escalar, introduciendo cargas de trabajo en el sistema y observando cómo responde. Esto permite a los ingenieros identificar y abordar debilidades y fallos antes de que se conviertan en problemas graves en entornos de producción real.
+6. **Pruebas de disponibilidad**: La ingeniería del caos se puede utilizar para probar la disponibilidad de un sistema, introduciendo fallos en el sistema y observando cómo responde. Esto permite a los ingenieros identificar y abordar debilidades y fallos antes de que se conviertan en problemas graves en entornos de producción real.
+7. **Pruebas de rendimiento**: La ingeniería del caos se puede utilizar para probar el rendimiento de un sistema, introduciendo cargas de trabajo en el sistema y observando cómo responde. Esto permite a los ingenieros identificar y abordar debilidades y fallos antes de que se conviertan en problemas graves en entornos de producción real.
+8. **Pruebas de tolerancia a fallos**: La ingeniería del caos se puede utilizar para probar la tolerancia a fallos de un sistema, introduciendo fallos en el sistema y observando cómo responde. Esto permite a los ingenieros identificar y abordar debilidades y fallos antes de que se conviertan en problemas graves en entornos de producción real.
 
 ## Primeros pasos 
+### 1. instalar chaospy
+```bash
+pip install chaospy
+```
+### 2. Crear archivo *payment_app.py*
 
-### 1. Instalación de Neo4j Desktop
+```python
+# archivo: payment_app.py
+
+import random
+
+def procesar_pago(monto, chaos_factor):
+    exito = random.random() < chaos_factor
+    if exito:
+        return f"Pago exitoso: ${monto}"
+    else:
+        return "Error en el procesamiento de pago"
+```
+### 3. Crear archivo *chaos_payment_demo.py*
+
+```python
+# archivo: chaos_payment_demo.py
+
+import chaospy
+from payment_app import procesar_pago
+
+def introducir_caos(monto):
+    # Configurar un experimento de caos
+    dist = chaospy.Normal(0, 1)  
+    samples = dist.sample(10)  
+
+    resultados = []
+    for sample in samples:
+        resultado = procesar_pago(monto,sample)
+        resultados.append(resultado)
+
+    return resultados
+
+if __name__ == "__main__":
+    monto_de_pago = 50.0
+
+    print("Resultado sin caos:")
+    print(procesar_pago(monto_de_pago,1))
+
+    print("\nResultados con caos:")
+    resultados_caos = introducir_caos(monto_de_pago)
+    for resultado in resultados_caos:
+        print(resultado)
+```
+### 4. Ejecutar el archivo *test_payment_app.py*
+
+```bash
+    python chaos_payment_demo.py
+```
 
 # Demo 
 
-
-## Escenario práctico 
-
-El escenario, es la detección de información personal dentro de cada nodo. 
-
-
-
-## Pasos para la demo 
-
-
-
-
-## Resultados 
-
-Los resultados que se obtuvieron, fueron que la utilización de librerías de análisis de datos utilizando neo4j es bastante util e intuitivo, además nos brinda una gran facilidad debido al modelo de datos de grafos. 
+[video de la demo](https://drive.google.com/file/d/1JYzVgGGuZkWam_LhkBjbjbiwhOJdrmfo/view?usp=sharing)
