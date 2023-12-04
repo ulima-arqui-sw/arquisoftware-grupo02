@@ -1,0 +1,62 @@
+@startuml "diagrama-de-contenedor"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
+!include osaPuml/Common.puml
+!include osaPuml/User/all.puml
+
+!include <office/Servers/database_server>
+!include <office/Servers/file_server>
+!include <office/Servers/application_server>
+!include <office/Concepts/service_application>
+!include <office/Concepts/firewall>
+
+
+HIDE_STEREOTYPE()
+
+AddElementTag("servicios", $shape=EightSidedShape(), $bgColor="CornflowerBlue", $fontColor="white", $legendText="micro service\neight sided")
+AddElementTag("base", $shape=RoundedBoxShape(), $bgColor="lightSkyBlue",$sprite="database_server", $fontColor="white")
+
+Person(customer, Participante)
+Person(admin, Administrador)
+
+System_Boundary(c1, "Sistema de concursos") {
+    ' FRONTEND
+    Container(webapp, "Webapp", "Javascript, React", "Aplicacion web que permitirá interactuar a los usuarios")
+    ' BACKEND 
+    Container(gateway, "Gateway", "Node.js", "Aplicacion que gestionará las peticiones de los usuarios", $tags = "servicios")
+
+    Container(concurso, "Modulo de concursos", "javascript, express.js", "Módulo que gestionará los concursos en ejecución", $tags = "servicios")
+
+
+    Container(comunicacion, "Comunicación y notificaciones", "javascript, express.js", "Módulo que gestionará la comunicación entre los participantes y el juez", $tags = "servicios")
+
+    Container(auth, "Usuario", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+
+    Container(participante, "Participante", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+
+    Container(administrador, "administrador", "javascript, express.js", "Módulo que autentificará, administrará al usuario", $tags = "servicios")
+
+    Container(juez, "Juez", "Node.js", "Aplicacion que ejecuta los programas de los participantes")
+' BASES DE DATOS
+}
+
+
+' gateway -> webapp
+Rel(webapp, gateway, "Obtiene información", "REST")
+' gateway servicios
+Rel(gateway, concurso, "Obtiene información", "REST")
+Rel(gateway, comunicacion, "Obtiene información", "REST")
+Rel(gateway, auth, "Obtiene información", "REST")
+Rel(gateway, participante, "Obtiene información", "REST")
+Rel(gateway, administrador, "Obtiene información", "REST")
+
+
+Rel(customer, webapp, "Usa", "HTTPS")
+Rel(admin, webapp, "Usa", "HTTPS")
+
+Rel(juez, concurso, "Envía resultados", "REST")
+
+
+SHOW_LEGEND()
+@enduml

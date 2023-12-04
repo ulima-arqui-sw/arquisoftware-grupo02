@@ -1,0 +1,16 @@
+@startuml "Diagrama-de-contexto"
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+
+HIDE_STEREOTYPE()
+
+Person(cliente, Participante, "Participante del concurso, se encarga de resolver los problemas propuestos y participar en los concursos")
+Person(admin, Administrador, "se encarga de crear y gestionar los concursos")
+
+System(Ulitorneos, "Juez en línea Ulitorneos", "Sistema que permite crear y participar en concursos de programación" , "Sistema de software")
+
+Rel(cliente, Ulitorneos, "Usa")
+Rel(admin, Ulitorneos, "Usa")
+
+SHOW_LEGEND()
+@enduml
