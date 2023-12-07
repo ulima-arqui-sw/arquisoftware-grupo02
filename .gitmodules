@@ -1,3 +1,6 @@
 [submodule "grupo02-backend"]
 	path = grupo02-backend
 	url = https://github.com/ItsJavito/grupo02-as-backend.git
+[submodule "grupo02-frondend"]
+	path = grupo02-frondend
+	url = https://github.com/fmdd00/web-prueba.git
